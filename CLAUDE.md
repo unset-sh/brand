@@ -12,7 +12,6 @@ and icons, and the guidelines for using them), as pinned copies of the design sh
   in the design sheet yet (it starts in the sheet).
 - **Uses:** nothing. **Used by:** `unset-sh/presentation`, and `Undefined6799/unset` after its rewrite, each at an
   exact version.
-
 - **Licence:** everything written for unset.sh is AGPL-3.0-only; work we use from others keeps its own licence. The
   fonts are third-party (OFL-1.1). The licence for the files here is not settled yet; changing it needs the owner.
 
