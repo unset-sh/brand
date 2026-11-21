@@ -111,15 +111,17 @@ gh attestation verify unset-sh-brand-0.1.0.tgz --repo unset-sh/brand
 ## Not here yet
 
 - Official avatars and banners, a press kit and promotional artwork. Each folder is added with its first file.
-- Fonts for text beyond Latin. The two fonts cover Latin and Latin Extended-A, so presentation cannot draw
-  emoji or Greek, Cyrillic, Vietnamese, Arabic, Hebrew or East Asian text with them. Which fonts fill that gap,
-  and whether they live here, is an open decision.
+- The whole typefaces. The sheet ships one slice of each: Space Grotesk with Western European letters only (230
+  characters, so no Polish, Czech, Turkish or Vietnamese), and JetBrains Mono without Vietnamese, Greek or
+  Cyrillic. Presentation fills the gap for now with the other slices of the same typefaces; the fix belongs in the
+  sheet. Fonts for other scripts and for emoji do not belong to the brand and live in presentation.
 - `icons/unset-favicon.svg` has no colour of its own, so it draws black in every browser theme, although
   `guidelines/logo.md` says it switches between Onyx and Platinum. The file is kept as the sheet has it; the fix
   belongs in the sheet.
 
 ## Licences
 
-- Tokens, guidelines and checks: MIT, see [`LICENSE`](LICENSE).
+- Tokens, guidelines and checks: GNU Affero General Public License, version 3 only (AGPL-3.0-only), see
+  [`LICENSE`](LICENSE). Copyright (c) 2026 Alex (Undefined6799).
 - Fonts: SIL Open Font License 1.1, see the `OFL-*.txt` files in [`fonts/`](fonts/).
 - The mark and icons: all rights reserved, with the uses [`LICENSE-ASSETS.md`](LICENSE-ASSETS.md) allows.

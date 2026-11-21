@@ -2,7 +2,7 @@
   "name": "@unset-sh/brand",
   "version": "0.1.0",
   "description": "unset.sh brand foundations: design tokens, fonts, the mark and icons, as pinned copies of the design sheet.",
-  "license": "(MIT AND OFL-1.1 AND LicenseRef-unset-sh-brand-assets)",
+  "license": "(AGPL-3.0-only AND OFL-1.1 AND LicenseRef-unset-sh-brand-assets)",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/unset-sh/brand.git"

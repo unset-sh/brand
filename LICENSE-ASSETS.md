@@ -3,8 +3,8 @@
 Copyright (c) 2026 Alex (Undefined6799). All rights reserved.
 
 This licence covers the files in `logo/` and `icons/`, and any official avatar, banner or artwork added to this
-repository later. They are the identity of unset.sh, so they are not under the MIT licence that covers the rest of
-this repository.
+repository later. They are the identity of unset.sh, so they are not under the licence that covers the rest of this
+repository.
 
 You may, without asking:
 
@@ -18,6 +18,6 @@ You may not, without written permission:
 - use them as the name, logo or icon of anything that is not unset.sh;
 - use them in a way that suggests unset.sh made, sponsors or endorses your work.
 
-Everything else here has its own licence: the tokens, guidelines and checks are under the MIT licence
-([`LICENSE`](LICENSE)); the fonts are under the SIL Open Font License 1.1
+Everything else here has its own licence: the tokens, guidelines and checks are under the GNU Affero
+General Public License, version 3 only ([`LICENSE`](LICENSE)); the fonts are under the SIL Open Font License 1.1
 ([`fonts/OFL-SpaceGrotesk.txt`](fonts/OFL-SpaceGrotesk.txt), [`fonts/OFL-JetBrainsMono.txt`](fonts/OFL-JetBrainsMono.txt)).
