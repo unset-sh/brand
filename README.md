@@ -8,6 +8,19 @@ Nothing is drawn or decided in this repository. Every file it ships is a copy of
 [`source.json`](source.json) records the sheet version and the sha256 of each copy. A file that is edited by hand,
 added without a pin, or missing fails the checks.
 
+## What belongs here
+
+Fixed files that say what Unset looks like and that never change with anyone's data: the logo and mark, icons,
+fonts, colours and type, and later the official avatars and banners, the press kit and print artwork.
+
+What does not belong here:
+
+- Anything **drawn from data**, such as link previews, embeds and share cards. That is
+  [`unset-sh/presentation`](https://github.com/unset-sh/presentation), which takes its colours, fonts and mark
+  from this package.
+- Code that decides or serves anything. That is the app.
+- A file that is not in the design sheet. The sheet is where a brand file starts.
+
 ## What is here
 
 | Folder | Holds |
@@ -97,8 +110,10 @@ gh attestation verify unset-sh-brand-0.1.0.tgz --repo unset-sh/brand
 
 ## Not here yet
 
-- Static font files for image renderers, official avatars and banners, and promotional artwork. Each folder is
-  added with its first file.
+- Official avatars and banners, a press kit and promotional artwork. Each folder is added with its first file.
+- Fonts for text beyond Latin. The two fonts cover Latin and Latin Extended-A, so presentation cannot draw
+  emoji or Greek, Cyrillic, Vietnamese, Arabic, Hebrew or East Asian text with them. Which fonts fill that gap,
+  and whether they live here, is an open decision.
 - `icons/unset-favicon.svg` has no colour of its own, so it draws black in every browser theme, although
   `guidelines/logo.md` says it switches between Onyx and Platinum. The file is kept as the sheet has it; the fix
   belongs in the sheet.
