@@ -12,8 +12,8 @@ and icons, and the guidelines for using them), as pinned copies of the design sh
   in the design sheet yet (it starts in the sheet).
 - **Uses:** nothing. **Used by:** `unset-sh/presentation`, and `Undefined6799/unset` after its rewrite, each at an
   exact version.
-- **Licence:** everything written for unset.sh is AGPL-3.0-only; work we use from others keeps its own licence. The
-  fonts are third-party (OFL-1.1). The licence for the files here is not settled yet; changing it needs the owner.
+- **Licence:** not decided yet; it waits for the branding pass. The fonts are third-party and stay OFL-1.1.
+- **Outside contributions:** none for now; do not merge a pull request from outside the organisation.
 
 The map of every unset.sh repository is <https://github.com/unset-sh/.github/blob/main/MAP.md>. Read it before
 moving work between repositories or starting work that might belong elsewhere.
