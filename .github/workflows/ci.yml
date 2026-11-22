@@ -13,7 +13,8 @@ concurrency:
 
 jobs:
   check:
-    name: Check contract, package and website
+    # Keep this status name stable: the repository ruleset requires it.
+    name: Check pins, tokens, files and package
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     permissions:
