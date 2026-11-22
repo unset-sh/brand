@@ -1,6 +1,6 @@
 {
   "name": "@unset-sh/brand",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Unset brand contract, CSS tokens, style adapters, fonts, icons and usage guidelines.",
   "license": "(AGPL-3.0-only AND OFL-1.1 AND LicenseRef-unset-sh-brand-assets)",
   "repository": {

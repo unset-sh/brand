@@ -2890,12 +2890,6 @@
       "id": "mark-variants",
       "status": "unverified",
       "question": "Confirm minimum sizes and light/dark export variants."
-    },
-    {
-      "id": "distribution",
-      "status": "provisional",
-      "question": "Agree how this proposal is authored/exported by the source design sheet, then add package exports and source.json entries.",
-      "note": "The existing data-only package already defines its governance. Preserve licence/provenance manifests and keep runtime query/generation code outside that package."
     }
   ],
   "consumption": {
@@ -2903,7 +2897,7 @@
     "references": "ref inherits a token; values selects light or dark; value applies to both. Source paths are repository-relative.",
     "cssNames": "cssVariable is the public CSS name. Consumers use semantic or component roles, not primitive palette tokens.",
     "statusFiltering": "Provisional records are working defaults subject to review; do not treat them as a settled brand decision.",
-    "versioning": "Exact versions. Breaking role/ID/type/export changes require a major release; intentional visual value/default changes and additive roles a minor; documentation or fixes without changed meaning a patch. Use Changesets.",
+    "versioning": "Exact versions. Breaking role/ID/type/export changes require a major release; intentional visual value/default changes and additive roles a minor; documentation or fixes without changed meaning a patch. Use Changesets. Owner-approved initial exception: 0.1.1 introduces the contract and guide with an incompatible migration from 0.1.0; see docs/decisions/0002-initial-contract-version.md and docs/migration.md.",
     "query": "Import contract.json for metadata, resolved.json for theme-specific resolved values, or run npm run query -- <id-or-prefix> [light|dark].",
     "generation": "npm run build validates and generates dist; npm run check rejects generated drift. No consumer runs this repository build tooling.",
     "publication": "Static npm package on GitHub Packages; Hugo guide and Svelte gallery on GitHub Pages. A published version must be adopted, rebuilt and deployed by each consumer.",

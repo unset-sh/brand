@@ -1,7 +1,13 @@
 # Migrating from the design-sheet package
 
-This changes the public token shape and visual direction and carries a major
-changeset. Do not deploy it as an unnoticed patch over 0.1.0.
+**0.1.1 introduces the new brand contract and guide.** At the owner's request,
+this initial 0.x transition uses 0.1.1. It changes the public token format and
+visual defaults incompatibly with 0.1.0; consumers must migrate and pin an exact
+version. See [decision 0002](decisions/0002-initial-contract-version.md).
+
+Do not treat the patch number as a compatibility guarantee. Ranges such as
+`^0.1.0` and `~0.1.0` can admit this release; review and replace loose ranges
+before updating. Keep the existing 0.1.0 package and tag for historical users.
 
 The sheet remains historical provenance. New decisions are authored in
 `src/contract.json`, validated, and compiled into `dist/`. Token records have

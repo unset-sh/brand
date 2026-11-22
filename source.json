@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "authority": "src/contract.json",
-  "contractSha256": "611e967350871c6d59c3bc3ddfd975df3074fa7599d078738296dafe750b5bd6",
+  "contractSha256": "5c99ac570d6a68326ba2516044f628fbb78f50109c71e54756fb5a7e16ac5aeb",
   "historical": "provenance/design-sheet-0.1.0.json",
   "files": [
     {
@@ -127,17 +127,17 @@
     },
     {
       "path": "dist/tokens.css",
-      "sha256": "f45baa3900128aba9dbff5f7c5fda56b739158f8393c2ee9fd242fe98e721f37",
+      "sha256": "2738aa54564ec77474d25552e880e6743b0df982f2b1b8ebc940c55d74c79377",
       "origin": "repository-build"
     },
     {
       "path": "dist/tailwind.css",
-      "sha256": "14bb58ad9cd76e68cad7fb93e3a98bd8a373ca9e932f68d7e70d12b87d036965",
+      "sha256": "b563990e38a12db20f18b4ad3ee00f7795df7840b32ef332400ebeb8bb16608d",
       "origin": "repository-build"
     },
     {
       "path": "dist/contract.json",
-      "sha256": "d59e0e55dee8e6c40e6fbc3ecc069897827e936d05d528079132baf8cb5a6166",
+      "sha256": "44b196fc51027bc18f58438537128f3bc078fc9ce3edea71cfb7565b3c9599a6",
       "origin": "repository-build"
     },
     {
@@ -162,12 +162,12 @@
     },
     {
       "path": "dist/meta.json",
-      "sha256": "25d91ad38d5f74b4375d29ee5b390dae52855bdfb158152a81eb0ca631f6cad9",
+      "sha256": "81db953301fd4c1820c50e31f1b347e8b4f8c6d32f334d72e9147b8ebfc183ae",
       "origin": "repository-build"
     },
     {
       "path": "dist/resolved.json",
-      "sha256": "47d329f4ea93e6c302ea2e9edad0ad16370c1aabe384de66ab348e529fdcfa84",
+      "sha256": "461a039b77eeaaf8a4f834b167609857f85b2f01cff125addc1c6b09d1970f66",
       "origin": "repository-build"
     },
     {
@@ -187,7 +187,7 @@
     },
     {
       "path": "dist/syntax/moss-clay.json",
-      "sha256": "e941f0bb0844b4231dee0a3a577ca2215e4df81ed191899367a4690577b34145",
+      "sha256": "241ae14601203d878931c5f3ce9700fea5967521b28d6123efdf1dd1103cfd8e",
       "origin": "repository-build"
     }
   ]

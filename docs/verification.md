@@ -20,10 +20,14 @@ Checked on 2026-11-22, before publication.
   targets are 32px. No console errors were observed in these checks.
 - Guide CSS and JavaScript use content hashes and integrity attributes so
   deployments cannot retain a previous script/style under the same URL.
-- A disposable Changesets rehearsal prepares 1.0.0, updates the package/lockfile
-  and generated metadata, consumes the changeset and creates the changelog.
-  The real branch retains 0.1.0 and its pending major changeset until a release
-  is prepared. No package was published during validation.
+- Changesets prepares 0.1.1 as selected by the owner, updates the package and
+  lockfile, consumes the changeset and creates the changelog. Regenerated
+  metadata uses 0.1.1 throughout; schema versions and historical 0.1.0 asset
+  provenance are unchanged. All 41 checks pass for the prepared version.
+  No package was published during validation; the protected release gate remains.
+- The 0.1.1 archive includes the migration warning and matching package,
+  contract, syntax and provenance versions. The custom-domain website build
+  displays v0.1.1 and keeps component links relative to the site root.
 - The org-map companion passes its 22 tests and generated-map drift check.
 
 The original font, logo and app-icon bytes and existing licences are retained.
