@@ -1,0 +1,36 @@
+      <section id="use" aria-labelledby="use-title">
+        <div class="section-heading"><h2 id="use-title">Use the system</h2><span class="status-label">Version <span data-version>{{ hugo.Data.brand.contract.version }}</span></span></div>
+        <p>The contract gives people and tools the same named decisions. Edit a colour, typeface, or component recipe once, regenerate the shared output, and review the result here. Stable role names keep consuming repositories consistent.</p>
+        <ol class="usage-steps"><li><strong>Read the role.</strong> Use <code>color.ground</code> for a page canvas and <code>color.link</code> for an unvisited content link.</li><li><strong>Check its status.</strong> Working values are ready to review. Provisional values are candidates, not stable defaults.</li><li><strong>Consume one version.</strong> Pin the contract and matching assets. Import the package styles and assets rather than copying values by hand.</li></ol>
+        <h3>Import the foundation</h3>
+        <p>The base CSS works in any web interface. Add the Tailwind and shadcn adapters only in applications that use them; the renderer can read the JSON contract directly.</p>
+        <div class="code-specimen"><div class="code-heading"><span>Shared stylesheet</span><span>CSS</span></div><pre tabindex="0" aria-label="Import the shared brand CSS"><code>@import "@unset-sh/brand/tokens.css";
+
+.page {
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--font-sans);
+}</code></pre></div>
+        <p>For a Tailwind v4 interface, install <code>tw-animate-css</code>, then add the shadcn adapter and token mapping. The optional recipes supply the shared component refinements shown in the gallery.</p>
+        <div class="code-specimen"><div class="code-heading"><span>Tailwind and shadcn-svelte</span><span>CSS</span></div><pre tabindex="0" aria-label="Import the Tailwind and shadcn adapters"><code>@import "tailwindcss";
+@import "tw-animate-css";
+@import "@unset-sh/brand/tokens.css";
+@import "@unset-sh/brand/shadcn.css";
+@import "@unset-sh/brand/tailwind.css";
+@import "@unset-sh/brand/recipes.css";
+
+@custom-variant dark (&amp;:where([data-theme="dark"], [data-theme="dark"] *));</code></pre></div>
+        <p>The adapter targets the gallery’s pinned Vega markup. Set the root appearance and class as shown; <code>data-recipes="true"</code> opts into the shared refinements.</p>
+        <div class="code-specimen"><div class="code-heading"><span>Root element</span><span>HTML</span></div><pre tabindex="0" aria-label="Enable the theme and scoped component recipes"><code>&lt;html class="style-vega" data-theme="dark" data-recipes="true"&gt;</code></pre></div>
+        <p class="caption">Use <code>data-theme="light"</code> for the light appearance. Check the consuming component version and markup: CSS updates styling, not copied shadcn component source or behavior.</p>
+        <div class="contract-actions"><a href="{{ "assets/brand/contract.json" | relURL }}" download="unset-brand-contract-{{ hugo.Data.brand.contract.version }}.json">Download contract JSON</a><a href="{{ "assets/brand/tokens.css" | relURL }}" download>CSS tokens</a><a href="{{ "assets/brand/tailwind.css" | relURL }}" download>Tailwind v4 mapping</a><a href="https://github.com/unset-sh/brand">View the brand repository</a></div>
+        <div class="token-browser">
+          <label for="token-search">Find a token</label>
+          <input id="token-search" type="search" placeholder="Try link, background, radius…" autocomplete="off" spellcheck="false" aria-describedby="token-count">
+          <p class="caption" id="token-count" role="status">Loading the contract…</p>
+          <div class="token-table-region" role="region" aria-label="Design token lookup results" tabindex="0"><table><caption class="sr-only">Token values for the selected appearance</caption><thead><tr><th scope="col">Role</th><th scope="col">Value</th><th scope="col">Status</th><th scope="col"><span class="sr-only">Copy value</span></th></tr></thead><tbody id="token-results"></tbody></table></div>
+          <button type="button" id="more-tokens" class="icon-button" hidden>Show more tokens</button>
+        </div>
+        <div class="code-specimen"><div class="code-heading"><span>Query the same contract</span><span>jq</span></div><pre tabindex="0" aria-label="Contract query example"><code>jq '.tokens[] | select(.id == "color.link")' contract.json</code></pre></div>
+        <p class="caption">Publishing makes a new version available. Each consuming repository updates its pinned dependency, runs its checks, and rebuilds before that version reaches users.</p>
+      </section>

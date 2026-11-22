@@ -1,13 +1,16 @@
 ## What changed
 
-<!-- One sheet version, or one change to the checks or workflows, per pull request. -->
+<!-- Describe contract/consumer behaviour and why it changes. -->
 
-## Where it came from
+## Validation
 
-<!-- The design sheet version, or the documentation you read for a tooling change. -->
+<!-- Commands, affected visual/interaction checks and unverified limits. -->
 
-## Checklist
+## Compatibility and provenance
 
-- [ ] Files were copied byte for byte, and each `sha256` in `source.json` came from the sheet's own listing
-- [ ] `npm run check` passes
-- [ ] `package.json` version raised if the package's contents changed
+<!-- Public imports, roles, markup, assets, licences and migration impact. Link the org-map companion PR when responsibilities change. -->
+
+- [ ] `npm run check` passes; generated outputs are current
+- [ ] `npm run site:build` passes; affected examples checked in light/dark
+- [ ] Package changes have a changeset; breaking changes have migration notes
+- [ ] Sources/licences preserved; package boundaries intact

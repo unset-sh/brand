@@ -1,0 +1,22 @@
+      <section id="typography" aria-labelledby="typography-title">
+        <div class="section-heading"><h2 id="typography-title">Typography</h2><span class="status-label">Working recipes</span></div>
+        <p><span data-font="sans">The interface typeface</span> carries headings, prose, labels, and controls. <span data-font="mono">The monospace typeface</span> distinguishes code, identifiers, and short technical details.</p>
+        <div class="type-specimen">
+          <p class="eyebrow" data-font="sans">Interface typeface</p>
+          <p class="type-heading">A place to make your own.</p>
+          <p class="type-lead">Shared typography gives every surface a familiar voice.</p>
+          <p>Build hierarchy with size, weight, and spacing. Keep reading widths comfortable, labels explicit, and paragraphs easy to follow.</p>
+          <div class="type-alphabet" aria-label="Typeface character specimen">Aa Bb Cc &amp; 0123456789</div>
+        </div>
+        <div class="two-column type-notes">
+          <div><h3>Reading and interface</h3><p>This guide uses 1rem body text with generous line height. It keeps longer prose to a comfortable measure and lets content reflow.</p></div>
+          <div><h3>Code and identifiers</h3><p class="mono-example">mika.unset.sh<br>color.ground<br>brand@<span data-version>{{ hugo.Data.brand.contract.version }}</span></p></div>
+        </div>
+        <div class="code-specimen"><div class="code-heading"><span>Moss &amp; clay</span><span>TypeScript</span></div><pre tabindex="0" aria-label="Moss and clay syntax example"><code><span class="syntax-comment">// A small space, made your own.</span>
+<span class="syntax-keyword">const</span> <span class="syntax-name">profile</span> <span class="syntax-punctuation">= {</span>
+  <span class="syntax-name">name</span><span class="syntax-punctuation">:</span> <span class="syntax-string">'Mika Rowan'</span><span class="syntax-punctuation">,</span>
+  <span class="syntax-name">published</span><span class="syntax-punctuation">:</span> <span class="syntax-literal">true</span>
+<span class="syntax-punctuation">};</span></code></pre></div>
+        <p><a href="{{ "components/" | relURL }}?component=typography">View the typography specimen</a> · <a href="{{ "components/" | relURL }}?component=code-block">Explore syntax and code blocks</a></p>
+        <p class="caption">The shared heading scale and renderer-specific type sizes are marked provisional in the contract. Keep those choices explicit when adopting the package.</p>
+      </section>

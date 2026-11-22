@@ -5,7 +5,7 @@ import { readFileSync, readdirSync, statSync } from "node:fs";
 export const root = new URL("../", import.meta.url);
 
 /** Folders that hold nothing but pinned copies. Every file in them must be listed in source.json. */
-export const PINNED_FOLDERS = ["tokens", "fonts", "logo", "icons", "guidelines"];
+export const PINNED_FOLDERS = ["fonts", "logo", "icons"];
 
 export function read(path) {
   return readFileSync(new URL(path, root));

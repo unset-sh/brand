@@ -1,127 +1,163 @@
 # unset.sh brand
 
-The one place the brand foundations of [unset.sh](https://unset.sh) live: the design tokens (colours, type,
-spacing), the two fonts, the mark and the icons. Every other repository takes them from here, as the package
-`@unset-sh/brand` at one exact version, and keeps no copy of its own.
+The shared visual contract for unset.sh: colours, typography, spacing, component
+styles, icons and the mark. App, chat, renderer and documentation can consume
+`@unset-sh/brand` at an exact version. This repository owns the values and the
+guide that demonstrates them.
 
-Nothing is drawn or decided in this repository. Every file it ships is a copy of the unset.sh design sheet, and
-[`source.json`](source.json) records the sheet version and the sha256 of each copy. A file that is edited by hand,
-added without a pin, or missing fails the checks.
+This source replacement breaks the original sheet-only token shape. See
+[migration](docs/migration.md) and the [Changesets release policy](.changeset/README.md).
+A merged guide update is not a published package release or an application migration.
 
-## What belongs here
+## Architecture
 
-Fixed files that say what Unset looks like and that never change with anyone's data: the logo and mark, icons,
-fonts, colours and type, and later the official avatars and banners, the press kit and print artwork.
+```text
+src/contract.json → validation + generation → dist/ → @unset-sh/brand
+                                              ├── app / chat / renderer
+                                              └── Hugo guide + Svelte gallery
+```
 
-What does not belong here:
-
-- Anything **drawn from data**, such as link previews, embeds and share cards. That is
-  [`unset-sh/presentation`](https://github.com/unset-sh/presentation), which takes its colours, fonts and mark
-  from this package.
-- Code that decides or serves anything. That is the app.
-- A file that is not in the design sheet. The sheet is where a brand file starts.
-
-## What is here
-
-| Folder | Holds |
+| Path | Responsibility |
 | --- | --- |
-| [`tokens/`](tokens/) | `tokens.json`: colours for the Dark and Light themes, the type scale, spacing, corners, shadows, stacking, and the mark's geometry |
-| [`fonts/`](fonts/) | Space Grotesk and JetBrains Mono as variable web fonts, each with its licence |
-| [`logo/`](logo/) | The mark, three fisheyes, as SVG: Platinum and Onyx, cropped and as square tiles, plus the print-only white and black |
-| [`icons/`](icons/) | The favicon and the home-screen icons: one unit of the mark |
-| [`guidelines/`](guidelines/) | How to use colour, type and the mark ([`brand.md`](guidelines/brand.md)), and which logo file is for what ([`logo.md`](guidelines/logo.md)) |
-| [`checks/`](checks/) | The checks CI runs |
+| `src/` | Editable contract, schema and shared style adapters |
+| `dist/` | Generated public CSS, JSON, syntax theme and manifest |
+| `fonts/`, `logo/`, `icons/` | Pinned assets and their licences |
+| `site/guide/` | Hugo content, templates and guide interactions |
+| `site/gallery/` | Interactive Svelte examples at `/components/` |
+| `scripts/`, `checks/` | Build tooling and contract/package checks |
+| `guidelines/`, `docs/` | Usage, architecture and migration |
+| `provenance/` | Original sheet manifest and upstream records |
+| `.changeset/` | Reviewed release intent and versioning configuration |
 
-Design tokens are the named values a design is built from, such as `ground` for the page background. They have
-nothing to do with access tokens.
+The package contains static data, styles and assets, with no runtime dependency
+on Hugo, Svelte, Bits UI or Tailwind. Website and tooling are excluded from the
+npm archive. [Decision 0001](docs/decisions/0001-contract-and-guide.md) defines the boundaries.
 
-## Use it
+[Bits UI](https://www.bits-ui.com/docs/introduction) supplies headless interaction
+primitives; [shadcn-svelte](https://www.shadcn-svelte.com/docs/components) supplies
+component code. Unset styles that code through tokens and optional adapters.
+Product rules, authentication, network calls and data rendering remain with the
+consumer. The brand package does not duplicate component behaviour.
 
-The package is published to GitHub Packages. GitHub asks for an access token to install any package from it, even
-a public one, so installing needs a personal access token (classic) with only the `read:packages` scope
-([GitHub's npm registry guide](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-to-github-packages)).
+## Use the package
 
-In the project's `.npmrc`, which is safe to commit:
+Configure the scope in the consumer's committed `.npmrc`:
 
 ```ini
 @unset-sh:registry=https://npm.pkg.github.com
 ```
 
-In your own `~/.npmrc`, never in a repository:
+Provide read-only package credentials through user configuration or CI secrets,
+never a committed file. See [GitHub registry authentication](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-to-github-packages).
+Install an intended published version with `npm install --save-exact
+@unset-sh/brand@VERSION`, replacing `VERSION` with that version.
 
-```ini
-//npm.pkg.github.com/:_authToken=YOUR_READ_PACKAGES_TOKEN
+For a bundler-based application:
+
+```css
+@import "@unset-sh/brand/tokens.css";
+html { background: var(--ground); color: var(--ink); }
+body { font-family: var(--font-sans); }
+a { color: var(--link); }
+a:visited { color: var(--link-visited); }
 ```
 
-Then install an exact version:
+Set `data-theme="light"` or `data-theme="dark"` on the root element; dark is the
+default. CSS includes font declarations. Let the bundler resolve relative font
+URLs; static Hugo copies must preserve the CSS file's `../fonts/` directory.
 
-```sh
-npm install --save-exact @unset-sh/brand
+For Tailwind v4 and shadcn-svelte:
+
+```css
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "@unset-sh/brand/tokens.css";
+@import "@unset-sh/brand/shadcn.css";
+@import "@unset-sh/brand/tailwind.css";
+@import "@unset-sh/brand/recipes.css";
 ```
 
-The package holds files, not code:
+The optional shadcn adapter targets the pinned Vega markup used in the gallery.
+Install `tw-animate-css` in a Tailwind consumer and put `class="style-vega"` on
+the root element. Add `data-recipes="true"` to opt into the additional recipes.
+Use `@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));`
+when consuming dark variants.
+
+Recipes style documented markup and states. Check the consuming component
+version and markup; CSS does not update copied shadcn source or its behaviour.
+
+For a renderer or tool:
 
 ```js
-import { readFile } from "node:fs/promises";
-import { fileURLToPath } from "node:url";
-import tokens from "@unset-sh/brand/tokens.json" with { type: "json" };
-
-const ground = tokens.color.tokens.find((token) => token.name === "ground").value.dark;
-const mark = await readFile(fileURLToPath(import.meta.resolve("@unset-sh/brand/logo/unset-mark-platinum.svg")));
+import contract from "@unset-sh/brand/contract.json" with { type: "json" };
+const linkRole = contract.tokens.find(token => token.id === "color.link");
 ```
 
-`@unset-sh/brand/fonts/…`, `/logo/…` and `/icons/…` resolve to the files in those folders, and
-`@unset-sh/brand/source.json` says which design sheet version they came from.
+`contract.json` records roles, references, usage and decision status.
+`resolved.json` provides resolved theme values; `contract.schema.json` describes
+the shape; `source.json` records build/asset provenance. Asset exports are
+`fonts/*`, `logo/*`, `icons/*`; the syntax export is `syntax/moss-clay.json`.
 
-## How it stays in step
+## Change and verify
 
-```
-design sheet  →  this repository (source.json pins every copy)  →  @unset-sh/brand at an exact version  →  every other repository
-```
-
-- **Upstream.** The design sheet is where a colour, a font or the mark changes. This repository only copies.
-- **Here.** `npm run check` proves every shipped file matches its pin, the tokens are sound (every colour has a
-  value in both themes, text pairs reach 4.5:1, the mark files match the geometry the tokens record), the SVGs hold
-  nothing but the mark's shapes, and the package holds exactly the pinned files.
-- **Downstream.** Repositories depend on one exact version of the package and never copy a file out of it.
-
-## Take a new design sheet version
-
-1. Copy the changed files from the sheet into their folders, byte for byte.
-2. In `source.json`, set `sheetVersion`, `copiedAt`, and each changed file's `sha256` **from the sheet's own file
-   listing**. Never compute the hash from your copy: that would only prove the copy equals itself.
-3. Run `npm run check`.
-4. Raise the version in `package.json`: patch for a correction, minor for something added, major when a token,
-   file or export is removed or renamed.
-5. Open a pull request. One sheet version per pull request.
-
-## Releases
-
-A release is a tag `v<version>` on a commit of `main`. The release workflow checks the tag against `package.json`,
-runs the checks, packs the package once, and then waits. Alex approves it in GitHub, and only then is that same
-packed file signed and published.
-
-Each release carries a signed statement of which repository, commit and workflow built it. To check a copy you
-downloaded:
+Use Node from `.nvmrc` and Hugo **0.168.0**, matching the docs site.
 
 ```sh
-gh attestation verify unset-sh-brand-0.1.0.tgz --repo unset-sh/brand
+npm ci
+npm run build
+npm run check
+npm run site:build
 ```
 
-## Not here yet
+Serve `site/public/` for a local preview. `HUGO_BINARY` can name an executable
+outside `PATH`. Test project Pages paths with `BRAND_BASE_PATH=/brand/`;
+`BRAND_BASE_URL` supplies the absolute URL for the assembled guide and gallery.
 
-- Official avatars and banners, a press kit and promotional artwork. Each folder is added with its first file.
-- The whole typefaces. The sheet ships one slice of each: Space Grotesk with Western European letters only (230
-  characters, so no Polish, Czech, Turkish or Vietnamese), and JetBrains Mono without Vietnamese, Greek or
-  Cyrillic. Presentation fills the gap for now with the other slices of the same typefaces; the fix belongs in the
-  sheet. Fonts for other scripts and for emoji do not belong to the brand and live in presentation.
-- `icons/unset-favicon.svg` has no colour of its own, so it draws black in every browser theme, although
-  `guidelines/logo.md` says it switches between Onyx and Platinum. The file is kept as the sheet has it; the fix
-  belongs in the sheet.
+Edit `src/contract.json` and shared `src/` style adapters, then rebuild. Inspect
+both themes and affected components, including keyboard and small-screen use.
+Add a changeset with `npm run changeset` for package changes and open a PR with
+generated outputs and validation. Guide-only edits need no package version bump.
 
-## Licences
+WCAG 2.2 AA is the target. Automated contrast checks cover authored pairs, not
+whole-product certification. Integrations still need labels, keyboard, focus,
+reflow, screen-reader and state checks.
 
-- Tokens, guidelines and checks: GNU Affero General Public License, version 3 only (AGPL-3.0-only), see
-  [`LICENSE`](LICENSE). Copyright (c) 2026 Alex (Undefined6799).
-- Fonts: SIL Open Font License 1.1, see the `OFL-*.txt` files in [`fonts/`](fonts/).
-- The mark and icons: all rights reserved, with the uses [`LICENSE-ASSETS.md`](LICENSE-ASSETS.md) allows.
+## Releases and consistency
+
+`npm run version-packages` applies reviewed changesets to version/changelog
+files. Regenerate outputs and review that release commit before tagging. Do not
+manually edit semver or bypass publication controls with `changeset publish`.
+See the [Changesets version command](https://changesets.dev/guide/cli#version).
+
+A release is a `v<version>` tag on `main`. CI validates the tag, checks and packs
+once, then waits for the protected `release` environment. That same artifact is
+attested and published to GitHub Packages. Existing licences and approval remain.
+
+Publishing makes a version available; it does not change an already built app.
+Each consumer updates its exact dependency and lockfile, runs checks and
+rebuilds/deploys. Consumer-side dependency bots can open update PRs automatically.
+A coordinated rollout uses the same approved version across surfaces. Runtime
+fetching of a mutable `latest` theme is outside this contract.
+
+## GitHub Pages
+
+The `pages` workflow builds Hugo and the Svelte gallery together and deploys
+`site/public/` after changes reach `main`. Manual runs also require `main`. The
+Pages-provided URL supports the default project path or a future custom domain.
+
+Set repository **Settings → Pages → Source** to **GitHub Actions**. The
+`github-pages` environment should allow `main` only; it is separate from the
+protected npm `release` environment. See [custom Pages workflows](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
+
+## Licences and remaining decisions
+
+- Original project files remain **AGPL-3.0-only**; see [LICENSE](LICENSE).
+- Font files retain **OFL-1.1**; see `fonts/OFL-*.txt`.
+- Unset's mark/favicon/app icons retain [LICENSE-ASSETS.md](LICENSE-ASSETS.md).
+- [Tabler Icons](https://tabler.io/icons) retain **MIT**, with included notice.
+- Vendored shadcn-svelte code retains its included upstream licence.
+
+Retained font slices do not cover every script. Do not synthesize unavailable
+italic variants. Final heading-scale and renderer typography remain provisional
+where the contract says so. Official mark geometry is preserved; see
+[logo usage](guidelines/logo.md).

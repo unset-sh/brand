@@ -1,2 +1,9 @@
-*.tgz
 node_modules/
+site/public/
+site/gallery/dist/
+site/gallery/.vite-cache/
+site/guide/resources/
+site/guide/.hugo_build.lock
+artifacts/
+*.tgz
+.DS_Store

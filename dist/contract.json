@@ -1,0 +1,3091 @@
+{
+  "$schema": "./contract.schema.json",
+  "schemaVersion": 1,
+  "id": "unset.brand",
+  "status": "reviewable",
+  "created": "2026-11-22",
+  "name": "Unset brand contract",
+  "scope": {
+    "appliesTo": [
+      "app",
+      "chat",
+      "renderer",
+      "documentation"
+    ],
+    "location": "unset-sh/brand",
+    "published": false,
+    "productionMigrated": false,
+    "meaning": "Repository-owned brand contract. Consumer adoption and product accessibility are verified independently.",
+    "catalogue": {
+      "mainShadcnEntries": 66,
+      "excluded": [
+        "separate AI Elements catalogue",
+        "arbitrary third-party components",
+        "every possible component variant"
+      ]
+    }
+  },
+  "statusDefinitions": {
+    "selected": "Direction selected by the brand owner; changes follow the package release process.",
+    "working": "Concrete current preview value or implementation; available for review and testing.",
+    "inherited": "Retained baseline material with provenance; not newly measured or independently approved here.",
+    "provisional": "Candidate or incomplete cross-context decision; consumers must not treat it as a stable default.",
+    "unverified": "Not established by the reviewed material.",
+    "requirement": "Accessibility requirement summary; see the authoritative criterion and its exceptions."
+  },
+  "decisions": [
+    {
+      "id": "visual-direction",
+      "status": "selected",
+      "summary": "Restrained typography-led identity; keep official mark; discard artwork.",
+      "sourceIds": [
+        "direction"
+      ]
+    },
+    {
+      "id": "colour-roles",
+      "status": "selected",
+      "summary": "Pacific/lavender reserved for link states; primary/action/info roles stay neutral.",
+      "sourceIds": [
+        "link-decision"
+      ]
+    },
+    {
+      "id": "colour-values",
+      "status": "working",
+      "summary": "Graphite neutrals and coordinated feedback palette are the current contract values.",
+      "sourceIds": [
+        "theme",
+        "extensions",
+        "colour-feedback"
+      ]
+    },
+    {
+      "id": "icons",
+      "status": "selected",
+      "summary": "Tabler replaces Iconoir for this design direction.",
+      "sourceIds": [
+        "icon-contract"
+      ]
+    },
+    {
+      "id": "syntax",
+      "status": "selected",
+      "summary": "Moss & clay is the selected working syntax direction.",
+      "sourceIds": [
+        "syntax"
+      ]
+    },
+    {
+      "id": "component-refinements",
+      "status": "working",
+      "summary": "Sizing, label, focus and overlay refinements are shared CSS recipes; consuming UI owns markup and behaviour.",
+      "sourceIds": [
+        "component-rules",
+        "catalogue"
+      ]
+    }
+  ],
+  "tokens": [
+    {
+      "id": "palette.ground",
+      "type": "color",
+      "kind": "primitive",
+      "status": "working",
+      "usage": "Raw value backing color.ground. Consume its semantic or component role in UI.",
+      "sourceIds": [
+        "theme"
+      ],
+      "values": {
+        "light": "#f5f5f5",
+        "dark": "#1c1c1c"
+      }
+    },
+    {
+      "id": "color.ground",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--ground",
+      "usage": "Default page canvas.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "palette.ground"
+    },
+    {
+      "id": "palette.surface-raised",
+      "type": "color",
+      "kind": "primitive",
+      "status": "working",
+      "usage": "Raw value backing color.surface-raised. Consume its semantic or component role in UI.",
+      "sourceIds": [
+        "theme"
+      ],
+      "values": {
+        "light": "#fafafa",
+        "dark": "#242424"
+      }
+    },
+    {
+      "id": "color.surface-raised",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--surface-raised",
+      "usage": "Raised panels and popover surfaces.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "palette.surface-raised"
+    },
+    {
+      "id": "palette.surface-card",
+      "type": "color",
+      "kind": "primitive",
+      "status": "working",
+      "usage": "Raw value backing color.surface-card. Consume its semantic or component role in UI.",
+      "sourceIds": [
+        "theme"
+      ],
+      "values": {
+        "light": "#fff",
+        "dark": "#2b2b2b"
+      }
+    },
+    {
+      "id": "color.surface-card",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--surface-card",
+      "usage": "Card and specimen surfaces.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "palette.surface-card"
+    },
+    {
+      "id": "palette.surface-sunken",
+      "type": "color",
+      "kind": "primitive",
+      "status": "working",
+      "usage": "Raw value backing color.surface-sunken. Consume its semantic or component role in UI.",
+      "sourceIds": [
+        "theme"
+      ],
+      "values": {
+        "light": "#e8e8e8",
+        "dark": "#161616"
+      }
+    },
+    {
+      "id": "color.surface-sunken",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--surface-sunken",
+      "usage": "Inset/code surfaces.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "palette.surface-sunken"
+    },
+    {
+      "id": "palette.ink",
+      "type": "color",
+      "kind": "primitive",
+      "status": "working",
+      "usage": "Raw value backing color.ink. Consume its semantic or component role in UI.",
+      "sourceIds": [
+        "theme"
+      ],
+      "values": {
+        "light": "#171717",
+        "dark": "#ededed"
+      }
+    },
+    {
+      "id": "color.ink",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--ink",
+      "usage": "Primary text and neutral action fill.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "palette.ink"
+    },
+    {
+      "id": "palette.ink-muted",
+      "type": "color",
+      "kind": "primitive",
+      "status": "working",
+      "usage": "Raw value backing color.ink-muted. Consume its semantic or component role in UI.",
+      "sourceIds": [
+        "theme"
+      ],
+      "values": {
+        "light": "#5a5a5a",
+        "dark": "#b0b0b0"
+      }
+    },
+    {
+      "id": "color.ink-muted",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--ink-muted",
+      "usage": "Secondary readable text.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "palette.ink-muted"
+    },
+    {
+      "id": "palette.line",
+      "type": "color",
+      "kind": "primitive",
+      "status": "working",
+      "usage": "Raw value backing color.line. Consume its semantic or component role in UI.",
+      "sourceIds": [
+        "theme"
+      ],
+      "values": {
+        "light": "#d7d7d7",
+        "dark": "#3a3a3a"
+      }
+    },
+    {
+      "id": "color.line",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--line",
+      "usage": "Decorative separators; not the sole indicator of a control boundary.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "palette.line"
+    },
+    {
+      "id": "palette.line-strong",
+      "type": "color",
+      "kind": "primitive",
+      "status": "working",
+      "usage": "Raw value backing color.line-strong. Consume its semantic or component role in UI.",
+      "sourceIds": [
+        "theme"
+      ],
+      "value": "#858585"
+    },
+    {
+      "id": "color.line-strong",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--line-strong",
+      "usage": "Meaningful control boundaries.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "palette.line-strong"
+    },
+    {
+      "id": "palette.link",
+      "type": "color",
+      "kind": "primitive",
+      "status": "working",
+      "usage": "Raw value backing color.link. Consume its semantic or component role in UI.",
+      "sourceIds": [
+        "theme"
+      ],
+      "values": {
+        "light": "#00677f",
+        "dark": "#55bdd4"
+      }
+    },
+    {
+      "id": "color.link",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--link",
+      "usage": "Unvisited content links only.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "palette.link"
+    },
+    {
+      "id": "palette.link-hover",
+      "type": "color",
+      "kind": "primitive",
+      "status": "working",
+      "usage": "Raw value backing color.link-hover. Consume its semantic or component role in UI.",
+      "sourceIds": [
+        "theme"
+      ],
+      "values": {
+        "light": "#004f64",
+        "dark": "#8ed7e7"
+      }
+    },
+    {
+      "id": "color.link-hover",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--link-hover",
+      "usage": "Hovered unvisited content links only.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "palette.link-hover"
+    },
+    {
+      "id": "palette.link-visited",
+      "type": "color",
+      "kind": "primitive",
+      "status": "working",
+      "usage": "Raw value backing color.link-visited. Consume its semantic or component role in UI.",
+      "sourceIds": [
+        "theme"
+      ],
+      "values": {
+        "light": "#685284",
+        "dark": "#b8add6"
+      }
+    },
+    {
+      "id": "color.link-visited",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--link-visited",
+      "usage": "Visited content links only.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "palette.link-visited"
+    },
+    {
+      "id": "palette.link-visited-hover",
+      "type": "color",
+      "kind": "primitive",
+      "status": "working",
+      "usage": "Raw value backing color.link-visited-hover. Consume its semantic or component role in UI.",
+      "sourceIds": [
+        "theme"
+      ],
+      "values": {
+        "light": "#4c318d",
+        "dark": "#d4cbed"
+      }
+    },
+    {
+      "id": "color.link-visited-hover",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--link-visited-hover",
+      "usage": "Hovered visited content links only.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "palette.link-visited-hover"
+    },
+    {
+      "id": "palette.success",
+      "type": "color",
+      "kind": "primitive",
+      "status": "working",
+      "usage": "Raw value backing color.success. Consume its semantic or component role in UI.",
+      "sourceIds": [
+        "theme"
+      ],
+      "values": {
+        "light": "#2f6a47",
+        "dark": "#7fbf95"
+      }
+    },
+    {
+      "id": "color.success",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--success",
+      "usage": "Success text, glyph and boundary.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "palette.success"
+    },
+    {
+      "id": "palette.success-surface",
+      "type": "color",
+      "kind": "primitive",
+      "status": "working",
+      "usage": "Raw value backing color.success-surface. Consume its semantic or component role in UI.",
+      "sourceIds": [
+        "theme"
+      ],
+      "values": {
+        "light": "#e7f4eb",
+        "dark": "#242e27"
+      }
+    },
+    {
+      "id": "color.success-surface",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--success-surface",
+      "usage": "Soft success feedback surface.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "palette.success-surface"
+    },
+    {
+      "id": "palette.warning",
+      "type": "color",
+      "kind": "primitive",
+      "status": "working",
+      "usage": "Raw value backing color.warning. Consume its semantic or component role in UI.",
+      "sourceIds": [
+        "theme"
+      ],
+      "values": {
+        "light": "#78591e",
+        "dark": "#d2af67"
+      }
+    },
+    {
+      "id": "color.warning",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--warning",
+      "usage": "Warning text, glyph and boundary.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "palette.warning"
+    },
+    {
+      "id": "palette.warning-surface",
+      "type": "color",
+      "kind": "primitive",
+      "status": "working",
+      "usage": "Raw value backing color.warning-surface. Consume its semantic or component role in UI.",
+      "sourceIds": [
+        "theme"
+      ],
+      "values": {
+        "light": "#f7efe3",
+        "dark": "#2f2b21"
+      }
+    },
+    {
+      "id": "color.warning-surface",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--warning-surface",
+      "usage": "Soft warning feedback surface.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "palette.warning-surface"
+    },
+    {
+      "id": "palette.danger",
+      "type": "color",
+      "kind": "primitive",
+      "status": "working",
+      "usage": "Raw value backing color.danger. Consume its semantic or component role in UI.",
+      "sourceIds": [
+        "theme"
+      ],
+      "values": {
+        "light": "#973f37",
+        "dark": "#eb9287"
+      }
+    },
+    {
+      "id": "color.danger",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--danger",
+      "usage": "Error/destructive text, glyph and boundary.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "palette.danger"
+    },
+    {
+      "id": "palette.danger-surface",
+      "type": "color",
+      "kind": "primitive",
+      "status": "working",
+      "usage": "Raw value backing color.danger-surface. Consume its semantic or component role in UI.",
+      "sourceIds": [
+        "theme"
+      ],
+      "values": {
+        "light": "#fcece9",
+        "dark": "#342826"
+      }
+    },
+    {
+      "id": "color.danger-surface",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--danger-surface",
+      "usage": "Soft error feedback surface.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "palette.danger-surface"
+    },
+    {
+      "id": "color.danger-action",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--danger-action",
+      "usage": "Destructive action fill.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "color.danger"
+    },
+    {
+      "id": "palette.on-danger-action",
+      "type": "color",
+      "kind": "primitive",
+      "status": "working",
+      "usage": "Raw value backing color.on-danger-action. Consume its semantic or component role in UI.",
+      "sourceIds": [
+        "theme"
+      ],
+      "values": {
+        "light": "#fff",
+        "dark": "#161616"
+      }
+    },
+    {
+      "id": "color.on-danger-action",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--on-danger-action",
+      "usage": "Content on a destructive action fill.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "palette.on-danger-action"
+    },
+    {
+      "id": "dimension.radius",
+      "type": "dimension",
+      "kind": "primitive",
+      "status": "working",
+      "usage": "Raw value backing radius.base. Consume its semantic or component role in UI.",
+      "sourceIds": [
+        "theme"
+      ],
+      "value": ".25rem"
+    },
+    {
+      "id": "radius.base",
+      "type": "dimension",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--radius",
+      "usage": "Base corner radius; do not revive historical cut corners.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "dimension.radius"
+    },
+    {
+      "id": "dimension.control-height",
+      "type": "dimension",
+      "kind": "primitive",
+      "status": "working",
+      "usage": "Raw value backing control.height. Consume its semantic or component role in UI.",
+      "sourceIds": [
+        "theme"
+      ],
+      "value": "2.5rem"
+    },
+    {
+      "id": "control.height",
+      "type": "dimension",
+      "kind": "component",
+      "status": "working",
+      "cssVariable": "--control-height",
+      "usage": "Default control minimum height, not icon size.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "dimension.control-height"
+    },
+    {
+      "id": "color.background",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--background",
+      "usage": "Shared background role; consume through this semantic alias.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "color.ground"
+    },
+    {
+      "id": "color.foreground",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--foreground",
+      "usage": "Shared foreground role; consume through this semantic alias.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "color.ink"
+    },
+    {
+      "id": "color.card",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--card",
+      "usage": "Shared card role; consume through this semantic alias.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "color.surface-card"
+    },
+    {
+      "id": "color.card-foreground",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--card-foreground",
+      "usage": "Shared card-foreground role; consume through this semantic alias.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "color.ink"
+    },
+    {
+      "id": "color.popover",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--popover",
+      "usage": "Shared popover role; consume through this semantic alias.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "color.surface-raised"
+    },
+    {
+      "id": "color.popover-foreground",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--popover-foreground",
+      "usage": "Shared popover-foreground role; consume through this semantic alias.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "color.ink"
+    },
+    {
+      "id": "color.primary",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--primary",
+      "usage": "Neutral primary action fill; does not mean a saturated brand colour.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "color.ink"
+    },
+    {
+      "id": "color.primary-foreground",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--primary-foreground",
+      "usage": "Content on a neutral primary action.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "color.ground"
+    },
+    {
+      "id": "color.secondary",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--secondary",
+      "usage": "Shared secondary role; consume through this semantic alias.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "color.surface-raised"
+    },
+    {
+      "id": "color.secondary-foreground",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--secondary-foreground",
+      "usage": "Shared secondary-foreground role; consume through this semantic alias.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "color.ink"
+    },
+    {
+      "id": "color.muted",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--muted",
+      "usage": "Shared muted role; consume through this semantic alias.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "color.surface-sunken"
+    },
+    {
+      "id": "color.muted-foreground",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--muted-foreground",
+      "usage": "Shared muted-foreground role; consume through this semantic alias.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "color.ink-muted"
+    },
+    {
+      "id": "color.accent",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--accent",
+      "usage": "shadcn neutral interaction surface; not a brand accent.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "color.surface-raised"
+    },
+    {
+      "id": "color.accent-foreground",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--accent-foreground",
+      "usage": "Shared accent-foreground role; consume through this semantic alias.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "color.ink"
+    },
+    {
+      "id": "color.destructive",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--destructive",
+      "usage": "Shared destructive role; consume through this semantic alias.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "color.danger"
+    },
+    {
+      "id": "color.border",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--border",
+      "usage": "Shared border role; consume through this semantic alias.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "color.line"
+    },
+    {
+      "id": "color.input",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--input",
+      "usage": "Shared input role; consume through this semantic alias.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "color.line-strong"
+    },
+    {
+      "id": "color.ring",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--ring",
+      "usage": "Shared ring role; consume through this semantic alias.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "color.ink"
+    },
+    {
+      "id": "color.sidebar",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--sidebar",
+      "usage": "Shared sidebar role; consume through this semantic alias.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "color.surface-sunken"
+    },
+    {
+      "id": "color.sidebar-foreground",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--sidebar-foreground",
+      "usage": "Shared sidebar-foreground role; consume through this semantic alias.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "color.ink"
+    },
+    {
+      "id": "color.sidebar-primary",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--sidebar-primary",
+      "usage": "Shared sidebar-primary role; consume through this semantic alias.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "color.primary"
+    },
+    {
+      "id": "color.sidebar-primary-foreground",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--sidebar-primary-foreground",
+      "usage": "Shared sidebar-primary-foreground role; consume through this semantic alias.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "color.primary-foreground"
+    },
+    {
+      "id": "color.sidebar-accent",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--sidebar-accent",
+      "usage": "Shared sidebar-accent role; consume through this semantic alias.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "color.surface-raised"
+    },
+    {
+      "id": "color.sidebar-accent-foreground",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--sidebar-accent-foreground",
+      "usage": "Shared sidebar-accent-foreground role; consume through this semantic alias.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "color.ink"
+    },
+    {
+      "id": "color.sidebar-border",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--sidebar-border",
+      "usage": "Shared sidebar-border role; consume through this semantic alias.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "color.line"
+    },
+    {
+      "id": "color.sidebar-ring",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--sidebar-ring",
+      "usage": "Shared sidebar-ring role; consume through this semantic alias.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "color.ring"
+    },
+    {
+      "id": "font.stack.sans",
+      "type": "fontFamily",
+      "kind": "primitive",
+      "status": "working",
+      "usage": "Raw value backing type.family.sans. Consume its semantic or component role in UI.",
+      "sourceIds": [
+        "theme"
+      ],
+      "value": "\"Space Grotesk\",system-ui,sans-serif"
+    },
+    {
+      "id": "type.family.sans",
+      "type": "fontFamily",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--font-sans",
+      "usage": "Shared font-sans role; consume through this semantic alias.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "font.stack.sans"
+    },
+    {
+      "id": "font.stack.mono",
+      "type": "fontFamily",
+      "kind": "primitive",
+      "status": "working",
+      "usage": "Raw value backing type.family.mono. Consume its semantic or component role in UI.",
+      "sourceIds": [
+        "theme"
+      ],
+      "value": "\"JetBrains Mono\",monospace"
+    },
+    {
+      "id": "type.family.mono",
+      "type": "fontFamily",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--font-mono",
+      "usage": "Shared font-mono role; consume through this semantic alias.",
+      "sourceIds": [
+        "theme"
+      ],
+      "ref": "font.stack.mono"
+    },
+    {
+      "id": "type.family.heading",
+      "type": "fontFamily",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--font-heading",
+      "usage": "Shared font-heading role; consume through this semantic alias.",
+      "sourceIds": [
+        "extensions"
+      ],
+      "ref": "type.family.sans"
+    },
+    {
+      "id": "color.surface",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--surface",
+      "usage": "Shared surface role; consume through this semantic alias.",
+      "sourceIds": [
+        "extensions"
+      ],
+      "ref": "color.surface-raised"
+    },
+    {
+      "id": "color.surface-foreground",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--surface-foreground",
+      "usage": "Shared surface-foreground role; consume through this semantic alias.",
+      "sourceIds": [
+        "extensions"
+      ],
+      "ref": "color.ink"
+    },
+    {
+      "id": "color.destructive-foreground",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--destructive-foreground",
+      "usage": "Shared destructive-foreground role; consume through this semantic alias.",
+      "sourceIds": [
+        "extensions"
+      ],
+      "ref": "color.on-danger-action"
+    },
+    {
+      "id": "palette.chart-1",
+      "type": "color",
+      "kind": "primitive",
+      "status": "provisional",
+      "usage": "Raw value backing color.chart-1. Consume its semantic or component role in UI.",
+      "sourceIds": [
+        "extensions"
+      ],
+      "values": {
+        "light": "#525252",
+        "dark": "#c8c8c8"
+      }
+    },
+    {
+      "id": "color.chart-1",
+      "type": "color",
+      "kind": "semantic",
+      "status": "provisional",
+      "cssVariable": "--chart-1",
+      "usage": "Provisional categorical data series; pair with labels and redundant cues.",
+      "sourceIds": [
+        "extensions"
+      ],
+      "ref": "palette.chart-1"
+    },
+    {
+      "id": "palette.chart-2",
+      "type": "color",
+      "kind": "primitive",
+      "status": "provisional",
+      "usage": "Raw value backing color.chart-2. Consume its semantic or component role in UI.",
+      "sourceIds": [
+        "extensions"
+      ],
+      "values": {
+        "light": "#85621f",
+        "dark": "#d8b66b"
+      }
+    },
+    {
+      "id": "color.chart-2",
+      "type": "color",
+      "kind": "semantic",
+      "status": "provisional",
+      "cssVariable": "--chart-2",
+      "usage": "Provisional categorical data series; pair with labels and redundant cues.",
+      "sourceIds": [
+        "extensions"
+      ],
+      "ref": "palette.chart-2"
+    },
+    {
+      "id": "palette.chart-3",
+      "type": "color",
+      "kind": "primitive",
+      "status": "provisional",
+      "usage": "Raw value backing color.chart-3. Consume its semantic or component role in UI.",
+      "sourceIds": [
+        "extensions"
+      ],
+      "values": {
+        "light": "#536742",
+        "dark": "#a6ba8a"
+      }
+    },
+    {
+      "id": "color.chart-3",
+      "type": "color",
+      "kind": "semantic",
+      "status": "provisional",
+      "cssVariable": "--chart-3",
+      "usage": "Provisional categorical data series; pair with labels and redundant cues.",
+      "sourceIds": [
+        "extensions"
+      ],
+      "ref": "palette.chart-3"
+    },
+    {
+      "id": "palette.chart-4",
+      "type": "color",
+      "kind": "primitive",
+      "status": "provisional",
+      "usage": "Raw value backing color.chart-4. Consume its semantic or component role in UI.",
+      "sourceIds": [
+        "extensions"
+      ],
+      "values": {
+        "light": "#91584f",
+        "dark": "#d29b8e"
+      }
+    },
+    {
+      "id": "color.chart-4",
+      "type": "color",
+      "kind": "semantic",
+      "status": "provisional",
+      "cssVariable": "--chart-4",
+      "usage": "Provisional categorical data series; pair with labels and redundant cues.",
+      "sourceIds": [
+        "extensions"
+      ],
+      "ref": "palette.chart-4"
+    },
+    {
+      "id": "palette.chart-5",
+      "type": "color",
+      "kind": "primitive",
+      "status": "provisional",
+      "usage": "Raw value backing color.chart-5. Consume its semantic or component role in UI.",
+      "sourceIds": [
+        "extensions"
+      ],
+      "values": {
+        "light": "#6c6558",
+        "dark": "#bfb29e"
+      }
+    },
+    {
+      "id": "color.chart-5",
+      "type": "color",
+      "kind": "semantic",
+      "status": "provisional",
+      "cssVariable": "--chart-5",
+      "usage": "Provisional categorical data series; pair with labels and redundant cues.",
+      "sourceIds": [
+        "extensions"
+      ],
+      "ref": "palette.chart-5"
+    },
+    {
+      "id": "color.info",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--info",
+      "usage": "Neutral informational text and glyphs.",
+      "sourceIds": [
+        "extensions"
+      ],
+      "ref": "color.ink"
+    },
+    {
+      "id": "color.info-surface",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--info-surface",
+      "usage": "Neutral information surface.",
+      "sourceIds": [
+        "extensions"
+      ],
+      "ref": "color.surface-raised"
+    },
+    {
+      "id": "color.info-border",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--info-border",
+      "usage": "Information boundary.",
+      "sourceIds": [
+        "extensions"
+      ],
+      "ref": "color.line-strong"
+    },
+    {
+      "id": "color.code",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--code",
+      "usage": "Code surface. Syntax colours are separate code.* records.",
+      "sourceIds": [
+        "extensions"
+      ],
+      "ref": "color.surface-sunken"
+    },
+    {
+      "id": "color.code-foreground",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--code-foreground",
+      "usage": "Default code text.",
+      "sourceIds": [
+        "extensions"
+      ],
+      "ref": "color.ink"
+    },
+    {
+      "id": "color.code-highlight",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--code-highlight",
+      "usage": "Highlighted code line surface.",
+      "sourceIds": [
+        "extensions"
+      ],
+      "ref": "color.surface-raised"
+    },
+    {
+      "id": "color.code-number",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--code-number",
+      "usage": "Code line-number colour.",
+      "sourceIds": [
+        "extensions"
+      ],
+      "ref": "color.ink-muted"
+    },
+    {
+      "id": "color.selection",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--selection",
+      "usage": "Neutral selected fill.",
+      "sourceIds": [
+        "extensions"
+      ],
+      "ref": "color.primary"
+    },
+    {
+      "id": "color.selection-foreground",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--selection-foreground",
+      "usage": "Content on selected fill.",
+      "sourceIds": [
+        "extensions"
+      ],
+      "ref": "color.primary-foreground"
+    },
+    {
+      "id": "color.control-thumb",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--control-thumb",
+      "usage": "Slider/switch thumb role.",
+      "sourceIds": [
+        "extensions"
+      ],
+      "ref": "color.primary"
+    },
+    {
+      "id": "palette.overlay",
+      "type": "color",
+      "kind": "primitive",
+      "status": "working",
+      "usage": "Raw value backing color.overlay. Consume its semantic or component role in UI.",
+      "sourceIds": [
+        "extensions"
+      ],
+      "values": {
+        "light": "rgb(0 0 0 / .35)",
+        "dark": "rgb(0 0 0 / .6)"
+      }
+    },
+    {
+      "id": "color.overlay",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--overlay",
+      "usage": "Modal backdrop; inspect resulting composited colours.",
+      "sourceIds": [
+        "extensions"
+      ],
+      "ref": "palette.overlay"
+    },
+    {
+      "id": "type.family.typeset-body",
+      "type": "fontFamily",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--typeset-font-body",
+      "usage": "Shared typeset-font-body role; consume through this semantic alias.",
+      "sourceIds": [
+        "extensions"
+      ],
+      "ref": "type.family.sans"
+    },
+    {
+      "id": "type.family.typeset-heading",
+      "type": "fontFamily",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--typeset-font-heading",
+      "usage": "Shared typeset-font-heading role; consume through this semantic alias.",
+      "sourceIds": [
+        "extensions"
+      ],
+      "ref": "type.family.sans"
+    },
+    {
+      "id": "type.family.typeset-mono",
+      "type": "fontFamily",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--typeset-font-mono",
+      "usage": "Shared typeset-font-mono role; consume through this semantic alias.",
+      "sourceIds": [
+        "extensions"
+      ],
+      "ref": "type.family.mono"
+    },
+    {
+      "id": "dimension.icon-inline",
+      "type": "dimension",
+      "kind": "primitive",
+      "status": "working",
+      "usage": "Raw value backing icon.size.inline. Consume its semantic or component role in UI.",
+      "sourceIds": [
+        "component-rules"
+      ],
+      "value": "1rem"
+    },
+    {
+      "id": "icon.size.inline",
+      "type": "dimension",
+      "kind": "component",
+      "status": "working",
+      "cssVariable": "--icon-inline",
+      "usage": "Inline and compact-control glyph.",
+      "sourceIds": [
+        "component-rules"
+      ],
+      "ref": "dimension.icon-inline"
+    },
+    {
+      "id": "dimension.icon-action",
+      "type": "dimension",
+      "kind": "primitive",
+      "status": "working",
+      "usage": "Raw value backing icon.size.action. Consume its semantic or component role in UI.",
+      "sourceIds": [
+        "component-rules"
+      ],
+      "value": "1.25rem"
+    },
+    {
+      "id": "icon.size.action",
+      "type": "dimension",
+      "kind": "component",
+      "status": "working",
+      "cssVariable": "--icon-action",
+      "usage": "Standard icon-action glyph.",
+      "sourceIds": [
+        "component-rules"
+      ],
+      "ref": "dimension.icon-action"
+    },
+    {
+      "id": "dimension.icon-feedback",
+      "type": "dimension",
+      "kind": "primitive",
+      "status": "working",
+      "usage": "Raw value backing icon.size.feedback. Consume its semantic or component role in UI.",
+      "sourceIds": [
+        "component-rules"
+      ],
+      "value": "1.25rem"
+    },
+    {
+      "id": "icon.size.feedback",
+      "type": "dimension",
+      "kind": "component",
+      "status": "working",
+      "cssVariable": "--icon-feedback",
+      "usage": "Toast/status feedback glyph.",
+      "sourceIds": [
+        "component-rules"
+      ],
+      "ref": "dimension.icon-feedback"
+    },
+    {
+      "id": "dimension.target-compact",
+      "type": "dimension",
+      "kind": "primitive",
+      "status": "working",
+      "usage": "Raw value backing target.compact. Consume its semantic or component role in UI.",
+      "sourceIds": [
+        "component-rules"
+      ],
+      "value": "2rem"
+    },
+    {
+      "id": "target.compact",
+      "type": "dimension",
+      "kind": "component",
+      "status": "working",
+      "cssVariable": "--target-compact",
+      "usage": "Compact action size; a design choice, not the WCAG minimum.",
+      "sourceIds": [
+        "component-rules"
+      ],
+      "ref": "dimension.target-compact"
+    },
+    {
+      "id": "dimension.target-large",
+      "type": "dimension",
+      "kind": "primitive",
+      "status": "working",
+      "usage": "Raw value backing target.large. Consume its semantic or component role in UI.",
+      "sourceIds": [
+        "component-rules"
+      ],
+      "value": "2.75rem"
+    },
+    {
+      "id": "target.large",
+      "type": "dimension",
+      "kind": "component",
+      "status": "working",
+      "cssVariable": "--target-large",
+      "usage": "Large action size; a design choice, not a blanket rule.",
+      "sourceIds": [
+        "component-rules"
+      ],
+      "ref": "dimension.target-large"
+    },
+    {
+      "id": "dimension.control-gap",
+      "type": "dimension",
+      "kind": "primitive",
+      "status": "working",
+      "usage": "Raw value backing control.gap. Consume its semantic or component role in UI.",
+      "sourceIds": [
+        "component-rules"
+      ],
+      "value": ".5rem"
+    },
+    {
+      "id": "control.gap",
+      "type": "dimension",
+      "kind": "component",
+      "status": "working",
+      "cssVariable": "--control-gap",
+      "usage": "Gap between content and icon within a control.",
+      "sourceIds": [
+        "component-rules"
+      ],
+      "ref": "dimension.control-gap"
+    },
+    {
+      "id": "palette.interaction-surface",
+      "type": "color",
+      "kind": "primitive",
+      "status": "working",
+      "usage": "Raw value backing color.interaction-surface. Consume its semantic or component role in UI.",
+      "sourceIds": [
+        "component-rules"
+      ],
+      "values": {
+        "light": "#e6e6e6",
+        "dark": "#383838"
+      }
+    },
+    {
+      "id": "color.interaction-surface",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--interaction-surface",
+      "usage": "Neutral highlighted row surface.",
+      "sourceIds": [
+        "component-rules"
+      ],
+      "ref": "palette.interaction-surface"
+    },
+    {
+      "id": "space.1",
+      "type": "dimension",
+      "kind": "primitive",
+      "status": "inherited",
+      "cssVariable": "--space-1",
+      "usage": "Icon-to-label gap, tight inline gaps.",
+      "value": "4px",
+      "sourceIds": [
+        "baseline"
+      ]
+    },
+    {
+      "id": "space.2",
+      "type": "dimension",
+      "kind": "primitive",
+      "status": "inherited",
+      "cssVariable": "--space-2",
+      "usage": "Gap between related controls and inside checkboxes; menu option padding; textarea padding.",
+      "value": "8px",
+      "sourceIds": [
+        "baseline"
+      ]
+    },
+    {
+      "id": "space.3",
+      "type": "dimension",
+      "kind": "primitive",
+      "status": "inherited",
+      "cssVariable": "--space-3",
+      "usage": "Padding inside blocks and controls (command and code blocks, menu options, table cells); button vertical padding.",
+      "value": "12px",
+      "sourceIds": [
+        "baseline"
+      ]
+    },
+    {
+      "id": "space.4",
+      "type": "dimension",
+      "kind": "primitive",
+      "status": "inherited",
+      "cssVariable": "--space-4",
+      "usage": "Panel and code-block padding; mobile page gutter.",
+      "value": "16px",
+      "sourceIds": [
+        "baseline"
+      ]
+    },
+    {
+      "id": "space.6",
+      "type": "dimension",
+      "kind": "primitive",
+      "status": "inherited",
+      "cssVariable": "--space-6",
+      "usage": "Gap between paragraphs and stacked panels.",
+      "value": "24px",
+      "sourceIds": [
+        "baseline"
+      ]
+    },
+    {
+      "id": "space.8",
+      "type": "dimension",
+      "kind": "primitive",
+      "status": "inherited",
+      "cssVariable": "--space-8",
+      "usage": "Gap before a `heading-2`; footer padding and its bottom line.",
+      "value": "32px",
+      "sourceIds": [
+        "baseline"
+      ]
+    },
+    {
+      "id": "space.12",
+      "type": "dimension",
+      "kind": "primitive",
+      "status": "inherited",
+      "cssVariable": "--space-12",
+      "usage": "Section spacing; cover pattern pitch.",
+      "value": "48px",
+      "sourceIds": [
+        "baseline"
+      ]
+    },
+    {
+      "id": "space.24",
+      "type": "dimension",
+      "kind": "primitive",
+      "status": "inherited",
+      "cssVariable": "--space-24",
+      "usage": "Hero padding and page-level breathing room.",
+      "value": "96px",
+      "sourceIds": [
+        "baseline"
+      ]
+    },
+    {
+      "id": "mark.ring-diameter",
+      "type": "number",
+      "kind": "primitive",
+      "status": "inherited",
+      "usage": "One fisheye unit's diameter in source units; the base for all mark ratios. Source-unit ratio, not CSS pixels.",
+      "value": 220,
+      "sourceIds": [
+        "baseline",
+        "mark"
+      ]
+    },
+    {
+      "id": "mark.ring-width",
+      "type": "number",
+      "kind": "primitive",
+      "status": "inherited",
+      "usage": "Outer ring stroke: 26/220 of the unit diameter. Source-unit ratio, not CSS pixels.",
+      "value": 26,
+      "sourceIds": [
+        "baseline",
+        "mark"
+      ]
+    },
+    {
+      "id": "mark.hole-width",
+      "type": "number",
+      "kind": "primitive",
+      "status": "inherited",
+      "usage": "Black gap between ring and dot: 30/220 of the unit diameter. Source-unit ratio, not CSS pixels.",
+      "value": 30,
+      "sourceIds": [
+        "baseline",
+        "mark"
+      ]
+    },
+    {
+      "id": "mark.dot-diameter",
+      "type": "number",
+      "kind": "primitive",
+      "status": "inherited",
+      "usage": "Centre dot: 108/220 of the unit diameter. Source-unit ratio, not CSS pixels.",
+      "value": 108,
+      "sourceIds": [
+        "baseline",
+        "mark"
+      ]
+    },
+    {
+      "id": "mark.gap",
+      "type": "number",
+      "kind": "primitive",
+      "status": "inherited",
+      "usage": "Gap between units: 84/220 of the unit diameter. Also the minimum clear space around the mark. Source-unit ratio, not CSS pixels.",
+      "value": 84,
+      "sourceIds": [
+        "baseline",
+        "mark"
+      ]
+    },
+    {
+      "id": "palette.syntax.foreground",
+      "type": "color",
+      "kind": "primitive",
+      "status": "working",
+      "usage": "Raw value backing code.foreground. Consume its semantic or component role in UI.",
+      "sourceIds": [
+        "syntax"
+      ],
+      "values": {
+        "light": "#171717",
+        "dark": "#ededed"
+      }
+    },
+    {
+      "id": "code.foreground",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--syntax-foreground",
+      "usage": "Moss & clay syntax foreground; does not assign this hue a UI status or link meaning.",
+      "sourceIds": [
+        "syntax"
+      ],
+      "ref": "palette.syntax.foreground"
+    },
+    {
+      "id": "palette.syntax.keyword",
+      "type": "color",
+      "kind": "primitive",
+      "status": "working",
+      "usage": "Raw value backing code.keyword. Consume its semantic or component role in UI.",
+      "sourceIds": [
+        "syntax"
+      ],
+      "values": {
+        "light": "#8d4e46",
+        "dark": "#d5a094"
+      }
+    },
+    {
+      "id": "code.keyword",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--syntax-keyword",
+      "usage": "Moss & clay syntax keyword; does not assign this hue a UI status or link meaning.",
+      "sourceIds": [
+        "syntax"
+      ],
+      "ref": "palette.syntax.keyword"
+    },
+    {
+      "id": "palette.syntax.string",
+      "type": "color",
+      "kind": "primitive",
+      "status": "working",
+      "usage": "Raw value backing code.string. Consume its semantic or component role in UI.",
+      "sourceIds": [
+        "syntax"
+      ],
+      "values": {
+        "light": "#425e3a",
+        "dark": "#b3c49c"
+      }
+    },
+    {
+      "id": "code.string",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--syntax-string",
+      "usage": "Moss & clay syntax string; does not assign this hue a UI status or link meaning.",
+      "sourceIds": [
+        "syntax"
+      ],
+      "ref": "palette.syntax.string"
+    },
+    {
+      "id": "palette.syntax.name",
+      "type": "color",
+      "kind": "primitive",
+      "status": "working",
+      "usage": "Raw value backing code.name. Consume its semantic or component role in UI.",
+      "sourceIds": [
+        "syntax"
+      ],
+      "values": {
+        "light": "#675744",
+        "dark": "#dccba6"
+      }
+    },
+    {
+      "id": "code.name",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--syntax-name",
+      "usage": "Moss & clay syntax name; does not assign this hue a UI status or link meaning.",
+      "sourceIds": [
+        "syntax"
+      ],
+      "ref": "palette.syntax.name"
+    },
+    {
+      "id": "palette.syntax.type",
+      "type": "color",
+      "kind": "primitive",
+      "status": "working",
+      "usage": "Raw value backing code.type. Consume its semantic or component role in UI.",
+      "sourceIds": [
+        "syntax"
+      ],
+      "values": {
+        "light": "#675744",
+        "dark": "#dccba6"
+      }
+    },
+    {
+      "id": "code.type",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--syntax-type",
+      "usage": "Moss & clay syntax type; does not assign this hue a UI status or link meaning.",
+      "sourceIds": [
+        "syntax"
+      ],
+      "ref": "palette.syntax.type"
+    },
+    {
+      "id": "palette.syntax.literal",
+      "type": "color",
+      "kind": "primitive",
+      "status": "working",
+      "usage": "Raw value backing code.literal. Consume its semantic or component role in UI.",
+      "sourceIds": [
+        "syntax"
+      ],
+      "values": {
+        "light": "#795718",
+        "dark": "#d8b66b"
+      }
+    },
+    {
+      "id": "code.literal",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--syntax-literal",
+      "usage": "Moss & clay syntax literal; does not assign this hue a UI status or link meaning.",
+      "sourceIds": [
+        "syntax"
+      ],
+      "ref": "palette.syntax.literal"
+    },
+    {
+      "id": "palette.syntax.comment",
+      "type": "color",
+      "kind": "primitive",
+      "status": "working",
+      "usage": "Raw value backing code.comment. Consume its semantic or component role in UI.",
+      "sourceIds": [
+        "syntax"
+      ],
+      "values": {
+        "light": "#5f5f5f",
+        "dark": "#929292"
+      }
+    },
+    {
+      "id": "code.comment",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--syntax-comment",
+      "usage": "Moss & clay syntax comment; does not assign this hue a UI status or link meaning.",
+      "sourceIds": [
+        "syntax"
+      ],
+      "ref": "palette.syntax.comment"
+    },
+    {
+      "id": "palette.syntax.punctuation",
+      "type": "color",
+      "kind": "primitive",
+      "status": "working",
+      "usage": "Raw value backing code.punctuation. Consume its semantic or component role in UI.",
+      "sourceIds": [
+        "syntax"
+      ],
+      "values": {
+        "light": "#626262",
+        "dark": "#b7b7b7"
+      }
+    },
+    {
+      "id": "code.punctuation",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--syntax-punctuation",
+      "usage": "Moss & clay syntax punctuation; does not assign this hue a UI status or link meaning.",
+      "sourceIds": [
+        "syntax"
+      ],
+      "ref": "palette.syntax.punctuation"
+    },
+    {
+      "id": "palette.syntax.background",
+      "type": "color",
+      "kind": "primitive",
+      "status": "working",
+      "usage": "Raw value backing code.background. Consume its semantic or component role in UI.",
+      "sourceIds": [
+        "syntax"
+      ],
+      "values": {
+        "light": "#e8e8e8",
+        "dark": "#161616"
+      }
+    },
+    {
+      "id": "code.background",
+      "type": "color",
+      "kind": "semantic",
+      "status": "working",
+      "cssVariable": "--syntax-background",
+      "usage": "Moss & clay code background.",
+      "sourceIds": [
+        "syntax"
+      ],
+      "ref": "palette.syntax.background"
+    },
+    {
+      "id": "dimension.control-font-size",
+      "type": "dimension",
+      "kind": "primitive",
+      "status": "working",
+      "usage": "Raw value backing type.size.control. Consume its semantic or component role in UI.",
+      "sourceIds": [
+        "component-rules",
+        "theme"
+      ],
+      "value": "1rem"
+    },
+    {
+      "id": "type.size.control",
+      "type": "dimension",
+      "kind": "component",
+      "status": "working",
+      "cssVariable": "--control-font-size",
+      "usage": "Standard input/select text size, as implemented by the current recipe.",
+      "sourceIds": [
+        "component-rules",
+        "theme"
+      ],
+      "ref": "dimension.control-font-size"
+    },
+    {
+      "id": "number.icon-stroke-width",
+      "type": "number",
+      "kind": "primitive",
+      "status": "selected",
+      "usage": "Raw value backing icon.stroke-width. Consume its semantic or component role in UI.",
+      "sourceIds": [
+        "icon-contract"
+      ],
+      "value": 2
+    },
+    {
+      "id": "icon.stroke-width",
+      "type": "number",
+      "kind": "component",
+      "status": "selected",
+      "cssVariable": "--icon-stroke-width",
+      "usage": "Outline stroke in the 24×24 SVG viewBox. Filled state drawings do not use an outline stroke.",
+      "sourceIds": [
+        "icon-contract"
+      ],
+      "ref": "number.icon-stroke-width"
+    },
+    {
+      "id": "dimension.icon-standalone",
+      "type": "dimension",
+      "kind": "primitive",
+      "status": "selected",
+      "usage": "Raw value backing icon.size.standalone. Consume its semantic or component role in UI.",
+      "sourceIds": [
+        "icon-contract"
+      ],
+      "value": "1.5rem"
+    },
+    {
+      "id": "icon.size.standalone",
+      "type": "dimension",
+      "kind": "component",
+      "status": "selected",
+      "cssVariable": "--icon-standalone",
+      "usage": "Standalone icon size; independent from pointer target size.",
+      "sourceIds": [
+        "icon-contract"
+      ],
+      "ref": "dimension.icon-standalone"
+    },
+    {
+      "id": "component.button.primary.background",
+      "type": "color",
+      "kind": "component",
+      "status": "working",
+      "usage": "button primary background binding.",
+      "ref": "color.primary",
+      "sourceIds": [
+        "theme",
+        "extensions",
+        "component-rules"
+      ],
+      "cssVariable": "--component-button-primary-background"
+    },
+    {
+      "id": "component.button.primary.foreground",
+      "type": "color",
+      "kind": "component",
+      "status": "working",
+      "usage": "button primary foreground binding.",
+      "ref": "color.primary-foreground",
+      "sourceIds": [
+        "theme",
+        "extensions",
+        "component-rules"
+      ],
+      "cssVariable": "--component-button-primary-foreground"
+    },
+    {
+      "id": "component.button.secondary.background",
+      "type": "color",
+      "kind": "component",
+      "status": "working",
+      "usage": "button secondary background binding.",
+      "ref": "color.secondary",
+      "sourceIds": [
+        "theme",
+        "extensions",
+        "component-rules"
+      ],
+      "cssVariable": "--component-button-secondary-background"
+    },
+    {
+      "id": "component.button.secondary.foreground",
+      "type": "color",
+      "kind": "component",
+      "status": "working",
+      "usage": "button secondary foreground binding.",
+      "ref": "color.secondary-foreground",
+      "sourceIds": [
+        "theme",
+        "extensions",
+        "component-rules"
+      ],
+      "cssVariable": "--component-button-secondary-foreground"
+    },
+    {
+      "id": "component.input.background",
+      "type": "color",
+      "kind": "component",
+      "status": "working",
+      "usage": "input background binding.",
+      "ref": "color.surface-sunken",
+      "sourceIds": [
+        "theme",
+        "extensions",
+        "component-rules"
+      ],
+      "cssVariable": "--component-input-background"
+    },
+    {
+      "id": "component.input.foreground",
+      "type": "color",
+      "kind": "component",
+      "status": "working",
+      "usage": "input foreground binding.",
+      "ref": "color.foreground",
+      "sourceIds": [
+        "theme",
+        "extensions",
+        "component-rules"
+      ],
+      "cssVariable": "--component-input-foreground"
+    },
+    {
+      "id": "component.input.border",
+      "type": "color",
+      "kind": "component",
+      "status": "working",
+      "usage": "input border binding.",
+      "ref": "color.input",
+      "sourceIds": [
+        "theme",
+        "extensions",
+        "component-rules"
+      ],
+      "cssVariable": "--component-input-border"
+    },
+    {
+      "id": "component.input.font-size",
+      "type": "dimension",
+      "kind": "component",
+      "status": "working",
+      "usage": "input font-size binding.",
+      "ref": "type.size.control",
+      "sourceIds": [
+        "theme",
+        "extensions",
+        "component-rules"
+      ],
+      "cssVariable": "--component-input-font-size"
+    },
+    {
+      "id": "component.input.minimum-height",
+      "type": "dimension",
+      "kind": "component",
+      "status": "working",
+      "usage": "input minimum-height binding.",
+      "ref": "control.height",
+      "sourceIds": [
+        "theme",
+        "extensions",
+        "component-rules"
+      ],
+      "cssVariable": "--component-input-minimum-height"
+    },
+    {
+      "id": "component.focus.colour",
+      "type": "color",
+      "kind": "component",
+      "status": "working",
+      "usage": "focus colour binding.",
+      "ref": "color.ring",
+      "sourceIds": [
+        "theme",
+        "extensions",
+        "component-rules"
+      ],
+      "cssVariable": "--component-focus-colour"
+    },
+    {
+      "id": "component.alert.success.foreground",
+      "type": "color",
+      "kind": "component",
+      "status": "working",
+      "usage": "alert success foreground binding.",
+      "ref": "color.success",
+      "sourceIds": [
+        "theme",
+        "extensions",
+        "component-rules"
+      ],
+      "cssVariable": "--component-alert-success-foreground"
+    },
+    {
+      "id": "component.alert.success.background",
+      "type": "color",
+      "kind": "component",
+      "status": "working",
+      "usage": "alert success background binding.",
+      "ref": "color.success-surface",
+      "sourceIds": [
+        "theme",
+        "extensions",
+        "component-rules"
+      ],
+      "cssVariable": "--component-alert-success-background"
+    },
+    {
+      "id": "component.alert.warning.foreground",
+      "type": "color",
+      "kind": "component",
+      "status": "working",
+      "usage": "alert warning foreground binding.",
+      "ref": "color.warning",
+      "sourceIds": [
+        "theme",
+        "extensions",
+        "component-rules"
+      ],
+      "cssVariable": "--component-alert-warning-foreground"
+    },
+    {
+      "id": "component.alert.warning.background",
+      "type": "color",
+      "kind": "component",
+      "status": "working",
+      "usage": "alert warning background binding.",
+      "ref": "color.warning-surface",
+      "sourceIds": [
+        "theme",
+        "extensions",
+        "component-rules"
+      ],
+      "cssVariable": "--component-alert-warning-background"
+    },
+    {
+      "id": "component.alert.error.foreground",
+      "type": "color",
+      "kind": "component",
+      "status": "working",
+      "usage": "alert error foreground binding.",
+      "ref": "color.danger",
+      "sourceIds": [
+        "theme",
+        "extensions",
+        "component-rules"
+      ],
+      "cssVariable": "--component-alert-error-foreground"
+    },
+    {
+      "id": "component.alert.error.background",
+      "type": "color",
+      "kind": "component",
+      "status": "working",
+      "usage": "alert error background binding.",
+      "ref": "color.danger-surface",
+      "sourceIds": [
+        "theme",
+        "extensions",
+        "component-rules"
+      ],
+      "cssVariable": "--component-alert-error-background"
+    },
+    {
+      "id": "component.alert.info.foreground",
+      "type": "color",
+      "kind": "component",
+      "status": "working",
+      "usage": "alert info foreground binding.",
+      "ref": "color.info",
+      "sourceIds": [
+        "theme",
+        "extensions",
+        "component-rules"
+      ],
+      "cssVariable": "--component-alert-info-foreground"
+    },
+    {
+      "id": "component.alert.info.background",
+      "type": "color",
+      "kind": "component",
+      "status": "working",
+      "usage": "alert info background binding.",
+      "ref": "color.info-surface",
+      "sourceIds": [
+        "theme",
+        "extensions",
+        "component-rules"
+      ],
+      "cssVariable": "--component-alert-info-background"
+    },
+    {
+      "id": "component.toast.icon-size",
+      "type": "dimension",
+      "kind": "component",
+      "status": "working",
+      "usage": "toast icon-size binding.",
+      "ref": "icon.size.feedback",
+      "sourceIds": [
+        "theme",
+        "extensions",
+        "component-rules"
+      ],
+      "cssVariable": "--component-toast-icon-size"
+    },
+    {
+      "id": "component.code.background",
+      "type": "color",
+      "kind": "component",
+      "status": "working",
+      "usage": "code background binding.",
+      "ref": "code.background",
+      "sourceIds": [
+        "theme",
+        "extensions",
+        "component-rules"
+      ],
+      "cssVariable": "--component-code-background"
+    },
+    {
+      "id": "radius.sm",
+      "type": "dimension",
+      "kind": "component",
+      "status": "working",
+      "cssVariable": "--radius-sm",
+      "usage": "Derived shadcn sm corner role. Expression references radius.base via --radius.",
+      "value": "calc(var(--radius) / 2)",
+      "sourceIds": [
+        "theme",
+        "extensions"
+      ]
+    },
+    {
+      "id": "radius.md",
+      "type": "dimension",
+      "kind": "component",
+      "status": "working",
+      "cssVariable": "--radius-md",
+      "usage": "Derived shadcn md corner role. Expression references radius.base via --radius.",
+      "value": "var(--radius)",
+      "sourceIds": [
+        "theme",
+        "extensions"
+      ]
+    },
+    {
+      "id": "radius.lg",
+      "type": "dimension",
+      "kind": "component",
+      "status": "working",
+      "cssVariable": "--radius-lg",
+      "usage": "Derived shadcn lg corner role. Expression references radius.base via --radius.",
+      "value": "var(--radius)",
+      "sourceIds": [
+        "theme",
+        "extensions"
+      ]
+    },
+    {
+      "id": "radius.xl",
+      "type": "dimension",
+      "kind": "component",
+      "status": "working",
+      "cssVariable": "--radius-xl",
+      "usage": "Derived shadcn xl corner role. Expression references radius.base via --radius.",
+      "value": "calc(var(--radius) * 2)",
+      "sourceIds": [
+        "theme",
+        "extensions"
+      ]
+    },
+    {
+      "id": "radius.2xl",
+      "type": "dimension",
+      "kind": "component",
+      "status": "working",
+      "cssVariable": "--radius-2xl",
+      "usage": "Derived shadcn 2xl corner role. Expression references radius.base via --radius.",
+      "value": "calc(var(--radius) * 2)",
+      "sourceIds": [
+        "theme",
+        "extensions"
+      ]
+    },
+    {
+      "id": "radius.3xl",
+      "type": "dimension",
+      "kind": "component",
+      "status": "working",
+      "cssVariable": "--radius-3xl",
+      "usage": "Derived shadcn 3xl corner role. Expression references radius.base via --radius.",
+      "value": "calc(var(--radius) * 2.5)",
+      "sourceIds": [
+        "theme",
+        "extensions"
+      ]
+    },
+    {
+      "id": "radius.4xl",
+      "type": "dimension",
+      "kind": "component",
+      "status": "working",
+      "cssVariable": "--radius-4xl",
+      "usage": "Derived shadcn 4xl corner role. Expression references radius.base via --radius.",
+      "value": "calc(var(--radius) * 3)",
+      "sourceIds": [
+        "theme",
+        "extensions"
+      ]
+    },
+    {
+      "id": "control.height.small",
+      "type": "dimension",
+      "kind": "component",
+      "status": "working",
+      "cssVariable": "--control-height-small",
+      "value": "2.25rem",
+      "usage": "Small control and compact navigation minimum height.",
+      "sourceIds": [
+        "component-rules"
+      ]
+    },
+    {
+      "id": "calendar.cell.size",
+      "type": "dimension",
+      "kind": "component",
+      "status": "working",
+      "cssVariable": "--calendar-cell-size",
+      "value": "2.25rem",
+      "usage": "Calendar day cell size.",
+      "sourceIds": [
+        "component-rules"
+      ]
+    },
+    {
+      "id": "menu.row.height",
+      "type": "dimension",
+      "kind": "component",
+      "status": "working",
+      "cssVariable": "--menu-row-height",
+      "value": "2.25rem",
+      "usage": "Menu row minimum height.",
+      "sourceIds": [
+        "component-rules"
+      ]
+    },
+    {
+      "id": "toast.type.size",
+      "type": "dimension",
+      "kind": "component",
+      "status": "working",
+      "cssVariable": "--toast-font-size",
+      "value": ".875rem",
+      "usage": "Toast text size.",
+      "sourceIds": [
+        "component-rules"
+      ]
+    },
+    {
+      "id": "toast.gap",
+      "type": "dimension",
+      "kind": "component",
+      "status": "working",
+      "cssVariable": "--toast-gap",
+      "value": ".75rem",
+      "usage": "Gap between toast status glyph and text.",
+      "sourceIds": [
+        "component-rules"
+      ]
+    },
+    {
+      "id": "toast.padding",
+      "type": "dimension",
+      "kind": "component",
+      "status": "working",
+      "cssVariable": "--toast-padding",
+      "value": "1rem",
+      "usage": "Toast interior spacing.",
+      "sourceIds": [
+        "component-rules"
+      ]
+    },
+    {
+      "id": "focus.width",
+      "type": "dimension",
+      "kind": "component",
+      "status": "working",
+      "cssVariable": "--focus-width",
+      "value": "2px",
+      "usage": "Visible keyboard focus outline width.",
+      "sourceIds": [
+        "component-rules"
+      ]
+    },
+    {
+      "id": "focus.offset",
+      "type": "dimension",
+      "kind": "component",
+      "status": "working",
+      "cssVariable": "--focus-offset",
+      "value": "3px",
+      "usage": "Visible keyboard focus outline offset.",
+      "sourceIds": [
+        "component-rules"
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "id": "identity.character",
+      "kind": "authoring-rule",
+      "status": "selected",
+      "text": "Quiet, clear and recognisably technical. Recognition comes from typography, proportion, the retained mark and consistent interface details.",
+      "sourceIds": [
+        "direction"
+      ]
+    },
+    {
+      "id": "identity.artwork",
+      "kind": "authoring-rule",
+      "status": "selected",
+      "text": "Do not add custom ASCII, halftone or bespoke artwork to this direction.",
+      "sourceIds": [
+        "direction"
+      ]
+    },
+    {
+      "id": "colour.links",
+      "kind": "authoring-rule",
+      "status": "selected",
+      "text": "Reserve Pacific for unvisited content links and lavender for visited links. Retain underlines for inline content links. Navigation controls may remain neutral.",
+      "sourceIds": [
+        "link-decision",
+        "theme",
+        "extensions"
+      ]
+    },
+    {
+      "id": "colour.neutral-actions",
+      "kind": "authoring-rule",
+      "status": "selected",
+      "text": "Primary actions, selection, focus and informational messages use neutral roles. The shadcn token named accent is a neutral interaction role, not permission to introduce a brand hue.",
+      "sourceIds": [
+        "link-decision",
+        "theme",
+        "extensions"
+      ]
+    },
+    {
+      "id": "colour.feedback",
+      "kind": "authoring-rule",
+      "status": "selected",
+      "text": "Success uses green; warning uses amber; error/destructive uses clay-red. Pair state colour with meaningful text or a recognizable indicator. Do not use success colour for ordinary primary actions.",
+      "sourceIds": [
+        "link-decision",
+        "theme"
+      ]
+    },
+    {
+      "id": "type.roles",
+      "kind": "authoring-rule",
+      "status": "selected",
+      "text": "Space Grotesk carries headings, prose, labels and controls. JetBrains Mono carries code, identifiers, versions and occasional short metadata.",
+      "sourceIds": [
+        "direction"
+      ]
+    },
+    {
+      "id": "icons.family",
+      "kind": "authoring-rule",
+      "status": "selected",
+      "text": "Use the pinned Tabler outline family, currentColor and a 2-unit stroke in a 24×24 viewBox. Use filled drawings only for explicitly mapped state icons.",
+      "sourceIds": [
+        "icon-contract"
+      ]
+    },
+    {
+      "id": "icons.meaning",
+      "kind": "authoring-rule",
+      "status": "selected",
+      "text": "Keep decorative SVG hidden from assistive technology. Put the accessible name on an icon-only control; meaningful standalone icon content needs equivalent text.",
+      "sourceIds": [
+        "icon-contract",
+        "icon-adapter"
+      ]
+    },
+    {
+      "id": "controls.geometry",
+      "kind": "authoring-rule",
+      "status": "working",
+      "text": "Keep glyph size separate from pointer target size. Current recipes use 16px inline, 20px action/status, 24px standalone icons; default controls 40px, compact 32px, small/calendar 36px, large 44px at a 16px root.",
+      "sourceIds": [
+        "component-rules",
+        "icon-contract"
+      ]
+    },
+    {
+      "id": "controls.focus",
+      "kind": "authoring-rule",
+      "status": "working",
+      "text": "Use a visible neutral focus outline. Current recipe is 2px with 3px offset; verify adjacent colours, clipping and obscuration in each composition.",
+      "sourceIds": [
+        "theme"
+      ]
+    },
+    {
+      "id": "controls.labels",
+      "kind": "authoring-rule",
+      "status": "working",
+      "text": "Supply persistent labels, associated hints and explicit error text. Each thumb in a range slider needs its own meaningful name.",
+      "sourceIds": [
+        "wai-labels",
+        "apg-slider"
+      ]
+    },
+    {
+      "id": "layout.spacing",
+      "kind": "authoring-rule",
+      "status": "inherited",
+      "text": "Use the inherited 4px spacing basis; choose a token by relationship rather than copying incidental screenshot gaps. The historical 48px cover-pattern purpose is not revived.",
+      "sourceIds": [
+        "baseline"
+      ]
+    },
+    {
+      "id": "layout.radius",
+      "kind": "authoring-rule",
+      "status": "working",
+      "text": "Current base radius is 0.25rem. Derived shadcn radius aliases are documented in componentRecipes; historical cut corners and hard offset button shadows are not carried forward.",
+      "sourceIds": [
+        "theme",
+        "extensions",
+        "direction"
+      ]
+    },
+    {
+      "id": "motion.preference",
+      "kind": "authoring-rule",
+      "status": "working",
+      "text": "Respect prefers-reduced-motion. The current preview reduces animation/transition duration and iteration count; each consuming application must preserve useful state changes.",
+      "sourceIds": [
+        "theme"
+      ]
+    },
+    {
+      "id": "syntax.selection",
+      "kind": "authoring-rule",
+      "status": "selected",
+      "text": "Use Moss & clay for code, retaining distinct syntax roles. Use semantic success/danger plus +/− markers for diffs. Warm graphite and Sage are comparison alternatives, not competing defaults.",
+      "sourceIds": [
+        "syntax"
+      ]
+    }
+  ],
+  "typography": {
+    "status": "working",
+    "families": [
+      {
+        "name": "Space Grotesk",
+        "roles": [
+          "headings",
+          "prose",
+          "labels",
+          "controls"
+        ],
+        "assetSourceId": "space-grotesk",
+        "weights": "300 700",
+        "style": "normal",
+        "loading": "swap"
+      },
+      {
+        "name": "JetBrains Mono",
+        "roles": [
+          "code",
+          "identifiers",
+          "versions",
+          "short metadata"
+        ],
+        "assetSourceId": "jetbrains-mono",
+        "weights": "100 800",
+        "style": "normal",
+        "loading": "swap"
+      }
+    ],
+    "recipes": [
+      {
+        "id": "type.input",
+        "status": "working",
+        "sourceIds": [
+          "theme",
+          "component-rules"
+        ],
+        "fontSizeRef": "type.size.control"
+      },
+      {
+        "id": "type.gallery-prose",
+        "status": "working",
+        "fontSize": "1rem",
+        "lineHeight": 1.625,
+        "sourceIds": [
+          "typography-sample"
+        ]
+      },
+      {
+        "id": "type.gallery-lead",
+        "status": "working",
+        "fontSize": "1.125rem",
+        "lineHeight": 1.625,
+        "sourceIds": [
+          "typography-sample"
+        ]
+      },
+      {
+        "id": "type.docs-proposal",
+        "status": "provisional",
+        "fontSize": "1.125rem",
+        "lineHeight": 1.65,
+        "measure": "68ch",
+        "sourceIds": [
+          "registry"
+        ]
+      }
+    ],
+    "limits": [
+      "No universal 16px minimum is asserted as WCAG.",
+      "No mandatory modular ratio is claimed.",
+      "The final shared heading scale and renderer typography remain to be consolidated.",
+      "Only normal variable font files are bundled, under their retained OFL licences. Italic assets are not included; do not assume a real italic face exists."
+    ]
+  },
+  "icons": {
+    "family": "Tabler Icons",
+    "version": "3.52.0",
+    "source": "https://github.com/tabler/tabler-icons/tree/v3.52.0",
+    "license": "MIT",
+    "defaultStyle": "outline",
+    "viewBox": "0 0 24 24",
+    "color": "currentColor",
+    "filledUsage": "Only explicit upstream filled state marks; outline is the default",
+    "accessibility": "Decorative SVG is aria-hidden; meaning comes from visible text or an accessible control label",
+    "assetPolicy": "Pinned local drawing data; no runtime CDN, icon font or added runtime icon package",
+    "archiveIntegrity": "sha512-dldKlJNfO/gZnGLcIY0X2EFFKIMGwL/rEvTqglvBgAPFiwj9pZOCN5V3Sf0Gyjq6foX4VQmLdOmsS4w5FdWKAw==",
+    "sizeTokenRefs": {
+      "inline": "icon.size.inline",
+      "control": "icon.size.action",
+      "feedback": "icon.size.feedback",
+      "standalone": "icon.size.standalone"
+    },
+    "strokeWidthToken": "icon.stroke-width"
+  },
+  "mark": {
+    "status": "selected",
+    "assetSourceId": "mark",
+    "retainGeometry": true,
+    "localViewBox": "0 0 828 220",
+    "geometrySource": "Geometry ratios are inherited from baseline and correspond to the local horizontal SVG; the baseline describes the original square source.",
+    "dimensions": {
+      "ringDiameter": 220,
+      "outerRadius": 110,
+      "holeRadius": 84,
+      "dotRadius": 54,
+      "centrePitch": 304,
+      "gap": 84
+    },
+    "clearSpace": {
+      "status": "inherited",
+      "minimum": "84/220 of one ring diameter",
+      "sourceIds": [
+        "baseline"
+      ]
+    },
+    "usage": [
+      "Use the official mark geometry; do not redraw, stretch or create unreviewed variants.",
+      "The inspected SVG has a fixed #f0edee fill intended for a dark surface; verify contrast and approved asset variant before placing it on light backgrounds."
+    ],
+    "minimumDisplaySize": {
+      "status": "unverified",
+      "value": null
+    },
+    "sourceIds": [
+      "baseline",
+      "mark"
+    ]
+  },
+  "componentRecipes": {
+    "status": "working",
+    "sourceIds": [
+      "component-rules",
+      "theme",
+      "extensions"
+    ],
+    "framework": {
+      "svelte": "5.57.3",
+      "bitsUi": "2.20.6",
+      "shadcnSnapshot": "c3b21a62055c7d7b97a220eb5a9efb4d1b7fc8fc",
+      "recipe": "Vega"
+    },
+    "authoring": [
+      "Keep pinned UI components unchanged when CSS or sample composition suffices.",
+      "Use semantic tokens rather than literal colours in consuming screens.",
+      "Keep keyboard, focus, label and status behavior supplied by primitives intact.",
+      "Provide text or another visible cue alongside state colour.",
+      "Check overlays, mobile widths, zoom, long labels and error states in consuming applications."
+    ],
+    "bindings": {
+      "button.primary.background": "component.button.primary.background",
+      "button.primary.foreground": "component.button.primary.foreground",
+      "button.secondary.background": "component.button.secondary.background",
+      "button.secondary.foreground": "component.button.secondary.foreground",
+      "input.background": "component.input.background",
+      "input.foreground": "component.input.foreground",
+      "input.border": "component.input.border",
+      "input.font-size": "component.input.font-size",
+      "input.minimum-height": "component.input.minimum-height",
+      "focus.colour": "component.focus.colour",
+      "alert.success.foreground": "component.alert.success.foreground",
+      "alert.success.background": "component.alert.success.background",
+      "alert.warning.foreground": "component.alert.warning.foreground",
+      "alert.warning.background": "component.alert.warning.background",
+      "alert.error.foreground": "component.alert.error.foreground",
+      "alert.error.background": "component.alert.error.background",
+      "alert.info.foreground": "component.alert.info.foreground",
+      "alert.info.background": "component.alert.info.background",
+      "toast.icon-size": "component.toast.icon-size",
+      "code.background": "component.code.background"
+    },
+    "radiusTokenIds": [
+      "radius.sm",
+      "radius.md",
+      "radius.lg",
+      "radius.xl",
+      "radius.2xl",
+      "radius.3xl",
+      "radius.4xl"
+    ],
+    "sizeTokenRefs": {
+      "button.xs": "target.compact",
+      "button.sm": "control.height.small",
+      "button.default": "control.height",
+      "button.lg": "target.large",
+      "calendar.cell": "calendar.cell.size",
+      "menu.row": "menu.row.height",
+      "toast.status-glyph": "icon.size.feedback",
+      "toast.close-glyph": "icon.size.inline",
+      "toast.close-target": "target.compact",
+      "toast.touch-close-target": "target.large"
+    }
+  },
+  "syntax": {
+    "id": "moss-clay",
+    "label": "Moss & clay",
+    "status": "selected",
+    "portableShikiThemes": "dist/syntax/moss-clay.json",
+    "sourceIds": [
+      "syntax"
+    ],
+    "scope": "Syntax only; does not redefine link or UI feedback roles.",
+    "roleTokenRefs": {
+      "background": "code.background",
+      "foreground": "code.foreground",
+      "keyword": "code.keyword",
+      "string": "code.string",
+      "name": "code.name",
+      "type": "code.type",
+      "literal": "code.literal",
+      "comment": "code.comment",
+      "punctuation": "code.punctuation"
+    }
+  },
+  "accessibility": {
+    "target": "WCAG 2.2 AA",
+    "conformanceClaim": false,
+    "requirements": [
+      {
+        "id": "a11y.text-contrast",
+        "kind": "accessibility-requirement",
+        "status": "requirement",
+        "text": "For applicable text, meet 4.5:1; large text may use 3:1. Large means at least 18pt, or 14pt bold, not 18px. WCAG exceptions still apply.",
+        "sourceIds": [
+          "wcag-text-contrast"
+        ]
+      },
+      {
+        "id": "a11y.nontext-contrast",
+        "kind": "accessibility-requirement",
+        "status": "requirement",
+        "text": "Visual information needed to identify active controls, states and meaningful graphics must meet 3:1 against adjacent colours, subject to criterion exceptions. Decorative lines need not all meet 3:1.",
+        "sourceIds": [
+          "wcag-nontext"
+        ]
+      },
+      {
+        "id": "a11y.colour",
+        "kind": "accessibility-requirement",
+        "status": "requirement",
+        "text": "Do not use colour as the only visual means of conveying information, prompting a response or distinguishing an action.",
+        "sourceIds": [
+          "wcag-colour"
+        ]
+      },
+      {
+        "id": "a11y.target",
+        "kind": "accessibility-requirement",
+        "status": "requirement",
+        "text": "WCAG 2.2 AA target minimum is 24×24 CSS px, with spacing, equivalent-control, inline, user-agent and essential exceptions. Our 40px default is a comfort choice. Glyph bounds do not establish pointer-target bounds.",
+        "sourceIds": [
+          "wcag-target"
+        ]
+      },
+      {
+        "id": "a11y.spacing",
+        "kind": "accessibility-requirement",
+        "status": "requirement",
+        "text": "Support user overrides of line height 1.5×, paragraph spacing 2×, letter spacing 0.12em and word spacing 0.16em without loss, subject to the criterion. These are override tests, not mandatory authored defaults.",
+        "sourceIds": [
+          "wcag-spacing"
+        ]
+      }
+    ],
+    "scopeNote": "These design-relevant summaries are not the full WCAG checklist. Keyboard operation, focus, names/roles, zoom/reflow, validation and assistive-technology testing still belong to each integration.",
+    "evidenceNote": "Existing gallery render and icon reports are bounded smoke checks, not certification. This contract contains no newly measured contrast ratios."
+  },
+  "openDecisions": [
+    {
+      "id": "brand-accent",
+      "status": "provisional",
+      "question": "Is a separate brand accent needed?",
+      "currentDefault": "None; neutral identity plus semantic/link colours is usable."
+    },
+    {
+      "id": "chart-palette",
+      "status": "provisional",
+      "question": "Validate categorical palette, labels and redundant cues in real charts.",
+      "currentDefault": "Five chart roles remain explicitly provisional."
+    },
+    {
+      "id": "typography-scale",
+      "status": "provisional",
+      "question": "Finalize heading hierarchy, reading recipes and fixed-canvas renderer sizes."
+    },
+    {
+      "id": "voice-positioning",
+      "status": "unverified",
+      "question": "Confirm positioning, naming and editorial voice against durable brand-repository materials.",
+      "note": "Not defined by the local sources inspected here; this does not prove it is absent elsewhere."
+    },
+    {
+      "id": "mark-variants",
+      "status": "unverified",
+      "question": "Confirm minimum sizes and light/dark export variants."
+    },
+    {
+      "id": "distribution",
+      "status": "provisional",
+      "question": "Agree how this proposal is authored/exported by the source design sheet, then add package exports and source.json entries.",
+      "note": "The existing data-only package already defines its governance. Preserve licence/provenance manifests and keep runtime query/generation code outside that package."
+    }
+  ],
+  "consumption": {
+    "authority": "src/contract.json in unset-sh/brand is the editable source. Generated exports are the public interface. The sheet-copy authority is superseded by docs/decisions/0001-contract-and-guide.md.",
+    "references": "ref inherits a token; values selects light or dark; value applies to both. Source paths are repository-relative.",
+    "cssNames": "cssVariable is the public CSS name. Consumers use semantic or component roles, not primitive palette tokens.",
+    "statusFiltering": "Provisional records are working defaults subject to review; do not treat them as a settled brand decision.",
+    "versioning": "Exact versions. Breaking role/ID/type/export changes require a major release; intentional visual value/default changes and additive roles a minor; documentation or fixes without changed meaning a patch. Use Changesets.",
+    "query": "Import contract.json for metadata, resolved.json for theme-specific resolved values, or run npm run query -- <id-or-prefix> [light|dark].",
+    "generation": "npm run build validates and generates dist; npm run check rejects generated drift. No consumer runs this repository build tooling.",
+    "publication": "Static npm package on GitHub Packages; Hugo guide and Svelte gallery on GitHub Pages. A published version must be adopted, rebuilt and deployed by each consumer.",
+    "architecture": "Primitive values → semantic roles → component bindings. Optional Tailwind/shadcn CSS adapters. UI behaviour and business rules remain outside the package.",
+    "paths": {
+      "contract": "src/contract.json",
+      "schema": "src/contract.schema.json",
+      "generated": "dist/",
+      "guide": "site/guide/",
+      "gallery": "site/gallery/"
+    }
+  },
+  "precedence": [
+    {
+      "sourceIds": [
+        "direction"
+      ],
+      "supersededFields": [
+        "implementationFoundation Iconoir",
+        "brand.colour.roles under-review"
+      ],
+      "replacement": "Tabler and current explicit link-role decisions in this contract."
+    },
+    {
+      "sourceIds": [
+        "registry-draft",
+        "baseline"
+      ],
+      "supersededFields": [
+        "old Onyx/plum/emerald palette marked current",
+        "mono uppercase default UI labels",
+        "cut corner and hard-offset hover shadow recipes"
+      ],
+      "replacement": "Use current Graphite semantic roles, Space Grotesk UI labels and restrained component recipes. Original package provenance is retained in provenance/design-sheet-0.1.0.json."
+    }
+  ],
+  "sources": [
+    {
+      "id": "direction",
+      "kind": "repository-record",
+      "path": "provenance/selection.md"
+    },
+    {
+      "id": "baseline",
+      "kind": "repository-record",
+      "path": "provenance/selection.md"
+    },
+    {
+      "id": "link-decision",
+      "kind": "repository-record",
+      "path": "provenance/selection.md"
+    },
+    {
+      "id": "colour-feedback",
+      "kind": "repository-record",
+      "path": "provenance/selection.md"
+    },
+    {
+      "id": "theme",
+      "kind": "repository-record",
+      "path": "provenance/selection.md"
+    },
+    {
+      "id": "extensions",
+      "kind": "repository-record",
+      "path": "provenance/selection.md"
+    },
+    {
+      "id": "component-rules",
+      "kind": "repository-record",
+      "path": "provenance/selection.md"
+    },
+    {
+      "id": "typography-sample",
+      "kind": "repository-record",
+      "path": "provenance/selection.md"
+    },
+    {
+      "id": "icon-contract",
+      "kind": "repository-record",
+      "path": "provenance/selection.md"
+    },
+    {
+      "id": "icon-adapter",
+      "kind": "repository-record",
+      "path": "provenance/selection.md"
+    },
+    {
+      "id": "syntax",
+      "kind": "repository-record",
+      "path": "provenance/selection.md"
+    },
+    {
+      "id": "mark",
+      "kind": "pinned-asset",
+      "path": "logo/unset-mark-platinum.svg",
+      "sha256": "36714aa7fcaf3bba6df88da8e65dac6e5144107ba7649ea2aa14bc672f8e70e5"
+    },
+    {
+      "id": "registry",
+      "kind": "repository-record",
+      "path": "provenance/selection.md"
+    },
+    {
+      "id": "registry-draft",
+      "kind": "repository-record",
+      "path": "provenance/selection.md"
+    },
+    {
+      "id": "catalogue",
+      "kind": "repository-record",
+      "path": "provenance/selection.md"
+    },
+    {
+      "id": "manifest",
+      "kind": "repository-record",
+      "path": "provenance/selection.md"
+    },
+    {
+      "id": "space-grotesk",
+      "kind": "pinned-asset",
+      "path": "fonts/SpaceGrotesk-Variable.woff2",
+      "sha256": "0640890476fc1198ab4de571fb658de443c4d85b66466ec09534a8737ab1ce9d"
+    },
+    {
+      "id": "jetbrains-mono",
+      "kind": "pinned-asset",
+      "path": "fonts/JetBrainsMono-Variable.woff2",
+      "sha256": "7fd1f69642aa7f2bd41d917bf0e434c4f21911749f6d89455d5b9114547a8c9c"
+    },
+    {
+      "id": "wcag-text-contrast",
+      "kind": "guidance",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
+      "accessed": "2026-11-22"
+    },
+    {
+      "id": "wcag-nontext",
+      "kind": "guidance",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html",
+      "accessed": "2026-11-22"
+    },
+    {
+      "id": "wcag-colour",
+      "kind": "guidance",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html",
+      "accessed": "2026-11-22"
+    },
+    {
+      "id": "wcag-spacing",
+      "kind": "guidance",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/text-spacing.html",
+      "accessed": "2026-11-22"
+    },
+    {
+      "id": "wcag-target",
+      "kind": "guidance",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html",
+      "accessed": "2026-11-22"
+    },
+    {
+      "id": "wai-labels",
+      "kind": "guidance",
+      "url": "https://www.w3.org/WAI/tutorials/forms/labels/",
+      "accessed": "2026-11-22"
+    },
+    {
+      "id": "apg-slider",
+      "kind": "guidance",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/slider-multithumb/",
+      "accessed": "2026-11-22"
+    },
+    {
+      "id": "brand-repo-policy",
+      "kind": "repository-record",
+      "path": "docs/decisions/0001-contract-and-guide.md"
+    },
+    {
+      "id": "brand-repo-readme",
+      "kind": "repository-record",
+      "path": "docs/decisions/0001-contract-and-guide.md"
+    }
+  ],
+  "version": "0.1.0"
+}

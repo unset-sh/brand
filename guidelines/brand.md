@@ -1,58 +1,67 @@
-unset.sh is Onyx and Platinum first, with three accents used sparingly: Raspberry Plum, Pacific Cyan and Emerald. The identity is one mark — three fisheyes, ◉◉◉ (U+25C9, also the brand's alias) — set on an Onyx ground, with type doing the rest.
+# Unset brand usage
 
-## Mark
-
-- Use the supplied files only; never redraw, recolour, rotate, space out or reorder the three units. The mark is always in the palette: `unset-mark-platinum.svg` on `ground` in Dark, `unset-mark-onyx.svg` on `ground` in Light (the Mark component does this by itself, in `ink`). The pure white and black files are only for print or places the palette can't reach.
-- Keep clear space on every side of at least `mark-gap` (84/220 of one unit's diameter, about 0.4×).
-- The three units always appear together and horizontally. The one exception is the favicon and app icons, which use a single unit (`unset-favicon.svg`, `unset-app-icon.svg`); a typed ◉ may also serve as a bullet.
-- Never place the mark on a grey, a photo or an accent. It sits on `ground` or on an `ink` block (inverted).
+Unset is quiet, clear and technical. Recognition comes from the official
+three-fisheye mark, typography, proportion and consistent details. The contract
+in `src/contract.json` defines values and decision status; the guide and gallery
+demonstrate them. No artwork or ASCII texture is required.
 
 ## Colour
 
-- Dark is the native theme: `ground` #17161B (Onyx lifted a little, Alex 2026-10-21), `ink` Platinum #F0EDEE. Light is Platinum `ground` with Onyx #0A090C `ink`. Onyx stays the brand's darkest colour: the `on-` text, the hover shadow under a lifted button, and the mark's own files. Build in Dark first.
-- Text is `ink` on `ground`, `surface-raised` or `surface-card`; secondary text is `ink-muted`. Put nothing but `on-ink` on an `ink` fill.
-- `line` is for decorative hairlines only; any border that means something (inputs, the outline buttons, selected state) is `line-strong`.
-- Accents are for meaning and small moments, never for large backgrounds behind body copy: `emerald` for success, run and confirm actions and terminal output; `plum` for errors, destructive actions and the brand's loud moments; `cyan` for links (`link`) and information.
-- Use the role aliases (`success`, `danger`, `link`) in UI code, and the colour names (`plum`, `cyan`, `emerald`) for brand graphics.
-- Each accent has a per-theme value: take the token, never the source hex. The source hexes pass in only one theme each.
-- Text on an accent fill is its `on-` token (`on-plum`, `on-cyan`, `on-emerald`), never white or black.
-- State is never colour alone: always pair it with a bracketed word (`[ OK ]`, `[ ERR ]`, `[ INFO ]`). In Light, `success` and `danger` are close in lightness.
-- No gradients. Shadows follow the elevation levels below; the only other shadow is `shadow-hard`, the solid copy under a hovered button (Onyx in Dark, darker than the page; grey in Light). Only the modal `scrim` is see-through; Cards are solid (Alex, 2026-10-04), so the ASCII field never shows behind text.
+Use semantic tokens rather than copied hex values. Graphite neutrals provide
+canvas, surfaces, text, borders, selection and primary actions. Pacific belongs
+to unvisited content links and lavender to visited links. Keep inline links
+underlined; neutral navigation controls need not use content-link colours.
 
-## Type
+Success, warning and danger use green, amber and coral families; information
+stays neutral. Pair state with clear text and, where useful, distinct icons.
+Never use colour as the only cue. Do not borrow link colours for selected
+controls, primary actions or neutral notices.
 
-- Space Grotesk (`display` family) for headings and running text; JetBrains Mono (`mono` family) for commands, code, labels and anything a machine would print.
-- The JetBrains Mono file is trimmed to what the brand uses: Latin (French included), punctuation, arrows, maths, technical symbols (⌘ ⏎), box drawing, block and geometric shapes (░ ◉ ▾), and dingbats (✓ ✕). There is no italic; don't set `mono` in italics.
-- One `display` per view. Headings step `heading-1` → `heading-2` → `heading-3`; body is `body`, captions `body-small` in `ink-muted`.
-- Buttons, tags and nav use `label`. Write the name lowercase, always with its `.sh`: unset.sh.
-- Commands are shown as typed, prefixed with an `ink-muted` `$`, in `code` on `surface-raised`.
+Use each state's matching foreground/background tokens. Decorative separators
+and meaningful control borders have different roles. Verify actual adjacent
+colours when composing a screen, including hover and focus.
 
-## Space and shape
+## Typography
 
-- Spacing (padding, margins, gaps) sits on the 4px grid and uses the `space-` tokens: `space-3` inside blocks and controls, `space-4` inside panels and cards, `space-6` between blocks, `space-8` above section headings and around the footer, `space-12` between sections, `space-24` for hero padding. Hairlines, focus offsets and the 2px hover lift are not spacing.
-- Buttons, form fields, menus and modals have 4px corners (`radius-sm`); every other box has 2px corners (`radius-xs`): raised blocks and cards. Buttons also cut 45° off the bottom-right corner (`cut`). Only rules, table cells and full-bleed bands stay square (`radius-0`); the full circle (`radius-full`) is kept for dots, discs and pills that echo the mark.
-- Focus: a solid 2px `focus` outline, offset 2px.
+Space Grotesk carries headings, prose, labels and controls. JetBrains Mono
+carries code, identifiers, versions and occasional short metadata. Use provided
+fonts and fallbacks; retained normal variable slices have limited coverage.
+Do not invent italic variants.
 
-## Elevation
+Use token sizes and comfortable reading measures. Test text resizing, reflow
+and spacing overrides. A 16px body default is a design choice, not a WCAG
+minimum font-size rule. Final shared headings and renderer typography remain
+provisional where indicated. Moss & clay syntax applies inside code; it does
+not redefine link or feedback colours outside it.
 
-Five levels. Height comes from lighter surfaces and quiet shadows; only the menu and the modal get outlines.
+## Components and icons
 
-| Level | For | Surface | Edge | Stacking |
-| --- | --- | --- | --- | --- |
-| 0 · base | the page | `ground` | none | `z-base` |
-| 1 · raised | code and command blocks, callouts, panels | `surface-raised` | `shadow-1` | `z-base` |
-| 2 · card | Cards | `surface-card` | `shadow-2` | `z-card` |
-| 3 · menu | Select lists, menus, popovers | `ground` | 1px `line-strong` + `shadow-menu` | `z-menu` |
-| 4 · modal | Modal | `ground` over `scrim` | 1px `ink`, no shadow (the scrim lifts it) | `z-modal` |
+[shadcn-svelte](https://www.shadcn-svelte.com/docs/components) supplies component
+code; [Bits UI](https://www.bits-ui.com/docs/introduction) supplies headless
+behaviour. Unset supplies visual styling through tokens and recipes. Consumers
+remain responsible for labels, valid HTML, keyboard use and product behaviour.
 
-- Never skip up a level for emphasis; pick the level by what the thing is.
-- The site footer sits one step below the page, on `surface-sunken`; nothing else uses it.
-- Hover lift (2px up-left + `shadow-hard`) is a state for buttons, not a level.
+Use pinned [Tabler Icons](https://tabler.io/icons) outline drawings, `currentColor`,
+a `0 0 24 24` viewBox and a 2-unit stroke. Filled drawings are limited to mapped
+state icons. Glyphs are 16px inline, 20px action/status, 24px standalone at a
+16px root; pointer targets are separate. Controls use 40px comfortable, 32px
+compact, 36px small/calendar and 44px large minimum heights.
 
-## Iconography
+Keep focus visible and unobscured. Hide decorative SVG from assistive technology;
+icon-only controls need accessible names. Semantic status text remains necessary.
 
-- Icons are Iconoir (regular set, 1.5 stroke, in the text colour), from the closed list on the Icon component (Iconoir chosen by Alex 2026-10-03 for consistency; the list of 36 approved the same day). The drawings are copied into the kit at a pinned version, never loaded from a package or the network. Callouts keep their plain `i` `!` `+` `*` in a dashed box, and a typed ◉ may still serve as a bullet.
-- Status words stay bracketed text with quiet brackets: `[ OK ]`, `[ ERR ]`, `[ INFO ]`.
-- Controls and indicators are drawn as text too: checkboxes `[×]` / `[ ]`, radios `(•)` / `( )`, progress `[#####-----] 50%`, the spinner `|` `/` `-` `\`. Keep real inputs underneath for keyboards and screen readers.
-- The ASCII field (` .:-=+*#%@`) is the brand's texture: one per page, behind a hero or a Card grid, never behind bare text.
-- Never emoji. Text set in `mono` uses only characters the font draws, with U+FE0E after symbols that have an emoji form (⚠︎).
+## Mark and shape
+
+Use supplied mark assets and preserve geometry/clear space. Choose the appropriate
+variant and check contrast on the real surface. Keep three units horizontal and
+together except supplied single-unit favicon/app icons. See [logo.md](logo.md).
+
+Use the shared spacing scale and current 0.25rem base radius. Historical cut
+corners, hard offset shadows, ASCII controls and background art are superseded.
+
+## Accessibility and adoption
+
+Target WCAG 2.2 AA from the beginning: text/non-text contrast, non-colour cues,
+keyboard, labels, focus, reflow and reduced motion. Automated pair checks are
+limited evidence, not product certification. Pin a released package version,
+review updates and rebuild consumers. Publishing alone does not update them.
