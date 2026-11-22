@@ -19,3 +19,7 @@
   mark/font assets and licences. Publish the same contract used by the Hugo brand
   guide and interactive component gallery, with no website runtime dependencies
   in the package. See `docs/migration.md` for consumer changes and rollout steps.
+
+  The guide identifies its contract version and links to release history for
+  package availability. Publication status is external state, so the contract
+  does not store a fixed `scope.published` flag that becomes stale after release.

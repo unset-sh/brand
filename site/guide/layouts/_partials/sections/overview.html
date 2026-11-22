@@ -2,7 +2,7 @@
         <p class="eyebrow">{{ .Params.eyebrow }}</p>
         <h1 id="overview-title">{{ .Title }}</h1>
         <div class="lead">{{ .Content }}</div>
-        <div class="draft-note"><span data-icon="info-circle"></span><div><strong>{{ if hugo.Data.brand.contract.scope.published }}Contract{{ else }}Development{{ end }} <span data-version-label>v{{ hugo.Data.brand.contract.version }}</span> · ready for review</strong><p>The guide and component gallery use the same contract as the shared package. Each application adopts an exact version and validates its own integration.</p></div></div>
+        <div class="draft-note"><span data-icon="info-circle"></span><div><strong>Contract <span data-version-label>v{{ hugo.Data.brand.contract.version }}</span> · shared foundation</strong><p>This guide follows the brand repository. For package availability, check the <a href="https://github.com/unset-sh/brand/releases">release history</a>. Each application adopts an exact version and validates its own integration.</p></div></div>
         <div class="principles">
           <div><h2>Start with clarity</h2><p>Use type, spacing, and structure to make the next action easy to find.</p></div>
           <div><h2>Keep colour meaningful</h2><p>Neutral controls. Distinct links. Feedback that explains itself.</p></div>
