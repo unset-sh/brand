@@ -25,5 +25,12 @@
 - [x] Convert the accepted guide to Hugo in `site/guide/`, consuming the same contract; assemble with gallery at `components/`. Test both base paths.
 - [x] Define package exports, development-only dependencies and Changesets; test packed contents and consumer imports.
 - [x] Update CI and protected release workflow, add GitHub Pages deployment; document architecture, use and migration.
-- [ ] Update org `repos.json` in a companion branch, regenerate the map, review both diffs and open draft pull requests.
-- [ ] Validate package checks, website build, browser rendering and final branch review before handoff.
+- [x] Update org `repos.json` in a companion branch, regenerate the map, review both diffs and open draft pull requests.
+- [x] Validate package checks, website build, browser rendering and final branch review before handoff.
+
+## Review handoff
+
+- Brand replacement: https://github.com/unset-sh/brand/pull/4
+- Companion ownership map: https://github.com/unset-sh/.github/pull/4
+- Local evidence: `docs/verification.md`. Pages source is GitHub Actions with a main-only environment.
+- No merge, package publication or consuming-application migration is included in this handoff.
