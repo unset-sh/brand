@@ -1,0 +1,34 @@
+{
+  "name": "@unset-sh/brand",
+  "version": "0.1.0",
+  "description": "unset.sh brand foundations: design tokens, fonts, the mark and icons, as pinned copies of the design sheet.",
+  "license": "(AGPL-3.0-only AND OFL-1.1 AND LicenseRef-unset-sh-brand-assets)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unset-sh/brand.git"
+  },
+  "type": "module",
+  "files": [
+    "tokens/",
+    "fonts/",
+    "logo/",
+    "icons/",
+    "guidelines/",
+    "source.json",
+    "LICENSE-ASSETS.md"
+  ],
+  "exports": {
+    "./tokens.json": "./tokens/tokens.json",
+    "./source.json": "./source.json",
+    "./fonts/*": "./fonts/*",
+    "./logo/*": "./logo/*",
+    "./icons/*": "./icons/*",
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "scripts": {
+    "check": "node --test \"checks/*.test.mjs\""
+  }
+}
