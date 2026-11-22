@@ -1,0 +1,1483 @@
+{
+  "fixtures": [
+    {
+      "id": "typescript",
+      "label": "TypeScript",
+      "filename": "profile.ts",
+      "code": "import type { Profile } from './types';\n\n// A small space, made your own.\nconst profile: Profile = {\n  name: 'Mika Rowan',\n  visibility: 'public',\n  featured: true,\n  postLimit: 12,\n};\n\nexport function greet(name: string) {\n  return `Welcome, ${name}.`;\n}\n\nexport default profile;"
+    },
+    {
+      "id": "svelte",
+      "label": "Svelte",
+      "filename": "Profile.svelte",
+      "code": "<script lang=\"ts\">\n  import { Button } from '$lib/ui/button';\n  let follows = $state(12);\n</script>\n\n<!-- A profile that feels like you. -->\n<section aria-label=\"Profile\">\n  <h2>Mika Rowan</h2>\n  <p>{follows} people following</p>\n  <Button onclick={() => follows += 1}>\n    Follow profile\n  </Button>\n</section>"
+    },
+    {
+      "id": "css",
+      "label": "CSS",
+      "filename": "profile.css",
+      "code": "/* Shared foundations, personal expression. */\n.profile {\n  display: grid;\n  gap: 1.5rem;\n  color: var(--foreground);\n  background: var(--background);\n  font-family: 'Space Grotesk', sans-serif;\n}\n\n.profile:focus-visible {\n  outline: 2px solid currentColor;\n  outline-offset: 3px;\n}"
+    },
+    {
+      "id": "json",
+      "label": "JSON",
+      "filename": "profile.json",
+      "code": "{\n  \"name\": \"Mika Rowan\",\n  \"visibility\": \"public\",\n  \"featured\": true,\n  \"postLimit\": 12,\n  \"sections\": [\n    \"About\",\n    \"Recent posts\",\n    \"Elsewhere\"\n  ],\n  \"customDomain\": null\n}"
+    },
+    {
+      "id": "shellscript",
+      "label": "Shell",
+      "filename": "preview.sh",
+      "code": "#!/usr/bin/env bash\nset -eu\n\n# Build a local preview.\nfor name in docs app renderer; do\n  printf 'Preparing %s\\n' \"$name\"\ndone\n\nif [ -d \"dist\" ]; then\n  printf 'Preview is ready.\\n'\nelse\n  printf 'Run the build first.\\n'\nfi"
+    }
+  ],
+  "samples": {
+    "typescript": [
+      [
+        {
+          "content": "import",
+          "style": "color:var(--syntax-keyword)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "type",
+          "style": "color:var(--syntax-keyword)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "{",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": " Profile ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "}",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "from",
+          "style": "color:var(--syntax-keyword)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "'./types'",
+          "style": "color:var(--syntax-string)"
+        },
+        {
+          "content": ";",
+          "style": "color:var(--syntax-punctuation)"
+        }
+      ],
+      [],
+      [
+        {
+          "content": "// A small space, made your own.",
+          "style": "color:var(--syntax-comment)"
+        }
+      ],
+      [
+        {
+          "content": "const",
+          "style": "color:var(--syntax-keyword)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "profile",
+          "style": "color:var(--syntax-literal)"
+        },
+        {
+          "content": ":",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "Profile",
+          "style": "color:var(--syntax-name)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "=",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "{",
+          "style": "color:var(--syntax-punctuation)"
+        }
+      ],
+      [
+        {
+          "content": "  ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "name",
+          "style": "color:var(--syntax-name)"
+        },
+        {
+          "content": ":",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "'Mika Rowan'",
+          "style": "color:var(--syntax-string)"
+        },
+        {
+          "content": ",",
+          "style": "color:var(--syntax-punctuation)"
+        }
+      ],
+      [
+        {
+          "content": "  ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "visibility",
+          "style": "color:var(--syntax-name)"
+        },
+        {
+          "content": ":",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "'public'",
+          "style": "color:var(--syntax-string)"
+        },
+        {
+          "content": ",",
+          "style": "color:var(--syntax-punctuation)"
+        }
+      ],
+      [
+        {
+          "content": "  ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "featured",
+          "style": "color:var(--syntax-name)"
+        },
+        {
+          "content": ":",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "true",
+          "style": "color:var(--syntax-literal)"
+        },
+        {
+          "content": ",",
+          "style": "color:var(--syntax-punctuation)"
+        }
+      ],
+      [
+        {
+          "content": "  ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "postLimit",
+          "style": "color:var(--syntax-name)"
+        },
+        {
+          "content": ":",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "12",
+          "style": "color:var(--syntax-literal)"
+        },
+        {
+          "content": ",",
+          "style": "color:var(--syntax-punctuation)"
+        }
+      ],
+      [
+        {
+          "content": "};",
+          "style": "color:var(--syntax-punctuation)"
+        }
+      ],
+      [],
+      [
+        {
+          "content": "export",
+          "style": "color:var(--syntax-keyword)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "function",
+          "style": "color:var(--syntax-keyword)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "greet",
+          "style": "color:var(--syntax-name)"
+        },
+        {
+          "content": "(",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": "name",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": ":",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "string",
+          "style": "color:var(--syntax-name)"
+        },
+        {
+          "content": ")",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "{",
+          "style": "color:var(--syntax-punctuation)"
+        }
+      ],
+      [
+        {
+          "content": "  ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "return",
+          "style": "color:var(--syntax-keyword)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "`Welcome, ",
+          "style": "color:var(--syntax-string)"
+        },
+        {
+          "content": "${",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": "name",
+          "style": "color:var(--syntax-string)"
+        },
+        {
+          "content": "}",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": ".`",
+          "style": "color:var(--syntax-string)"
+        },
+        {
+          "content": ";",
+          "style": "color:var(--syntax-punctuation)"
+        }
+      ],
+      [
+        {
+          "content": "}",
+          "style": "color:var(--syntax-punctuation)"
+        }
+      ],
+      [],
+      [
+        {
+          "content": "export",
+          "style": "color:var(--syntax-keyword)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "default",
+          "style": "color:var(--syntax-keyword)"
+        },
+        {
+          "content": " profile",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": ";",
+          "style": "color:var(--syntax-punctuation)"
+        }
+      ]
+    ],
+    "svelte": [
+      [
+        {
+          "content": "<",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": "script",
+          "style": "color:var(--syntax-name)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "lang",
+          "style": "color:var(--syntax-name)"
+        },
+        {
+          "content": "=",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": "\"ts\"",
+          "style": "color:var(--syntax-string)"
+        },
+        {
+          "content": ">",
+          "style": "color:var(--syntax-punctuation)"
+        }
+      ],
+      [
+        {
+          "content": "  ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "import",
+          "style": "color:var(--syntax-keyword)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "{",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": " Button ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "}",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "from",
+          "style": "color:var(--syntax-keyword)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "'$lib/ui/button'",
+          "style": "color:var(--syntax-string)"
+        },
+        {
+          "content": ";",
+          "style": "color:var(--syntax-punctuation)"
+        }
+      ],
+      [
+        {
+          "content": "  ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "let",
+          "style": "color:var(--syntax-keyword)"
+        },
+        {
+          "content": " follows ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "=",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "$",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": "state",
+          "style": "color:var(--syntax-name)"
+        },
+        {
+          "content": "(",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": "12",
+          "style": "color:var(--syntax-literal)"
+        },
+        {
+          "content": ");",
+          "style": "color:var(--syntax-punctuation)"
+        }
+      ],
+      [
+        {
+          "content": "</",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": "script",
+          "style": "color:var(--syntax-name)"
+        },
+        {
+          "content": ">",
+          "style": "color:var(--syntax-punctuation)"
+        }
+      ],
+      [],
+      [
+        {
+          "content": "<!-- A profile that feels like you. -->",
+          "style": "color:var(--syntax-comment)"
+        }
+      ],
+      [
+        {
+          "content": "<",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": "section",
+          "style": "color:var(--syntax-name)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "aria-label",
+          "style": "color:var(--syntax-name)"
+        },
+        {
+          "content": "=",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": "\"Profile\"",
+          "style": "color:var(--syntax-string)"
+        },
+        {
+          "content": ">",
+          "style": "color:var(--syntax-punctuation)"
+        }
+      ],
+      [
+        {
+          "content": "  ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "<",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": "h2",
+          "style": "color:var(--syntax-name)"
+        },
+        {
+          "content": ">",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": "Mika Rowan",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "</",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": "h2",
+          "style": "color:var(--syntax-name)"
+        },
+        {
+          "content": ">",
+          "style": "color:var(--syntax-punctuation)"
+        }
+      ],
+      [
+        {
+          "content": "  ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "<",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": "p",
+          "style": "color:var(--syntax-name)"
+        },
+        {
+          "content": ">{",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": "follows",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "}",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": " people following",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "</",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": "p",
+          "style": "color:var(--syntax-name)"
+        },
+        {
+          "content": ">",
+          "style": "color:var(--syntax-punctuation)"
+        }
+      ],
+      [
+        {
+          "content": "  ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "<",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": "Button",
+          "style": "color:var(--syntax-name)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "onclick",
+          "style": "color:var(--syntax-name)"
+        },
+        {
+          "content": "={()",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "=>",
+          "style": "color:var(--syntax-keyword)"
+        },
+        {
+          "content": " follows ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "+=",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "1",
+          "style": "color:var(--syntax-literal)"
+        },
+        {
+          "content": "}>",
+          "style": "color:var(--syntax-punctuation)"
+        }
+      ],
+      [
+        {
+          "content": "    Follow profile",
+          "style": "color:var(--syntax-foreground)"
+        }
+      ],
+      [
+        {
+          "content": "  ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "</",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": "Button",
+          "style": "color:var(--syntax-name)"
+        },
+        {
+          "content": ">",
+          "style": "color:var(--syntax-punctuation)"
+        }
+      ],
+      [
+        {
+          "content": "</",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": "section",
+          "style": "color:var(--syntax-name)"
+        },
+        {
+          "content": ">",
+          "style": "color:var(--syntax-punctuation)"
+        }
+      ]
+    ],
+    "css": [
+      [
+        {
+          "content": "/* Shared foundations, personal expression. */",
+          "style": "color:var(--syntax-comment)"
+        }
+      ],
+      [
+        {
+          "content": ".",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": "profile",
+          "style": "color:var(--syntax-name)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "{",
+          "style": "color:var(--syntax-punctuation)"
+        }
+      ],
+      [
+        {
+          "content": "  ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "display",
+          "style": "color:var(--syntax-name)"
+        },
+        {
+          "content": ":",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "grid",
+          "style": "color:var(--syntax-literal)"
+        },
+        {
+          "content": ";",
+          "style": "color:var(--syntax-punctuation)"
+        }
+      ],
+      [
+        {
+          "content": "  ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "gap",
+          "style": "color:var(--syntax-name)"
+        },
+        {
+          "content": ":",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "1.5",
+          "style": "color:var(--syntax-literal)"
+        },
+        {
+          "content": "rem",
+          "style": "color:var(--syntax-keyword)"
+        },
+        {
+          "content": ";",
+          "style": "color:var(--syntax-punctuation)"
+        }
+      ],
+      [
+        {
+          "content": "  ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "color",
+          "style": "color:var(--syntax-name)"
+        },
+        {
+          "content": ":",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "var",
+          "style": "color:var(--syntax-name)"
+        },
+        {
+          "content": "(",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": "--foreground",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": ");",
+          "style": "color:var(--syntax-punctuation)"
+        }
+      ],
+      [
+        {
+          "content": "  ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "background",
+          "style": "color:var(--syntax-name)"
+        },
+        {
+          "content": ":",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "var",
+          "style": "color:var(--syntax-name)"
+        },
+        {
+          "content": "(",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": "--background",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": ");",
+          "style": "color:var(--syntax-punctuation)"
+        }
+      ],
+      [
+        {
+          "content": "  ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "font-family",
+          "style": "color:var(--syntax-name)"
+        },
+        {
+          "content": ":",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "'Space Grotesk'",
+          "style": "color:var(--syntax-string)"
+        },
+        {
+          "content": ",",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "sans-serif",
+          "style": "color:var(--syntax-literal)"
+        },
+        {
+          "content": ";",
+          "style": "color:var(--syntax-punctuation)"
+        }
+      ],
+      [
+        {
+          "content": "}",
+          "style": "color:var(--syntax-punctuation)"
+        }
+      ],
+      [],
+      [
+        {
+          "content": ".",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": "profile",
+          "style": "color:var(--syntax-name)"
+        },
+        {
+          "content": ":",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": "focus-visible",
+          "style": "color:var(--syntax-name)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "{",
+          "style": "color:var(--syntax-punctuation)"
+        }
+      ],
+      [
+        {
+          "content": "  ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "outline",
+          "style": "color:var(--syntax-name)"
+        },
+        {
+          "content": ":",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "2",
+          "style": "color:var(--syntax-literal)"
+        },
+        {
+          "content": "px",
+          "style": "color:var(--syntax-keyword)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "solid",
+          "style": "color:var(--syntax-literal)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "currentColor",
+          "style": "color:var(--syntax-literal)"
+        },
+        {
+          "content": ";",
+          "style": "color:var(--syntax-punctuation)"
+        }
+      ],
+      [
+        {
+          "content": "  ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "outline-offset",
+          "style": "color:var(--syntax-name)"
+        },
+        {
+          "content": ":",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "3",
+          "style": "color:var(--syntax-literal)"
+        },
+        {
+          "content": "px",
+          "style": "color:var(--syntax-keyword)"
+        },
+        {
+          "content": ";",
+          "style": "color:var(--syntax-punctuation)"
+        }
+      ],
+      [
+        {
+          "content": "}",
+          "style": "color:var(--syntax-punctuation)"
+        }
+      ]
+    ],
+    "json": [
+      [
+        {
+          "content": "{",
+          "style": "color:var(--syntax-punctuation)"
+        }
+      ],
+      [
+        {
+          "content": "  ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "\"",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": "name",
+          "style": "color:var(--syntax-name)"
+        },
+        {
+          "content": "\"",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": ":",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "\"Mika Rowan\"",
+          "style": "color:var(--syntax-string)"
+        },
+        {
+          "content": ",",
+          "style": "color:var(--syntax-punctuation)"
+        }
+      ],
+      [
+        {
+          "content": "  ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "\"",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": "visibility",
+          "style": "color:var(--syntax-name)"
+        },
+        {
+          "content": "\"",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": ":",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "\"public\"",
+          "style": "color:var(--syntax-string)"
+        },
+        {
+          "content": ",",
+          "style": "color:var(--syntax-punctuation)"
+        }
+      ],
+      [
+        {
+          "content": "  ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "\"",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": "featured",
+          "style": "color:var(--syntax-name)"
+        },
+        {
+          "content": "\"",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": ":",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "true",
+          "style": "color:var(--syntax-literal)"
+        },
+        {
+          "content": ",",
+          "style": "color:var(--syntax-punctuation)"
+        }
+      ],
+      [
+        {
+          "content": "  ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "\"",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": "postLimit",
+          "style": "color:var(--syntax-name)"
+        },
+        {
+          "content": "\"",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": ":",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "12",
+          "style": "color:var(--syntax-literal)"
+        },
+        {
+          "content": ",",
+          "style": "color:var(--syntax-punctuation)"
+        }
+      ],
+      [
+        {
+          "content": "  ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "\"",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": "sections",
+          "style": "color:var(--syntax-name)"
+        },
+        {
+          "content": "\"",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": ":",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "[",
+          "style": "color:var(--syntax-punctuation)"
+        }
+      ],
+      [
+        {
+          "content": "    ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "\"About\"",
+          "style": "color:var(--syntax-string)"
+        },
+        {
+          "content": ",",
+          "style": "color:var(--syntax-punctuation)"
+        }
+      ],
+      [
+        {
+          "content": "    ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "\"Recent posts\"",
+          "style": "color:var(--syntax-string)"
+        },
+        {
+          "content": ",",
+          "style": "color:var(--syntax-punctuation)"
+        }
+      ],
+      [
+        {
+          "content": "    ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "\"Elsewhere\"",
+          "style": "color:var(--syntax-string)"
+        }
+      ],
+      [
+        {
+          "content": "  ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "],",
+          "style": "color:var(--syntax-punctuation)"
+        }
+      ],
+      [
+        {
+          "content": "  ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "\"",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": "customDomain",
+          "style": "color:var(--syntax-name)"
+        },
+        {
+          "content": "\"",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": ":",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "null",
+          "style": "color:var(--syntax-literal)"
+        }
+      ],
+      [
+        {
+          "content": "}",
+          "style": "color:var(--syntax-punctuation)"
+        }
+      ]
+    ],
+    "shellscript": [
+      [
+        {
+          "content": "#!/usr/bin/env bash",
+          "style": "color:var(--syntax-comment)"
+        }
+      ],
+      [
+        {
+          "content": "set",
+          "style": "color:var(--syntax-name)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "-eu",
+          "style": "color:var(--syntax-literal)"
+        }
+      ],
+      [],
+      [
+        {
+          "content": "# Build a local preview.",
+          "style": "color:var(--syntax-comment)"
+        }
+      ],
+      [
+        {
+          "content": "for",
+          "style": "color:var(--syntax-keyword)"
+        },
+        {
+          "content": " name ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "in",
+          "style": "color:var(--syntax-keyword)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "docs",
+          "style": "color:var(--syntax-string)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "app",
+          "style": "color:var(--syntax-string)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "renderer",
+          "style": "color:var(--syntax-string)"
+        },
+        {
+          "content": ";",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "do",
+          "style": "color:var(--syntax-keyword)"
+        }
+      ],
+      [
+        {
+          "content": "  ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "printf",
+          "style": "color:var(--syntax-name)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "'Preparing %s\\n'",
+          "style": "color:var(--syntax-string)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "\"",
+          "style": "color:var(--syntax-string)"
+        },
+        {
+          "content": "$",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": "name\"",
+          "style": "color:var(--syntax-string)"
+        }
+      ],
+      [
+        {
+          "content": "done",
+          "style": "color:var(--syntax-keyword)"
+        }
+      ],
+      [],
+      [
+        {
+          "content": "if",
+          "style": "color:var(--syntax-keyword)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "[",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "-d",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "\"dist\"",
+          "style": "color:var(--syntax-string)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "];",
+          "style": "color:var(--syntax-punctuation)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "then",
+          "style": "color:var(--syntax-keyword)"
+        }
+      ],
+      [
+        {
+          "content": "  ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "printf",
+          "style": "color:var(--syntax-name)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "'Preview is ready.\\n'",
+          "style": "color:var(--syntax-string)"
+        }
+      ],
+      [
+        {
+          "content": "else",
+          "style": "color:var(--syntax-keyword)"
+        }
+      ],
+      [
+        {
+          "content": "  ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "printf",
+          "style": "color:var(--syntax-name)"
+        },
+        {
+          "content": " ",
+          "style": "color:var(--syntax-foreground)"
+        },
+        {
+          "content": "'Run the build first.\\n'",
+          "style": "color:var(--syntax-string)"
+        }
+      ],
+      [
+        {
+          "content": "fi",
+          "style": "color:var(--syntax-keyword)"
+        }
+      ]
+    ]
+  }
+}

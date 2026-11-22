@@ -1,0 +1,105 @@
+/* Unset component recipes. Kept outside the pinned upstream components. */
+
+/* Visual icon dimensions and pointer targets are separate decisions. */
+.style-vega .cn-button {min-height:var(--control-height);height:auto;gap:var(--control-gap);white-space:normal;line-height:1.4}
+.style-vega .cn-button-size-xs {min-height:var(--target-compact)}
+.style-vega .cn-button-size-sm {min-height:var(--control-height-small)}
+.style-vega .cn-button-size-lg {min-height:var(--target-large)}
+.style-vega :is(.cn-button-size-icon,.cn-button-size-icon-xs,.cn-button-size-icon-sm,.cn-button-size-icon-lg) {padding:0;flex-shrink:0}
+.style-vega .cn-button-size-icon-xs {width:var(--target-compact);min-width:var(--target-compact);height:var(--target-compact);min-height:var(--target-compact)}
+.style-vega .cn-button-size-icon-sm {width:var(--control-height-small);min-width:var(--control-height-small);height:var(--control-height-small);min-height:var(--control-height-small)}
+.style-vega .cn-button-size-icon {width:var(--control-height);min-width:var(--control-height);height:var(--control-height)}
+.style-vega .cn-button-size-icon-lg {width:var(--target-large);min-width:var(--target-large);height:var(--target-large);min-height:var(--target-large)}
+.style-vega .cn-button svg {flex-shrink:0}
+.style-vega :is(.cn-button-size-icon-xs,.cn-button-size-icon-sm) > svg {width:var(--icon-inline);height:var(--icon-inline)}
+.style-vega :is(.cn-button-size-icon,.cn-button-size-icon-lg) > svg {width:var(--icon-action);height:var(--icon-action)}
+.style-vega :is([data-slot="input-group"],[data-slot="input-group-control"],[data-slot="native-select"],[data-slot="select-trigger"],[data-slot="toggle"]) {min-height:var(--control-height)}
+.style-vega :is([data-slot="input-group-control"],[data-slot="native-select"],[data-slot="select-trigger"]) {font-size:var(--component-input-font-size)}
+.style-vega :is([data-slot="checkbox"],[data-slot="radio-group-item"]) {width:1.25rem;height:1.25rem}
+.style-vega [data-slot="checkbox-indicator"] > svg {width:1rem;height:1rem}
+/* Selection controls retain upstream expanded pointer areas and clickable labels. */
+.style-vega [data-slot="slider"][data-orientation="horizontal"] {min-height:var(--control-height)}
+.style-vega [data-slot="slider-thumb"] {width:1.5rem;height:1.5rem}
+.style-vega [data-slot="trace-collapsible-trigger"] {min-height:var(--control-height);text-align:start}
+.style-vega :is([data-slot="tabs-trigger"],[data-slot="menubar-trigger"]) {min-height:var(--control-height-small)}
+.style-vega [data-slot="menubar"] {height:auto;min-height:var(--control-height);flex-wrap:wrap}
+
+/* Focused menu rows must be distinguishable from the popover surface. */
+.style-vega :is([role="menuitem"],[role="menuitemcheckbox"],[role="menuitemradio"],[role="option"]) {min-height:var(--menu-row-height);line-height:1.4}
+.style-vega :is([role="menuitem"],[role="menuitemcheckbox"],[role="menuitemradio"],[role="option"])[data-highlighted],
+.style-vega [data-slot="command-item"][data-selected] {background:var(--interaction-surface)}
+.style-vega :is([role="menuitem"],[role="option"]):focus-visible {outline-offset:-2px}
+.style-vega :is([data-slot="dropdown-menu-content"],[data-slot="dropdown-menu-sub-content"],[data-slot="context-menu-content"],[data-slot="context-menu-sub-content"],[data-slot="menubar-content"],[data-slot="select-content"],[data-slot="popover-content"],[data-slot="hover-card-content"]) {max-width:calc(100vw - 2rem)}
+.style-vega :is([data-slot="dialog-content"],[data-slot="alert-dialog-content"]) {max-height:calc(100dvh - 2rem);overflow-y:auto;scroll-padding:1rem}
+.style-vega :is([data-slot="dialog-header"],[data-slot="sheet-header"]) {padding-inline-end:2rem}
+.style-vega [data-slot="sheet-content"] {overflow-y:auto;scroll-padding:1rem}
+.style-vega [data-slot="navigation-menu-content"] {max-width:calc(100vw - 2rem)}
+.style-vega [data-slot="navigation-menu-content"] > ul {max-width:100%;width:min(32rem,calc(100vw - 3rem));grid-template-columns:repeat(auto-fit,minmax(min(12rem,100%),1fr))}
+
+/* Calendar cells stay compact enough for a 320px specimen. */
+.style-vega .cn-calendar {--cell-size:var(--calendar-cell-size)}
+.style-vega .cn-calendar .cn-button {width:var(--control-height-small);min-width:var(--control-height-small);min-height:var(--control-height-small);height:var(--control-height-small)}
+.style-vega [data-calendar-day][data-selected],
+.style-vega [data-calendar-day][data-selected]:hover,
+.style-vega [data-range-calendar-day][data-range-start],
+.style-vega [data-range-calendar-day][data-range-start]:hover,
+.style-vega [data-range-calendar-day][data-range-end],
+.style-vega [data-range-calendar-day][data-range-end]:hover {color:var(--primary-foreground)}
+
+/* Sonner: a readable status glyph, quiet close affordance, and enough room for copy. */
+html.style-vega[data-recipes="true"] [data-sonner-toast][data-styled="true"] {padding:var(--toast-padding) 3.5rem var(--toast-padding) var(--toast-padding);gap:var(--toast-gap);align-items:flex-start;border-radius:var(--radius);font-size:var(--toast-font-size);line-height:1.5;font-family:var(--font-sans)}
+html.style-vega[data-recipes="true"] [data-sonner-toast][data-styled="true"] > div[data-icon] {width:var(--component-toast-icon-size);height:var(--component-toast-icon-size);margin:1px 0 0;flex:0 0 var(--component-toast-icon-size)}
+html.style-vega[data-recipes="true"] [data-sonner-toast][data-styled="true"] > div[data-icon] > svg {width:var(--component-toast-icon-size);height:var(--component-toast-icon-size);margin:0}
+html.style-vega[data-recipes="true"] [data-sonner-toast][data-styled="true"] [data-content] {gap:.25rem;overflow-wrap:anywhere}
+html.style-vega[data-recipes="true"] [data-sonner-toast][data-styled="true"] [data-title] {font-weight:600;line-height:1.5}
+html.style-vega[data-recipes="true"] [data-sonner-toast][data-styled="true"] [data-description] {line-height:1.5}
+html.style-vega[data-recipes="true"] [data-sonner-toast][data-styled="true"] [data-close-button] {left:auto;right:.5rem;top:.5rem;transform:none;width:var(--target-compact);height:var(--target-compact);padding:0;border:1px solid transparent;border-radius:var(--radius);background:transparent;color:var(--foreground)}
+html.style-vega[data-recipes="true"] [data-sonner-toast][data-styled="true"] [data-close-button] > svg {width:var(--icon-inline);height:var(--icon-inline);margin:0}
+html.style-vega[data-recipes="true"] [data-sonner-toast][data-styled="true"] [data-close-button]:hover {background:color-mix(in srgb,var(--foreground) 10%,transparent)}
+html.style-vega[data-recipes="true"] [data-sonner-toast][data-styled="true"] [data-button] {min-height:var(--target-compact);height:auto;font-size:.875rem;line-height:1.4}
+@media(pointer:coarse) {html.style-vega[data-recipes="true"] [data-sonner-toast][data-styled="true"] [data-close-button] {width:var(--target-large);height:var(--target-large);top:.25rem;right:.25rem}}
+
+.style-vega [data-slot="tabs-list"] {height:auto;min-height:2.625rem}
+.style-vega [data-slot="scroll-area-thumb"] {background:var(--input)}
+.style-vega [data-slot="resizable-handle"] > div {border-color:var(--input);color:var(--foreground)}
+
+.style-vega [data-slot="pagination"] {container-type:inline-size}
+@container (max-width:24rem) {
+ .style-vega :is(.cn-pagination-previous-text,.cn-pagination-next-text) {display:none}
+ .style-vega :is(.cn-pagination-previous,.cn-pagination-next) {width:var(--control-height);padding:0}
+}
+
+/* Stable component bindings may be retargeted independently in the contract. */
+.style-vega .cn-button-variant-default {background:var(--component-button-primary-background);color:var(--component-button-primary-foreground)}
+.style-vega .cn-button-variant-default:hover {background:color-mix(in srgb,var(--component-button-primary-background) 85%,var(--component-button-primary-foreground))}
+.style-vega .cn-button-variant-secondary {background:var(--component-button-secondary-background);color:var(--component-button-secondary-foreground)}
+.style-vega :is([data-slot="input"],[data-slot="textarea"],[data-slot="input-group-control"]) {color:var(--component-input-foreground);border-color:var(--component-input-border);background:var(--component-input-background)}
+.style-vega [data-slot="input"] {min-height:var(--component-input-minimum-height)}
+.style-vega svg[data-icon-family="tabler"][fill="none"] {stroke-width:var(--icon-stroke-width)}
+
+.style-vega :is(h1,h2,h3,h4,h5,h6) {font-family:var(--font-heading)}
+
+
+
+@layer base {*{border-color:var(--border)}body{background:var(--background);color:var(--foreground);font-family:var(--font-sans)}button,input,textarea,select{font:inherit}button,a,select{touch-action:manipulation}}
+
+/* Optional Unset recipes: opt in with data-recipes="true". */
+[data-recipes="true"] :is([data-slot="input"],[data-slot="textarea"]) {background:var(--component-input-background);font-size:var(--component-input-font-size)}
+[data-recipes="true"] [data-slot="input"] {min-height:var(--component-input-minimum-height)}
+[data-recipes="true"] [data-role="destructive-action"] {background:var(--danger-action);color:var(--on-danger-action)}
+[data-recipes="true"] [data-role="destructive-action"]:hover {background:color-mix(in srgb,var(--danger-action) 90%,var(--on-danger-action))}
+[data-recipes="true"] [data-role="text-link"] {color:var(--link);text-decoration:underline;text-underline-offset:.22em}
+[data-recipes="true"] [data-role="text-link"]:visited {color:var(--link-visited)}
+[data-recipes="true"] [data-role="text-link"]:hover {color:var(--link-hover)}
+[data-recipes="true"] [data-role="text-link"]:visited:hover {color:var(--link-visited-hover)}
+[data-recipes="true"] [data-role="text-link"][data-preview="visited"] {color:var(--link-visited)}
+[data-recipes="true"] [data-role="text-link"][data-preview="unvisited"] {color:var(--link)}
+[data-recipes="true"] :focus-visible {outline:var(--focus-width) solid var(--component-focus-colour);outline-offset:var(--focus-offset);box-shadow:none}
+[data-recipes="true"] [data-slot="alert"][data-tone="success"] {color:var(--component-alert-success-foreground);background:var(--component-alert-success-background);border-color:var(--component-alert-success-foreground)}
+[data-recipes="true"] [data-slot="alert"][data-tone="warning"] {color:var(--component-alert-warning-foreground);background:var(--component-alert-warning-background);border-color:var(--component-alert-warning-foreground)}
+[data-recipes="true"] [data-slot="alert"][data-tone="danger"] {color:var(--component-alert-error-foreground);background:var(--component-alert-error-background);border-color:var(--component-alert-error-foreground)}
+[data-recipes="true"] [data-slot="alert-description"] {color:var(--ink-muted)}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
+@media(forced-colors:active){:focus-visible{outline:2px solid CanvasText!important;outline-offset:3px}}
+
+[data-recipes="true"] [data-slot="alert"][data-tone="info"] {color:var(--component-alert-info-foreground);background:var(--component-alert-info-background)}

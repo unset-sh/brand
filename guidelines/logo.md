@@ -1,6 +1,6 @@
 The unset.sh mark: three fisheye units (◉◉◉). `unset-mark-source.png` is the original 1080×1080 file as supplied. The SVGs are vectorised from it at its exact geometry (outer radius 110, hole 84, dot 54, centres 304 apart).
 
-The mark is always drawn in the palette, Platinum (#F0EDEE) or Onyx (#0A090C), the same as `ink`:
+The retained digital mark uses Platinum (#F0EDEE) or Onyx (#0A090C). These are fixed asset colours, independent of the current Graphite text tokens:
 
 - `unset-mark-platinum.svg` — Platinum, transparent, cropped tight. Use on `ground` in Dark.
 - `unset-mark-onyx.svg` — Onyx, transparent, cropped tight. Use on `ground` in Light.
@@ -15,7 +15,7 @@ Pure white and black versions, only for print or places where the palette can't 
 
 Favicon and app icons: one fisheye unit taken from the mark at its exact geometry, in the palette.
 
-- `unset-favicon.svg` — the unit alone, transparent; Onyx in light browser UI, Platinum in dark (it switches itself with `prefers-color-scheme`). The main favicon.
+- `unset-favicon.svg` — the unit alone, transparent, with the default black fill. It does not switch with `prefers-color-scheme`; use the PNG alternative when a fixed Onyx background is needed.
 - `unset-favicon-32.png`, `unset-favicon-16.png` — Platinum unit filling an Onyx square, for browsers that ignore SVG favicons.
 - `unset-apple-touch-icon.png` (180), `unset-icon-192.png`, `unset-icon-512.png` — Platinum unit centred on an Onyx square, for home screens and web app manifests.
 - `unset-app-icon.svg` — the source for those three.

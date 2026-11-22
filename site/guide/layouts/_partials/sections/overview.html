@@ -1,0 +1,11 @@
+      <section id="overview" aria-labelledby="overview-title">
+        <p class="eyebrow">{{ .Params.eyebrow }}</p>
+        <h1 id="overview-title">{{ .Title }}</h1>
+        <div class="lead">{{ .Content }}</div>
+        <div class="draft-note"><span data-icon="info-circle"></span><div><strong>{{ if hugo.Data.brand.contract.scope.published }}Contract{{ else }}Development{{ end }} <span data-version-label>v{{ hugo.Data.brand.contract.version }}</span> · ready for review</strong><p>The guide and component gallery use the same contract as the shared package. Each application adopts an exact version and validates its own integration.</p></div></div>
+        <div class="principles">
+          <div><h2>Start with clarity</h2><p>Use type, spacing, and structure to make the next action easy to find.</p></div>
+          <div><h2>Keep colour meaningful</h2><p>Neutral controls. Distinct links. Feedback that explains itself.</p></div>
+          <div><h2>Share the decisions</h2><p>Use named roles so each repository follows the same foundation.</p></div>
+        </div>
+      </section>

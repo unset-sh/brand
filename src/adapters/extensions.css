@@ -1,0 +1,26 @@
+/* Shared additions required by the complete upstream catalogue. Chart choices remain provisional. */
+
+@custom-variant style-vega (&:where(.style-vega *));
+@custom-variant style-nova (&:where(.style-nova *));
+@custom-variant style-lyra (&:where(.style-lyra *));
+@custom-variant style-maia (&:where(.style-maia *));
+@custom-variant style-mira (&:where(.style-mira *));
+@custom-variant style-luma (&:where(.style-luma *));
+@custom-variant style-sera (&:where(.style-sera *));
+@custom-variant style-rhea (&:where(.style-rhea *));
+/* Overrides for inspected literal colours in upstream recipes. */
+.style-vega .cn-slider-thumb {background:var(--control-thumb)}
+.style-vega :is(.cn-slider-track,.cn-progress,.cn-progress-track){background:var(--line-strong)}
+.style-vega [aria-invalid="true"]{border-color:var(--danger)}
+.style-vega :is(.cn-dialog-overlay,.cn-alert-dialog-overlay,.cn-sheet-overlay,.cn-drawer-overlay){background:var(--overlay)}
+.style-vega .cn-code-block-line-variant-added {background:var(--success-surface);color:var(--success)}
+.style-vega .cn-code-block-line-variant-removed {background:var(--danger-surface);color:var(--danger)}
+.style-vega [data-slot="code-block"]{background:var(--component-code-background);color:var(--code-foreground)}
+.style-vega [data-slot="code-block-line"][data-variant="added"]{background:var(--success-surface);color:var(--success)}
+.style-vega [data-slot="code-block-line"][data-variant="removed"]{background:var(--danger-surface);color:var(--danger)}
+.typeset mark {background:var(--warning-surface);color:var(--warning)}
+a.cn-button-variant-link,.typeset a{color:var(--link);text-decoration:underline;text-underline-offset:.2em}
+a.cn-button-variant-link:visited,.typeset a:visited{color:var(--link-visited)}
+a.cn-button-variant-link:hover,.typeset a:hover{color:var(--link-hover)}
+a.cn-button-variant-link:visited:hover,.typeset a:visited:hover{color:var(--link-visited-hover)}
+/* Useful content links keep their underline; navigation controls can remain neutral. */

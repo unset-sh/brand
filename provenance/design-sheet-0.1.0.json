@@ -1,0 +1,145 @@
+{
+  "sheetUrl": "https://claude.ai/artifact/78Sh5q9HGz74d5AQyMbQVt",
+  "sheetVersion": "1792621080-00d4",
+  "copiedAt": "2026-11-21",
+  "files": [
+    {
+      "path": "tokens/tokens.json",
+      "origin": "sheet",
+      "from": "project/tokens.json",
+      "sha256": "0cf5a7ece362fa431d0fad26892bf1b03f2ae3d264b42fd714c8905750717607"
+    },
+    {
+      "path": "fonts/SpaceGrotesk-Variable.woff2",
+      "origin": "sheet",
+      "from": "project/fonts/SpaceGrotesk-Variable.woff2",
+      "sha256": "0640890476fc1198ab4de571fb658de443c4d85b66466ec09534a8737ab1ce9d"
+    },
+    {
+      "path": "fonts/JetBrainsMono-Variable.woff2",
+      "origin": "sheet",
+      "from": "project/fonts/JetBrainsMono-Variable.woff2",
+      "sha256": "7fd1f69642aa7f2bd41d917bf0e434c4f21911749f6d89455d5b9114547a8c9c"
+    },
+    {
+      "path": "fonts/OFL-SpaceGrotesk.txt",
+      "origin": "font-project",
+      "from": "https://github.com/floriankarsten/space-grotesk",
+      "sha256": "564ce565c371c5e5bbf286006565a7c9aa55a9f56e7ca58d56e05d649dd61a72"
+    },
+    {
+      "path": "fonts/OFL-JetBrainsMono.txt",
+      "origin": "font-project",
+      "from": "https://github.com/JetBrains/JetBrainsMono",
+      "sha256": "a76abf002c49097d146e86740a3105a5d00450b1592e820a1109a8c5680cd697"
+    },
+    {
+      "path": "logo/unset-mark-platinum.svg",
+      "origin": "sheet",
+      "from": "assets/Logos/unset-mark-platinum.svg",
+      "sha256": "36714aa7fcaf3bba6df88da8e65dac6e5144107ba7649ea2aa14bc672f8e70e5"
+    },
+    {
+      "path": "logo/unset-mark-onyx.svg",
+      "origin": "sheet",
+      "from": "assets/Logos/unset-mark-onyx.svg",
+      "sha256": "99942feb1539545bc4a611fc2dc0a127165f69ca26861356452085966fafa2ff"
+    },
+    {
+      "path": "logo/unset-mark-on-onyx.svg",
+      "origin": "sheet",
+      "from": "assets/Logos/unset-mark-on-onyx.svg",
+      "sha256": "cb029232aac4657f9f592d6bb6450a9b7519206e59b5aca076dbc42d0352ef50"
+    },
+    {
+      "path": "logo/unset-mark-on-platinum.svg",
+      "origin": "sheet",
+      "from": "assets/Logos/unset-mark-on-platinum.svg",
+      "sha256": "69ef7c549b787a8fb958105b277137a90e09dbd35b1f1427d512e7c16ff2bae2"
+    },
+    {
+      "path": "logo/unset-mark-white.svg",
+      "origin": "sheet",
+      "from": "assets/Logos/unset-mark-white.svg",
+      "sha256": "c44b13cae44ca6002849e31455194a5fce6363bea1ee9710d1b2bba54411fde4"
+    },
+    {
+      "path": "logo/unset-mark-black.svg",
+      "origin": "sheet",
+      "from": "assets/Logos/unset-mark-black.svg",
+      "sha256": "8ac3fde30cfc314f93a1a9bd175adf0f7c5e18b865803395869061e0b6ba602c"
+    },
+    {
+      "path": "logo/unset-mark-on-black.svg",
+      "origin": "sheet",
+      "from": "assets/Logos/unset-mark-on-black.svg",
+      "sha256": "75440309513effd0675250acf2e0b48c4fe873f49e49da206035173ce75bd44d"
+    },
+    {
+      "path": "logo/unset-mark-on-white.svg",
+      "origin": "sheet",
+      "from": "assets/Logos/unset-mark-on-white.svg",
+      "sha256": "fa72d7ffff0c952532010ad9e5e5f0e047381502559cba16f75d946e6dd3099e"
+    },
+    {
+      "path": "logo/unset-mark-source.png",
+      "origin": "sheet",
+      "from": "assets/Logos/unset-mark-source.png",
+      "sha256": "b9f1fc0b9e51d22de367151ee3e512b438b4873e2b5ed80b873f4d61afd8d8f7"
+    },
+    {
+      "path": "icons/unset-favicon.svg",
+      "origin": "sheet",
+      "from": "assets/Logos/unset-favicon.svg",
+      "sha256": "ac615ddb2ca1ba9b973079e9d482aa32aad474231a25c09e97b036dc21a1d91a"
+    },
+    {
+      "path": "icons/unset-favicon-32.png",
+      "origin": "sheet",
+      "from": "assets/Logos/unset-favicon-32.png",
+      "sha256": "044b95e98d0eed77832925af310fb5499c6ad041a5b584ef4081ba70bcc6cacd"
+    },
+    {
+      "path": "icons/unset-favicon-16.png",
+      "origin": "sheet",
+      "from": "assets/Logos/unset-favicon-16.png",
+      "sha256": "4f0d352ae3aaaff291c8dbe9b48f2986a9a22af8df326bc63dee87ee0ca22244"
+    },
+    {
+      "path": "icons/unset-app-icon.svg",
+      "origin": "sheet",
+      "from": "assets/Logos/unset-app-icon.svg",
+      "sha256": "4b8a65ed34df2a2aec8b86329fef458765370ea5ad7fbda27fea9ff4de84bc60"
+    },
+    {
+      "path": "icons/unset-apple-touch-icon.png",
+      "origin": "sheet",
+      "from": "assets/Logos/unset-apple-touch-icon.png",
+      "sha256": "0f793a1edbf1780d5df0a6d5540056a2de58672d5a72cd07b5dd0c411ecbf860"
+    },
+    {
+      "path": "icons/unset-icon-192.png",
+      "origin": "sheet",
+      "from": "assets/Logos/unset-icon-192.png",
+      "sha256": "69575d3595edafb59b8bc5213e489b42100e6e91f12506a8f1934d1b39a2abe7"
+    },
+    {
+      "path": "icons/unset-icon-512.png",
+      "origin": "sheet",
+      "from": "assets/Logos/unset-icon-512.png",
+      "sha256": "4fa78ea62201ff61ae319b31da8671ef8e02ff30cd322f6b270e76c95b6a2300"
+    },
+    {
+      "path": "guidelines/brand.md",
+      "origin": "sheet",
+      "from": "project/README.md",
+      "sha256": "de5f078ce9eee4b328099998b4f6e552de35f7ebe9fcd5f9423aba555d6e6fc3"
+    },
+    {
+      "path": "guidelines/logo.md",
+      "origin": "sheet",
+      "from": "project/assets/Logos/README.md",
+      "sha256": "802e73260fec3611cb0216b4358a4ce4f3d70eb64e42fe4a89aaccf29681bf40"
+    }
+  ]
+}

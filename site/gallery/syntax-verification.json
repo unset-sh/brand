@@ -1,0 +1,56 @@
+{
+  "shikiVersion": "3.20.0",
+  "theme": "moss-clay",
+  "checks": [
+    {
+      "language": "typescript",
+      "mode": "light",
+      "roundtrip": true
+    },
+    {
+      "language": "typescript",
+      "mode": "dark",
+      "roundtrip": true
+    },
+    {
+      "language": "svelte",
+      "mode": "light",
+      "roundtrip": true
+    },
+    {
+      "language": "svelte",
+      "mode": "dark",
+      "roundtrip": true
+    },
+    {
+      "language": "css",
+      "mode": "light",
+      "roundtrip": true
+    },
+    {
+      "language": "css",
+      "mode": "dark",
+      "roundtrip": true
+    },
+    {
+      "language": "json",
+      "mode": "light",
+      "roundtrip": true
+    },
+    {
+      "language": "json",
+      "mode": "dark",
+      "roundtrip": true
+    },
+    {
+      "language": "shellscript",
+      "mode": "light",
+      "roundtrip": true
+    },
+    {
+      "language": "shellscript",
+      "mode": "dark",
+      "roundtrip": true
+    }
+  ]
+}

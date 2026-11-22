@@ -1,0 +1,20 @@
+@import "tailwindcss" source(none);
+@import "../../../dist/shadcn.css";
+@import "../../../dist/tokens.css";
+@import "../../../dist/tailwind.css";
+@import "../../../dist/recipes.css";
+@import "tw-animate-css";
+@source "./lib/registry/ui";
+@source "./lib/registry/examples";
+@source "./samples";
+@source "./App.svelte";
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* Gallery framing only; reusable component rules live in the package. */
+.specimen [data-slot="input"]{min-height:var(--component-input-minimum-height);font-size:var(--component-input-font-size)}
+.specimen [data-slot="textarea"]{font-size:var(--component-input-font-size)}
+.specimen a:not([data-slot]){color:var(--link);text-decoration:underline;text-underline-offset:.2em}
+.specimen a:not([data-slot]):visited{color:var(--link-visited)}
+.specimen [data-slot="carousel"]{width:calc(100% - 96px);max-width:320px}
+.specimen [data-slot="tabs-list"]{max-width:100%;overflow-x:auto;justify-content:flex-start}
+.specimen [data-slot="navigation-menu-list"]{flex-wrap:wrap}

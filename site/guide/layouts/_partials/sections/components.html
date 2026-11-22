@@ -1,0 +1,16 @@
+      <section id="components" aria-labelledby="components-title">
+        <div class="section-heading"><h2 id="components-title">Components</h2><span class="status-label"><span id="component-count">{{ hugo.Data.brand.contract.scope.catalogue.mainShadcnEntries }}</span> main entries</span></div>
+        <p>The live gallery applies the same roles to real shadcn-svelte components. Open a family to try its controls, states, and both appearances.</p>
+        <p><a href="https://www.shadcn-svelte.com/docs/components">shadcn-svelte component documentation</a></p>
+        <div class="component-links">
+          <a href="{{ "components/" | relURL }}?component=button"><strong>Actions &amp; inputs</strong><span>Buttons, fields, selection, and focus.</span></a>
+          <a href="{{ "components/" | relURL }}?component=alert"><strong>Feedback</strong><span>Success, warning, error, and information.</span></a>
+          <a href="{{ "components/" | relURL }}?component=sonner"><strong>Toasts</strong><span>Status icons, actions, and dismissal.</span></a>
+          <a href="{{ "components/" | relURL }}?component=data-table"><strong>Data &amp; content</strong><span>Tables, sorting, filtering, and pagination.</span></a>
+          <a href="{{ "components/" | relURL }}?component=dialog"><strong>Overlays</strong><span>Dialogs, sheets, menus, and popovers.</span></a>
+          <a href="{{ "components/" | relURL }}?component=code-block"><strong>Code</strong><span>Moss &amp; clay syntax and copy controls.</span></a>
+        </div>
+        <div class="geometry-note"><span data-icon="info-circle"></span><p>Default controls are <span data-control-height>40px</span> high; an icon inside is usually <span data-icon-size="inline">16px</span> or <span data-icon-size="control">20px</span>. Compact sizes, meaningful labels, and focus behavior are part of each recipe.</p></div>
+        <p><a href="{{ "components/" | relURL }}?component=button">Browse all components</a></p>
+        <p class="caption">The gallery covers the main catalogue, not every possible variant or third-party component. Each application still needs integration and accessibility checks.</p>
+      </section>

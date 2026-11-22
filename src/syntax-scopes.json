@@ -1,0 +1,74 @@
+[
+  {
+    "role": "foreground"
+  },
+  {
+    "role": "punctuation",
+    "scope": [
+      "punctuation",
+      "meta.brace",
+      "delimiter",
+      "keyword.operator"
+    ]
+  },
+  {
+    "role": "keyword",
+    "scope": [
+      "keyword",
+      "storage.type",
+      "storage.modifier"
+    ]
+  },
+  {
+    "role": "name",
+    "scope": [
+      "entity.name.function",
+      "entity.name.tag",
+      "entity.name.section",
+      "support.function",
+      "support.class",
+      "entity.other.attribute-name",
+      "support.type.property-name",
+      "meta.object-literal.key",
+      "variable.other.property",
+      "variable.other.object.property"
+    ]
+  },
+  {
+    "role": "type",
+    "scope": [
+      "entity.name.type",
+      "entity.name.class",
+      "entity.name.namespace",
+      "support.type",
+      "storage.type.primitive"
+    ]
+  },
+  {
+    "role": "literal",
+    "scope": [
+      "constant.numeric",
+      "constant.language",
+      "constant.character",
+      "constant.other",
+      "support.constant",
+      "variable.other.constant",
+      "variable.language"
+    ]
+  },
+  {
+    "role": "string",
+    "scope": [
+      "string",
+      "punctuation.definition.string"
+    ]
+  },
+  {
+    "role": "comment",
+    "scope": [
+      "comment",
+      "punctuation.definition.comment",
+      "string.comment"
+    ]
+  }
+]

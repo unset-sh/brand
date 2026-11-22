@@ -13,9 +13,9 @@ concurrency:
 
 jobs:
   check:
-    name: Check pins, tokens, files and package
+    name: Check contract, package and website
     runs-on: ubuntu-24.04
-    timeout-minutes: 5
+    timeout-minutes: 15
     permissions:
       contents: read
     steps:
@@ -26,4 +26,14 @@ jobs:
         with:
           node-version-file: .nvmrc
           package-manager-cache: false
+      - run: npm ci
       - run: npm run check
+      - name: Install verified Hugo
+        run: bash .github/install-hugo.sh
+      - name: Build at site root
+        run: npm run site:build
+      - name: Build at a project Pages path
+        env:
+          BRAND_BASE_PATH: /brand/
+          BRAND_BASE_URL: https://unset-sh.github.io/brand/
+        run: npm run site:build
