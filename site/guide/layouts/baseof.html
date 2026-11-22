@@ -21,7 +21,7 @@
     <a class="wordmark" href="#overview" aria-label="Unset brand guide">unset<span>.sh</span></a>
     <span class="header-divider" aria-hidden="true"></span><span class="header-label">Brand guide</span>
     <div class="header-actions">
-      <span class="draft-tag">{{ if hugo.Data.brand.contract.scope.published }}Contract{{ else }}Development{{ end }} <span data-version-label>v{{ hugo.Data.brand.contract.version }}</span></span>
+      <span class="draft-tag">Contract <span data-version-label>v{{ hugo.Data.brand.contract.version }}</span></span>
       <button class="icon-button" id="theme-toggle" type="button" aria-label="Switch to light appearance"><span data-icon="sun"></span><span class="theme-label">Light</span></button>
       <button class="icon-button menu-toggle" id="menu-toggle" type="button" aria-controls="section-nav" aria-expanded="false" aria-label="Open guide navigation"><span data-icon="menu"></span></button>
     </div>
@@ -47,7 +47,7 @@
     </aside>
     <main id="main" tabindex="-1">
 {{ block "main" . }}{{ end }}
-      <footer class="footer"><span>unset.sh / brand</span><span>{{ if hugo.Data.brand.contract.scope.published }}Contract{{ else }}Development{{ end }} <span data-version-label>v{{ hugo.Data.brand.contract.version }}</span> · shared foundation</span><a href="#overview">Back to top</a></footer>
+      <footer class="footer"><span>unset.sh / brand</span><span>Contract <span data-version-label>v{{ hugo.Data.brand.contract.version }}</span> · shared foundation</span><a href="#overview">Back to top</a></footer>
     </main>
   </div>
   <div class="copy-status" role="status" id="copy-status"></div>

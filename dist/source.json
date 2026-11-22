@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "version": "0.1.1",
   "authority": "src/contract.json",
-  "contractSha256": "5c99ac570d6a68326ba2516044f628fbb78f50109c71e54756fb5a7e16ac5aeb",
+  "contractSha256": "92f5acb0b4298acff3f0e5e9e58277f28e22717e6c8e146cb57281f70e960003",
   "historical": "provenance/design-sheet-0.1.0.json",
   "files": [
     {
@@ -137,12 +137,12 @@
     },
     {
       "path": "dist/contract.json",
-      "sha256": "44b196fc51027bc18f58438537128f3bc078fc9ce3edea71cfb7565b3c9599a6",
+      "sha256": "b183ede75d46c8dcca976287cfb69a27297c252bf62791f8a1ebd3aeff27455b",
       "origin": "repository-build"
     },
     {
       "path": "dist/contract.schema.json",
-      "sha256": "733422f792b4816695bfeccbb641e8d6e11ded6f12da503d42b4f67c72c31a4e",
+      "sha256": "495c553a7f2f5a66a242c774b7ba3c0f1307d5188e3ae1a980b9aabef666c235",
       "origin": "repository-build"
     },
     {

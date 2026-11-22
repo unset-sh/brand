@@ -53,13 +53,9 @@
     "scope": {
       "type": "object",
       "required": [
-        "published",
         "productionMigrated"
       ],
       "properties": {
-        "published": {
-          "type": "boolean"
-        },
         "productionMigrated": {
           "type": "boolean"
         }

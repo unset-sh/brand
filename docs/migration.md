@@ -60,3 +60,6 @@ mutable runtime `latest` theme is fetched.
 
 The guide demonstrates repository source on `main`; a consumer may still use an
 older release. Compare the displayed contract/package version when reviewing it.
+The contract version identifies its contents, not registry availability. Check
+the package registry and release workflow when selecting an installable version;
+publication status is not stored as a fixed boolean in the contract.
