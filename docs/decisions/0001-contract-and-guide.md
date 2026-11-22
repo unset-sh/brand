@@ -2,6 +2,10 @@
 
 Status: accepted direction, implementation pending review. Date: 2026-11-22.
 
+Release numbering for the initial transition is superseded by
+[decision 0002](0002-initial-contract-version.md). The other boundaries and the
+requirement to document the breaking token-format change remain in force.
+
 The owner selected this repository as the source of the shared brand for app,
 chat, renderer and documentation, replacing the design-sheet-copy workflow.
 The existing mark, fonts and licences remain unchanged. The selected direction
