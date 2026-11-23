@@ -1,6 +1,6 @@
 # @unset-sh/brand
 
-## 0.1.1
+## v0.1.1
 
 ### Patch Changes
 

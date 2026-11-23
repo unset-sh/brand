@@ -141,10 +141,13 @@ Work lands on `staging`. A release is Alex's merge of `staging` into `main`
 ([org-0010](https://github.com/unset-sh/agent-kit/blob/main/skills/org-decisions/records/org-0010-staged-delivery-on-main.md));
 after it, an agent may press Approve on the `release` environment
 ([org-0012](https://github.com/unset-sh/agent-kit/blob/main/skills/org-decisions/records/org-0012-release-approvals-and-lexicon-drafts.md)).
-The release workflow checks and packs once, then attests and publishes that
-same artifact to GitHub Packages. Today it still starts from a `v<version>` tag
-on `main` and packs with npm; it moves to the merge trigger and `bun pm pack`
-with tooling's shared release chain. Existing licences and approval remain.
+`.github/workflows/release.yml` only calls tooling's shared release
+(`releases-package.yml` at a full commit): when a raised version lands on
+`main`, it checks and packs once with `bun pm pack`, waits for the `release`
+approval, then attests and publishes that same artifact to GitHub Packages and
+tags `v<version>`. Its notes are the `## v<version>` changelog entry, which
+`version-packages` writes. CI calls tooling's shared check the same way; change
+how either runs in `unset-sh/tooling`. Existing licences and approval remain.
 
 Publishing makes a version available; it does not change an already built app.
 Each consumer updates its exact dependency and lockfile, runs checks and
