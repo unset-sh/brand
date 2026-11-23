@@ -26,12 +26,16 @@ jobs:
       - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
         with:
           bun-version-file: .bun-version
+          no-cache: true
+          token: ""
+      - name: Bun is the pinned version
+        run: test "$(bun --version)" = "$(cat .bun-version)"
       - name: Install verified Hugo
         run: bash .github/install-hugo.sh
       - name: Configure Pages
         id: pages
         uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
-      - run: bun install --frozen-lockfile --ignore-scripts
+      - run: test -f bun.lock && bun install --frozen-lockfile --ignore-scripts
       - run: bun run check
       - name: Build guide and gallery
         env:
