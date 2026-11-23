@@ -1,5 +1,8 @@
 name: ci
 
+# Calls tooling's shared check, the single source of truth for how organisation repositories run CI.
+# Pinned to a full tooling commit; docs/use-workflows.md in unset-sh/tooling describes the inputs.
+
 on:
   pull_request:
     types: [opened, synchronize, reopened, edited, ready_for_review]
@@ -14,31 +17,20 @@ concurrency:
 
 jobs:
   check:
-    # Keep this status name stable: the repository ruleset requires it.
+    # The repository ruleset requires this status; through the shared workflow it reads
+    # "Check pins, tokens, files and package / Check".
     name: Check pins, tokens, files and package
-    runs-on: ubuntu-24.04
-    timeout-minutes: 15
+    uses: unset-sh/tooling/.github/workflows/ci-check.yml@3fe3db56a710da477877f1e1e3fe37abf4d3b71c
     permissions:
       contents: read
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          persist-credentials: false
-      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
-        with:
-          bun-version-file: .bun-version
-          no-cache: true
-          token: ""
-      - name: Bun is the pinned version
-        run: test "$(bun --version)" = "$(cat .bun-version)"
-      - run: test -f bun.lock && bun install --frozen-lockfile --ignore-scripts
-      - run: bun run check
-      - name: Install verified Hugo
-        run: bash .github/install-hugo.sh
-      - name: Build at site root
-        run: bun run site:build
-      - name: Build at a project Pages path
-        env:
-          BRAND_BASE_PATH: /brand/
-          BRAND_BASE_URL: https://unset-sh.github.io/brand/
-        run: bun run site:build
+      packages: read # the shared install step may read @unset-sh packages; brand has none today
+    with:
+      install: true
+      timeout-minutes: 15
+      # The guide is built at the site root and at the project Pages path, with Hugo verified by its digest.
+      command: |
+        bun run check
+        bash .github/install-hugo.sh
+        export HUGO_BINARY="$RUNNER_TEMP/brand-hugo/hugo"
+        bun run site:build
+        BRAND_BASE_PATH=/brand/ BRAND_BASE_URL=https://unset-sh.github.io/brand/ bun run site:build

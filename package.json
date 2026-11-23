@@ -47,7 +47,7 @@
     "site:build": "bun scripts/build-site.mjs",
     "site:preview": "python3 -m http.server 49740 --bind 127.0.0.1 --directory site/public",
     "changeset": "changeset",
-    "version-packages": "changeset version && bun install --lockfile-only --ignore-scripts && bun run build"
+    "version-packages": "changeset version && bun scripts/changelog-heading.mjs && bun install --lockfile-only --ignore-scripts && bun run build"
   },
   "devDependencies": {
     "svelte": "5.57.3",
