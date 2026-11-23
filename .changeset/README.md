@@ -1,6 +1,6 @@
 # Changesets
 
-Run `npm run changeset` for published-package changes. Describe the resulting
+Run `bun run changeset` for published-package changes. Describe the resulting
 consumer behaviour and choose patch, minor or major. Removing a public role,
 changing JSON shape or incompatible component-markup requirements needs a major
 changeset. Guide-only edits do not need a package release.

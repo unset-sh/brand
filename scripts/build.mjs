@@ -39,7 +39,7 @@ export async function generate() {
     if (/[;{}<>]/.test(family.name + family.weights + family.style + family.loading)) throw new Error('Unsafe font metadata');
     return `@font-face {font-family:${JSON.stringify(family.name)};src:url(${JSON.stringify('../' + source.path)}) format("woff2");font-weight:${family.weights};font-style:${family.style};font-display:${family.loading};}`;
   }).join('\n');
-  const banner = `/* Generated from src/contract.json (${pkg.version}). Run npm run build; do not edit. */\n`;
+  const banner = `/* Generated from src/contract.json (${pkg.version}). Run bun run build; do not edit. */\n`;
   const css = `${banner}${faces}\n:root {\n  color-scheme: dark;\n${declarations('dark')}\n}\n:root[data-theme="light"] {\n  color-scheme: light;\n${declarations('light')}\n}\n`;
   const tailwindEntries = cssTokens.flatMap(token => {
     if (token.type === 'color') return [`  --color-${token.cssVariable.slice(2)}: var(${token.cssVariable});`];
@@ -87,8 +87,8 @@ export async function build({ check = false } = {}) {
   if (check) {
     for (const [path, expected] of outputs) {
       let actual;
-      try { actual = await read(path); } catch { throw new Error(`Missing generated file: ${path}; run npm run build`); }
-      if (actual !== expected) throw new Error(`Generated drift: ${path}; run npm run build`);
+      try { actual = await read(path); } catch { throw new Error(`Missing generated file: ${path}; run bun run build`); }
+      if (actual !== expected) throw new Error(`Generated drift: ${path}; run bun run build`);
     }
     const entries = await readdir(resolve(root, 'dist'), { recursive: true, withFileTypes: true });
     for (const entry of entries.filter(entry => entry.isFile())) {

@@ -1,6 +1,8 @@
 import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
-import { existsSync } from 'node:fs';
+import { existsSync, mkdtempSync, rmSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { basename, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import test from 'node:test';
 import { readJson, root } from './repo.mjs';
@@ -31,12 +33,19 @@ test('public exports resolve without any website or tooling imports', async () =
   assert.equal(Object.keys(resolved.themes.dark).length, contract.tokens.length);
 });
 test('the archive contains only static outputs, assets and documentation', () => {
-  const args = ['pack', '--dry-run', '--json', '--ignore-scripts', '--cache', process.env.TMPDIR || '/tmp'];
-  const npm = process.env.npm_execpath;
-  const result = execFileSync(npm ? process.execPath : 'npm', npm ? [npm, ...args] : args, {
-    cwd: fileURLToPath(root), encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe']
-  });
-  const files = JSON.parse(result)[0].files.map(f => f.path);
+  // Pack for real into a scratch folder and list the archive, so the test reads what would be published.
+  const folder = mkdtempSync(join(tmpdir(), 'brand-pack-'));
+  let files;
+  try {
+    const name = execFileSync('bun', ['pm', 'pack', '--ignore-scripts', '--quiet', '--destination', folder], {
+      cwd: fileURLToPath(root), encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe']
+    }).trim().split('\n').at(-1);
+    assert(name, 'bun pm pack named no archive');
+    files = execFileSync('tar', ['-tzf', join(folder, basename(name))], { encoding: 'utf8' })
+      .split('\n').filter(Boolean).map(path => path.replace(/^package\//, ''));
+  } finally {
+    rmSync(folder, { recursive: true, force: true });
+  }
   const allowed = /^(dist\/|fonts\/|logo\/|icons\/|guidelines\/|provenance\/|source\.json$|LICENSE$|LICENSE-ASSETS\.md$|README\.md$|CHANGELOG\.md$|THIRD-PARTY-NOTICES\.md$|package\.json$)/;
   for (const path of files) {
     assert.match(path, allowed, path);

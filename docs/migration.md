@@ -48,7 +48,7 @@ separate semantic families. Inspect old generic cyan info/plum error usages.
 
 ## Release and rollout
 
-`npm run changeset` records intent. `npm run version-packages` applies reviewed
+`bun run changeset` records intent. `bun run version-packages` applies reviewed
 changesets to version/changelog files. Rebuild before the release PR. Existing
 main/tag validation, release-environment approval and artifact attestation remain.
 

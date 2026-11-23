@@ -41,13 +41,13 @@
     "registry": "https://npm.pkg.github.com"
   },
   "scripts": {
-    "build": "node scripts/build.mjs",
-    "check": "node scripts/build.mjs --check && node site/gallery/scripts/build-syntax.mjs --check && node --test checks/*.test.mjs site/gallery/checks/*.test.mjs",
-    "query": "node scripts/query.mjs",
-    "site:build": "node scripts/build-site.mjs",
+    "build": "bun scripts/build.mjs",
+    "check": "bun scripts/build.mjs --check && bun site/gallery/scripts/build-syntax.mjs --check && bun test checks/*.test.mjs site/gallery/checks/*.test.mjs && bun .claude/agent-kit/sync.mjs --check",
+    "query": "bun scripts/query.mjs",
+    "site:build": "bun scripts/build-site.mjs",
     "site:preview": "python3 -m http.server 49740 --bind 127.0.0.1 --directory site/public",
     "changeset": "changeset",
-    "version-packages": "changeset version && npm install --package-lock-only --ignore-scripts && npm run build"
+    "version-packages": "changeset version && bun install --lockfile-only --ignore-scripts && bun run build"
   },
   "devDependencies": {
     "svelte": "5.57.3",
