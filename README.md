@@ -109,6 +109,12 @@ npm run check
 npm run site:build
 ```
 
+CI runs for pull requests and pushes to `staging` and `main`, retaining the
+`Check pins, tokens, files and package` status. The separate
+`policy / Validate branch policy` check uses pinned organisation tooling to
+validate PR branch relationships, including retargets. Required-check settings
+are adopted separately. Release and Pages publication keep their existing gates.
+
 Serve `site/public/` for a local preview. `HUGO_BINARY` can name an executable
 outside `PATH`. Test project Pages paths with `BRAND_BASE_PATH=/brand/`;
 `BRAND_BASE_URL` supplies the absolute URL for the assembled guide and gallery.
