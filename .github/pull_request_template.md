@@ -10,7 +10,7 @@
 
 <!-- Public imports, roles, markup, assets, licences and migration impact. Link the org-map companion PR when responsibilities change. -->
 
-- [ ] `npm run check` passes; generated outputs are current
-- [ ] `npm run site:build` passes; affected examples checked in light/dark
+- [ ] `bun run check` passes; generated outputs are current
+- [ ] `bun run site:build` passes; affected examples checked in light/dark
 - [ ] Package changes have a changeset; breaking changes have migration notes
 - [ ] Sources/licences preserved; package boundaries intact

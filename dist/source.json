@@ -127,12 +127,12 @@
     },
     {
       "path": "dist/tokens.css",
-      "sha256": "2738aa54564ec77474d25552e880e6743b0df982f2b1b8ebc940c55d74c79377",
+      "sha256": "fd74d0595ed2e3e0600e3dc1ab160ed15cf2fa84be484bd37f3dcac5e76f3f53",
       "origin": "repository-build"
     },
     {
       "path": "dist/tailwind.css",
-      "sha256": "b563990e38a12db20f18b4ad3ee00f7795df7840b32ef332400ebeb8bb16608d",
+      "sha256": "967782b1862e17534633c76b60b53f9927ab8747d97a27fd742a328908a932c4",
       "origin": "repository-build"
     },
     {

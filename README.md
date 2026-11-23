@@ -31,7 +31,7 @@ src/contract.json → validation + generation → dist/ → @unset-sh/brand
 
 The package contains static data, styles and assets, with no runtime dependency
 on Hugo, Svelte, Bits UI or Tailwind. Website and tooling are excluded from the
-npm archive. [Decision 0001](docs/decisions/0001-contract-and-guide.md) defines the boundaries.
+package archive. [Decision 0001](docs/decisions/0001-contract-and-guide.md) defines the boundaries.
 
 [Bits UI](https://www.bits-ui.com/docs/introduction) supplies headless interaction
 primitives; [shadcn-svelte](https://www.shadcn-svelte.com/docs/components) supplies
@@ -41,15 +41,17 @@ consumer. The brand package does not duplicate component behaviour.
 
 ## Use the package
 
-Configure the scope in the consumer's committed `.npmrc`:
+Point the `@unset-sh` scope at GitHub Packages in the consumer's committed
+`bunfig.toml`, reading the token from an environment variable:
 
-```ini
-@unset-sh:registry=https://npm.pkg.github.com
+```toml
+[install.scopes]
+"@unset-sh" = { url = "https://npm.pkg.github.com", token = "$NPM_CONFIG_TOKEN" }
 ```
 
-Provide read-only package credentials through user configuration or CI secrets,
-never a committed file. See [GitHub registry authentication](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-to-github-packages).
-Install an intended published version with `npm install --save-exact
+Provide a read-only package token through the environment or CI secrets, never a
+committed file. See [GitHub registry authentication](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-to-github-packages).
+Install an intended published version with `bun add --exact
 @unset-sh/brand@VERSION`, replacing `VERSION` with that version.
 
 For a bundler-based application:
@@ -100,13 +102,13 @@ the shape; `source.json` records build/asset provenance. Asset exports are
 
 ## Change and verify
 
-Use Node from `.nvmrc` and Hugo **0.168.0**, matching the docs site.
+Use Bun from `.bun-version` and Hugo **0.168.0**, matching the docs site.
 
 ```sh
-npm ci
-npm run build
-npm run check
-npm run site:build
+bun install --frozen-lockfile
+bun run build
+bun run check
+bun run site:build
 ```
 
 CI runs for pull requests and pushes to `staging` and `main`, retaining the
@@ -121,7 +123,7 @@ outside `PATH`. Test project Pages paths with `BRAND_BASE_PATH=/brand/`;
 
 Edit `src/contract.json` and shared `src/` style adapters, then rebuild. Inspect
 both themes and affected components, including keyboard and small-screen use.
-Add a changeset with `npm run changeset` for package changes and open a PR with
+Add a changeset with `bun run changeset` for package changes and open a PR with
 generated outputs and validation. Guide-only edits need no package version bump.
 
 WCAG 2.2 AA is the target. Automated contrast checks cover authored pairs, not
@@ -130,14 +132,19 @@ reflow, screen-reader and state checks.
 
 ## Releases and consistency
 
-`npm run version-packages` applies reviewed changesets to version/changelog
+`bun run version-packages` applies reviewed changesets to version/changelog
 files. Regenerate outputs and review that release commit before tagging. Do not
 manually edit semver or bypass publication controls with `changeset publish`.
 See the [Changesets version command](https://changesets.dev/guide/cli#version).
 
-A release is a `v<version>` tag on `main`. CI validates the tag, checks and packs
-once, then waits for the protected `release` environment. That same artifact is
-attested and published to GitHub Packages. Existing licences and approval remain.
+Work lands on `staging`. A release is Alex's merge of `staging` into `main`
+([org-0010](https://github.com/unset-sh/agent-kit/blob/main/skills/org-decisions/records/org-0010-staged-delivery-on-main.md));
+after it, an agent may press Approve on the `release` environment
+([org-0012](https://github.com/unset-sh/agent-kit/blob/main/skills/org-decisions/records/org-0012-release-approvals-and-lexicon-drafts.md)).
+The release workflow checks and packs once, then attests and publishes that
+same artifact to GitHub Packages. Today it still starts from a `v<version>` tag
+on `main` and packs with npm; it moves to the merge trigger and `bun pm pack`
+with tooling's shared release chain. Existing licences and approval remain.
 
 Publishing makes a version available; it does not change an already built app.
 Each consumer updates its exact dependency and lockfile, runs checks and
