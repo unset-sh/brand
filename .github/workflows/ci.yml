@@ -20,7 +20,7 @@ jobs:
     # The repository ruleset requires this status; through the shared workflow it reads
     # "Check pins, tokens, files and package / Check".
     name: Check pins, tokens, files and package
-    uses: unset-sh/tooling/.github/workflows/ci-check.yml@3fe3db56a710da477877f1e1e3fe37abf4d3b71c
+    uses: unset-sh/tooling/.github/workflows/ci-check.yml@c4918ca0525bbb9183da82a7166368f262b059dc
     permissions:
       contents: read
       packages: read # the shared install step may read @unset-sh packages; brand has none today
