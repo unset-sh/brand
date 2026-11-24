@@ -42,15 +42,17 @@ consumer. The brand package does not duplicate component behaviour.
 ## Use the package
 
 Point the `@unset-sh` scope at GitHub Packages in the consumer's committed
-`bunfig.toml`, reading the token from an environment variable:
+`bunfig.toml`, reading the token from `GITHUB_PACKAGES_TOKEN`:
 
 ```toml
 [install.scopes]
-"@unset-sh" = { url = "https://npm.pkg.github.com", token = "$NPM_CONFIG_TOKEN" }
+"@unset-sh" = { url = "https://npm.pkg.github.com", token = "$GITHUB_PACKAGES_TOKEN" }
 ```
 
 Provide a read-only package token through the environment or CI secrets, never a
-committed file. See [GitHub registry authentication](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-to-github-packages).
+committed file. Do not use `NPM_CONFIG_TOKEN` for it: Bun also sends that one to
+the default registry, so the token would reach registry.npmjs.org (Bun 1.4.4
+`docs/pm/npmrc.mdx`). See [GitHub registry authentication](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-to-github-packages).
 Install an intended published version with `bun add --exact
 @unset-sh/brand@VERSION`, replacing `VERSION` with that version.
 
