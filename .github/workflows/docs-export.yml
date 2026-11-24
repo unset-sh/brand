@@ -1,0 +1,43 @@
+name: docs-export
+
+# Packages docs/site/ as the brand section of docs.unset.sh. unset-sh/docs imports only a successful
+# push run of this file on main (tooling docs/import-docs.md, source key brand), so the docs reach the
+# site when staging is promoted. The check runs first; the export only after it passes.
+# Pinned to a full tooling commit.
+
+on:
+  pull_request:
+    branches: [staging, main]
+  push:
+    branches: [staging, main]
+
+permissions: {}
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    # A distinct name, so this run does not duplicate ci.yml's required status.
+    name: Check before export
+    uses: unset-sh/tooling/.github/workflows/ci-check.yml@37ea5787ba7ecbfc9c910be7a8762a58479f2dc5
+    permissions:
+      contents: read
+      packages: read # the shared install step may read @unset-sh packages; brand has none today
+    with:
+      install: true
+      timeout-minutes: 15
+      # The same command as ci.yml's check.
+      command: |
+        bun run check
+        bash .github/install-hugo.sh
+        export HUGO_BINARY="$RUNNER_TEMP/brand-hugo/hugo"
+        bun run site:build
+        BRAND_BASE_PATH=/brand/ BRAND_BASE_URL=https://unset-sh.github.io/brand/ bun run site:build
+
+  export:
+    needs: check
+    uses: unset-sh/tooling/.github/workflows/automation-docs-export.yml@37ea5787ba7ecbfc9c910be7a8762a58479f2dc5
+    permissions:
+      contents: read
