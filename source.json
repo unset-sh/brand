@@ -81,6 +81,11 @@
       "origin": "brand@0.1.0"
     },
     {
+      "path": "logo/unset-link-card.png",
+      "sha256": "b23c7ed96874d9b92238d79f45707c3dae2c684146fe26f094e595cb757bbdb9",
+      "origin": "scripts/build-link-card.mjs"
+    },
+    {
       "path": "logo/unset-mark-black.svg",
       "sha256": "8ac3fde30cfc314f93a1a9bd175adf0f7c5e18b865803395869061e0b6ba602c",
       "origin": "brand@0.1.0"

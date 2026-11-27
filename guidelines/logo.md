@@ -13,6 +13,12 @@ Pure white and black versions, only for print or places where the palette can't 
 - `unset-mark-on-black.svg`, `unset-mark-on-white.svg` — square 1080 tiles.
 - `unset-mark-source.png` — the supplied original; reference only.
 
+Default link preview:
+
+- `unset-link-card.png` — a fixed 1200 × 630 Graphite card with the official mark and `unset.sh` in Space Grotesk. Use the unchanged file when a public page has no content-specific preview. Its package export is `@unset-sh/brand/logo/unset-link-card.png`; suggested image alternative: “Unset — unset.sh”. It has no profile or article data. Data-driven previews remain in `@unset-sh/rendering`.
+
+The card is authored in `scripts/build-link-card.mjs` from the current contract, the pinned font and the unchanged Platinum mark. `bun run asset:link-card` regenerates the image and its provenance using the exact build-only Takumi version. Inspect it before running `bun run build` and `bun run check`. The package ships the static image; consumers do not install or run the renderer. Rebuilding on another platform may change PNG bytes and requires reviewing the resulting asset.
+
 Favicon and app icons: one fisheye unit taken from the mark at its exact geometry, in the palette.
 
 - `unset-favicon.svg` — the unit alone, transparent, with the default black fill. It does not switch with `prefers-color-scheme`; use the PNG alternative when a fixed Onyx background is needed.
