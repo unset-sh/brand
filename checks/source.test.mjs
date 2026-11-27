@@ -24,3 +24,10 @@ test('all original fonts, marks, app icons and licences retain their exact bytes
     assert.equal(sha256(asset.path), asset.sha256, asset.path);
   }
 });
+test('the standard link card records its source artwork, font and current brand colours', () => {
+  const card = readJson('provenance/unset-link-card.json');
+  for (const input of card.inputs) assert.equal(sha256(input.path), input.sha256, input.path);
+  const colours = readJson('dist/resolved.json').themes[card.theme];
+  for (const [token, value] of Object.entries(card.tokens)) assert.equal(colours[token], value, token);
+  assert.equal(card.renderer, `@takumi-rs/core@${readJson('package.json').devDependencies['@takumi-rs/core']}`);
+});

@@ -42,6 +42,7 @@
   },
   "scripts": {
     "build": "bun scripts/build.mjs",
+    "asset:link-card": "bun scripts/build-link-card.mjs",
     "check": "bun scripts/build.mjs --check && bun site/gallery/scripts/build-syntax.mjs --check && bun test checks/*.test.mjs site/gallery/checks/*.test.mjs && bun .claude/agent-kit/sync.mjs --check",
     "query": "bun scripts/query.mjs",
     "site:build": "bun scripts/build-site.mjs",
@@ -76,7 +77,8 @@
     "shiki": "3.20.0",
     "@changesets/cli": "3.0.3",
     "ajv": "8.17.1",
-    "ajv-formats": "3.0.1"
+    "ajv-formats": "3.0.1",
+    "@takumi-rs/core": "2.21.0"
   },
   "devEngines": {
     "runtime": {

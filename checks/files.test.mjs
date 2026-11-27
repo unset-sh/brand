@@ -51,6 +51,7 @@ const PNG_SIZES = {
   "icons/unset-icon-192.png": 192,
   "icons/unset-icon-512.png": 512,
   "logo/unset-mark-source.png": 1080,
+  "logo/unset-link-card.png": [1200, 630],
 };
 
 test("every PNG has a size on record", () => {
@@ -58,11 +59,12 @@ test("every PNG has a size on record", () => {
 });
 
 for (const [path, size] of Object.entries(PNG_SIZES)) {
-  test(`${path} is a ${size} by ${size} PNG`, () => {
+  const [width, height] = Array.isArray(size) ? size : [size, size];
+  test(`${path} is a ${width} by ${height} PNG`, () => {
     const bytes = read(path);
     assert.ok(bytes.subarray(0, 8).equals(PNG_SIGNATURE), "PNG signature");
     assert.equal(bytes.subarray(12, 16).toString("latin1"), "IHDR");
-    assert.equal(bytes.readUInt32BE(16), size, "width");
-    assert.equal(bytes.readUInt32BE(20), size, "height");
+    assert.equal(bytes.readUInt32BE(16), width, "width");
+    assert.equal(bytes.readUInt32BE(20), height, "height");
   });
 }

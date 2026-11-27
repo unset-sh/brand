@@ -7,14 +7,16 @@ fonts, mark and icon assets in `@unset-sh/brand` on GitHub Packages. The owner s
 workflow in [decision 0001](docs/decisions/0001-contract-and-guide.md).
 
 - **Belongs here:** contract/schema, generated tokens and optional style adapters, pinned assets and provenance,
+  the fixed default Unset link card,
   brand guidelines, the Hugo guide and private Svelte gallery, build/check/release tooling.
 - **Does not belong here:** business rules, authentication, data fetching, app state or another component
   behaviour library (that is the consumer: `unset-sh/web`, `unset-sh/backend`); previews and share cards drawn
   from data (that is `unset-sh/rendering`); shared workflow implementations (that is `unset-sh/tooling`).
 - **Uses:** no other organisation runtime package; `unset-sh/tooling` for the branch policy check at a full
   commit; `unset-sh/agent-kit` as the copy under `.claude/`. Hugo, Svelte, Bits UI, shadcn-svelte, Tailwind and
-  related tools build the guide and gallery only. **Used by:** rendering, docs, and planned web and PDS
-  integrations, at exact package versions. Do not claim an integration migrated before its own changes are
+  related tools build the guide and gallery only; Takumi builds the fixed link-card asset only.
+  **Used by:** rendering, docs, and planned web and PDS integrations, at exact package versions.
+  Do not claim an integration migrated before its own changes are
   verified.
 - **Licence:** project files follow the organisation rule (AGPL-3.0-only). Preserve OFL-1.1 fonts, the reserved
   Unset mark and app icons, MIT Tabler data and vendored upstream notices.

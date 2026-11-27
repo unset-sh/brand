@@ -1,0 +1,26 @@
+{
+  "path": "logo/unset-link-card.png",
+  "width": 1200,
+  "height": 630,
+  "theme": "dark",
+  "text": "unset.sh",
+  "renderer": "@takumi-rs/core@2.21.0",
+  "inputs": [
+    {
+      "path": "scripts/build-link-card.mjs",
+      "sha256": "7a59a4236878e0899449062fb0bc1c81cb4e6870de530d4f5ee5230982113f65"
+    },
+    {
+      "path": "logo/unset-mark-platinum.svg",
+      "sha256": "36714aa7fcaf3bba6df88da8e65dac6e5144107ba7649ea2aa14bc672f8e70e5"
+    },
+    {
+      "path": "fonts/SpaceGrotesk-Variable.woff2",
+      "sha256": "0640890476fc1198ab4de571fb658de443c4d85b66466ec09534a8737ab1ce9d"
+    }
+  ],
+  "tokens": {
+    "color.ground": "#1c1c1c",
+    "color.ink": "#ededed"
+  }
+}

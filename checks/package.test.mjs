@@ -51,7 +51,7 @@ test('the archive contains only static outputs, assets and documentation', () =>
     assert.match(path, allowed, path);
     assert(!/\.(m?js|svelte|ts|html)$/.test(path), `Executable file in package: ${path}`);
   }
-  for (const required of ['dist/tokens.css', 'dist/contract.json', 'dist/shadcn.css', 'dist/recipes.css', 'dist/syntax/moss-clay-dark.json', 'fonts/SpaceGrotesk-Variable.woff2', 'icons/tabler/LICENSE.md', 'LICENSE']) {
+  for (const required of ['dist/tokens.css', 'dist/contract.json', 'dist/shadcn.css', 'dist/recipes.css', 'dist/syntax/moss-clay-dark.json', 'fonts/SpaceGrotesk-Variable.woff2', 'icons/tabler/LICENSE.md', 'logo/unset-link-card.png', 'LICENSE']) {
     assert(files.includes(required), required);
   }
 });
